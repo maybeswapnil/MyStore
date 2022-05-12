@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -19,7 +21,7 @@ export default function Login() {
         }
         localStorage.setItem('user', JSON.stringify(object))
         dispatch(login(object))
-        console.log(object)
+        navigate(-1)
     }
 
     return (

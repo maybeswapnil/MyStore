@@ -1,0 +1,10 @@
+.checkout {
+    display: flex;
+}
+
+.checkout-payment {
+    width: 50%;
+}
+.checkout-cart {
+    width: 50%;
+}

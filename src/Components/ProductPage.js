@@ -42,7 +42,7 @@ console.log(props.from)
         <h1>{props.res.name}</h1>
         <img src={props.res.name}/>
         <h1>{props.res.description}</h1>
-        {props.from!=='cart'?<button value='open' onClick={(e) => addToCart(e)}>Add to Cart</button>:null}
+        {props.from=='collection'?<button value='open' onClick={(e) => addToCart(e)}>Add to Cart</button>:null}
         {props.from=='cart'?<button value='open' onClick={(e) => RemoveFromCart(e)}>Remove</button>:null}
     </div>
   );

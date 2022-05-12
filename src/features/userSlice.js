@@ -14,11 +14,12 @@ export const userSlice = createSlice({
             state.user = null
         },
         addCart: (state, action) => {
-            state.cart = state.cart.push(action.payload)
+            var localVariable = state.cart;
+            localVariable.push(action.payload)
         },
         removeCart: (state, action) => {
             for(var j = 0;j<state.cart.length;j++) {
-                if(state.cart[j].id===action.payload.id) state.cart[j] = null
+                if(state.cart[j].name===action.payload.name) state.cart.splice(j,1)
             }
         }
     }

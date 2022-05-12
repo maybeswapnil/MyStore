@@ -44,7 +44,7 @@ export default function Collection() {
       <div className="collection-grid">
           {image.map((res) => {
               return(
-                <Product res={res}/>
+                <Product res={res} from={'collection'}/>
               )
           })}
       </div>

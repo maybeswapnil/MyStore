@@ -8,6 +8,7 @@ import { selectUser } from "./features/userSlice";
 import Cart from "./Components/Cart";
 import Collection from "./Components/Collection";
 import { useEffect } from "react";
+import Checkout from "./Components/Checkout";
 
 export default function App() {
 
@@ -29,11 +30,13 @@ export default function App() {
         <Link to="/" />
         <Link to="/cart" />
         <Link to="/collection" />
+        <Link to="/checkout" />
         <Routes>
           <Route path="/account/user" element={!user?<Login />:<Users />} />
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/collection" element={<Collection />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
     </div>

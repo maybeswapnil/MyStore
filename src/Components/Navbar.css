@@ -1,0 +1,17 @@
+.navbar {
+    height: 20%;
+    display: flex;
+}
+
+.navbar > div {
+    position: absolute;
+    right: 10vmin;
+}
+
+.navbar h1 {
+    color: red;
+    margin: 0;
+    padding: 0;
+    margin-inline: 0;
+    margin-black: 0;
+}

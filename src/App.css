@@ -1,9 +1,40 @@
-root {
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+:root {
   margin: 0;
   padding: 0;
-  overflow: auto;
+  --font-color: black;
+  --font-color-hover: #FF5F00;
+  --font-color-shadow: rgb(255, 255, 255);
+  --background-color: white;
+  --font-style: 'Source Sans Pro', sans-serif;
+}
+
+html {
+  height: 90%;
+  background-color: #eff3eb;
+
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  height: 100%;
 }
 
 .App {
   overflow: auto;
+  height: 90%;
+}
+.navbar-background {
+  position: fixed;
+  height: 12vh;
+  width: 100%;
+  background-color: #eff3eb;
+  z-index: 9;
+  box-shadow: rgba(87, 86, 86, 0.3) 0px 1px 30px;
 }

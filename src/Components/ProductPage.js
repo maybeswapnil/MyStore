@@ -4,8 +4,8 @@ import { selectCart, selectUser } from "../features/userSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart, removeCart } from "../features/userSlice";
-
-
+import './ProductPage.css'
+import ImageForm from "./ImageForm";
 //TODO: overlay
 export default function ProductPage(props) {
   const navigate = useNavigate()
@@ -13,12 +13,7 @@ export default function ProductPage(props) {
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-console.log(props.from)
-  }, [])
-
-  const addToCart = (e) => {
-    e.preventDefault();
+  const addToCart = () => {
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
     cart.push(props.res)
     localStorage.setItem('cart', JSON.stringify(cart))
@@ -26,8 +21,7 @@ console.log(props.from)
     console.log(cart)
   }
 
-  const RemoveFromCart = (e) => {
-    e.preventDefault();
+  const RemoveFromCart = () => {
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
     for(var j = 0;j<cart.length;j++) {
         if(cart[j].name===props.res.name) cart.splice(j, 1)
@@ -37,14 +31,20 @@ console.log(props.from)
     console.log(cart)
   }
 
+  const main = () => {
+    console.log('jhahah')
+    props.view(false)
+  }
+
   return (
-    <div className="product" onClick={() => props.view()}>
-        <h1>{props.res.name}</h1>
-        <img src={props.res.name}/>
-        <h1>{props.res.description}</h1>
-        {props.from=='collection'?<button value='open' onClick={(e) => addToCart(e)}>Add to Cart</button>:null}
-        {props.from=='cart'?<button value='open' onClick={(e) => RemoveFromCart(e)}>Remove</button>:null}
+    <div id="popup1" className="overlay" >
+    <div className="popup">
+        <img src={props.res.url} className="popup-image"/>
+        <a className="close" onClick={() => main()} >&times;</a>
+        <ImageForm close={props.view} res={props.res} addToCart={addToCart} />
+    </div>
     </div>
   );
 }
+
   

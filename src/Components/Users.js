@@ -25,7 +25,7 @@ export default function Users() {
   }
 
   return (
-    <div className="App">
+    <div className="users">
       <h1>Welcome {user.user}</h1>
     </div>
   );

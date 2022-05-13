@@ -1,11 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 
+:root {
+  margin: 0;
+  padding: 0;
+  --font-color: black;
+  --font-color-hover: #FF5F00;
+  --font-color-shadow: rgb(255, 255, 255);
+  --background-color: white;
+  --font-style: 'Source Sans Pro', sans-serif;
+}
 .collection {
+    font-family: var(--font-style);
+    width: 80%;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10%;
+}
+
+.collection-header {
+    margin-left: 20%;
 }
 
 .collection-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 3px;
+    gap: 90px 90px;
+    display: inline-grid;
+    justify-items: center;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+@media only screen and (max-width: 1400px) { 
+    .collection-grid {
+        grid-template-columns: 1fr ;
+        grid-gap: 3px;
+        gap: 40px 0px;
+        display: inline-grid;
+        justify-items: center;
+        margin-top: 30%;
+        margin-bottom: 30%;
+        overflow: hidden;
+    }
+    .collection {
+        font-family: var(--font-style);
+    }
 }

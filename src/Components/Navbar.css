@@ -1,17 +1,104 @@
-.navbar {
-    height: 20%;
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+:root {
+  margin: 0;
+  padding: 0;
+  --font-color: black;
+  --font-color-hover: #FF5F00;
+  --font-color-shadow: rgb(255, 255, 255);
+  --background-color: white;
+  --font-style: 'Source Sans Pro', sans-serif;
 }
 
-.navbar > div {
+.navbar {
+    position: fixed;
+    display: flex;
+    font-family: var(--font-style);
+    margin-top: 20px;
+    gap: 900px;
+    height: 20%;
+  z-index: 10;
+
+}
+
+/* .navbar > div {
     position: absolute;
     right: 10vmin;
-}
+    margin-right: 20%;
+} */
 
 .navbar h1 {
-    color: red;
     margin: 0;
     padding: 0;
     margin-inline: 0;
     margin-black: 0;
+    margin-left: 20%;
+}
+
+h1 > a {
+    font-size: 20px;
+}
+
+h1 > a:hover {
+    cursor: pointer;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.right-navbar-icon {
+    height: 30%;
+}
+
+.right-navbar-icon:hover {
+    -webkit-filter: drop-shadow(1px 1px 1px rgb(146, 144, 144));
+    filter: drop-shadow(1px 1px 1px rgb(146, 144, 144));
+}
+
+#headline {
+    font-size: 30px;
+    margin-top: -30px;
+    margin-left: 70%;
+}
+
+.right-navbar {
+    display: flex;
+    gap: 40px;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    .navbar > div {
+        position: absolute;
+        right: 10vmin;
+        margin-right: 5%;
+        width: 100vw;
+    }
+    .navbar h1 {
+        margin: 0;
+        padding: 0;
+        margin-inline: 0;
+        margin-black: 0;
+        margin-left: 10%;
+    }
+    img {
+        width: 12%;
+    }
+    .right-navbar {
+        display: flex;
+        gap: 40px;
+        position: absolute;
+        left: 210%;
+    }
+    .right-navbar {
+        float: right;
+        display: flex;
+        gap: 40px;
+    }
+    #headline {
+        font-size: 30px;
+        margin-top: -30px;
+        margin-left: 22%;
+    }
 }

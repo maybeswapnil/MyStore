@@ -9,6 +9,8 @@ import Cart from "./Components/Cart";
 import Collection from "./Components/Collection";
 import { useEffect } from "react";
 import Checkout from "./Components/Checkout";
+import './App.css'
+import Footer from "./Components/Footer";
 
 export default function App() {
 
@@ -24,6 +26,8 @@ export default function App() {
 
   return (
     <div className="App">
+      <div className="navbar-background">
+      </div>
       <Router>
         <Navbar />
         <Link to="/account/user" />
@@ -39,6 +43,8 @@ export default function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
+      <Footer />
+
     </div>
   );
 }

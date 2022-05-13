@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
-
+import './Login.scss'
 export default function Login() {
     const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const l = useRef(null)
+    const m = useRef(null)
+    const n = useRef(null)
+    const o = useRef(null)
 
+    function clearFunction() {
+        l.current.value = ''
+        m.current.value = ''
+        n.current.value = ''
+        o.current.value = ''
+    }
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
@@ -26,18 +36,34 @@ export default function Login() {
 
     return (
       <div className="Login">
-        <h1>Login</h1>
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <input type='email' onChange={(e) => {setEmail(e.target.value)}}/>
-            <br/>
-            <br/>
-            <input type='password' onChange={(e) => {setPassword(e.target.value)}}/>
-            <br/>
-            <br/>
-            <input type='submit'/>
-        </form>
-       
+        <h1 className='login-header'>Login</h1>
+        <div className="main-form">
+            <div className="form-group">
+                <span></span>
+                <input className="form-field" type="email" placeholder="Email" ref ={l} onChange={(e) => setEmail(e.target.value)}/>
+            </div>
+            <div className="form-group">
+                <span></span>
+                <input className="form-field" type="password" placeholder="Password" ref = {o} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <div className="content-submit">
+                    <button className="button-13" id='clear-button' onClick={() => clearFunction()} role="button">Clear</button>
+                    <button className="button-13" id='submit-button' role="button" onClick={(e) => handleSubmit(e)}>Submit</button>
+                    <br/>
+                    <br/>
+                    <a className="forgot-password">Forgot your password?</a>
+                    <br/>
+                    <br/>
+                    <a className="forgot-password">Create Account</a>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       </div>
+     
     );
 }
-  
+

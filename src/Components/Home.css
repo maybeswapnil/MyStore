@@ -10,7 +10,7 @@
   --font-style: 'Source Sans Pro', sans-serif;
 }
 .home {
-    height: 90vh;
+    height: 190vh;
     margin-top: 10%;
     font-family: var(--font-style);
     justify-content: center;
@@ -26,6 +26,14 @@
     gap: 90px;
 }
 
+.home-flex-two {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    justify-content: center;
+    margin-top: 11%;
+}
+
 .home-colored-box {
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
     padding: 90px;
@@ -34,12 +42,24 @@
     border-radius: 15px;
     width: 30%;
     position: absolute;
-
+    margin-left: 10%;
 }
 
 .home-colored-image {
     width: 80%;
     border-radius: 15px;
-    margin-left: auto;
+    margin-left: 16%;
+}
 
+.home-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    align-items: center;
+}
+
+.para-description {
+    width: 80%;
+    text-align: center;
 }

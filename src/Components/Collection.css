@@ -15,7 +15,8 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
+    margin-top: 70px;
 }
 
 .collection-header {
@@ -44,6 +45,6 @@
         overflow: hidden;
     }
     .collection {
-        font-family: var(--font-style);
+        margin-bottom: 100%;
     }
 }

@@ -1,5 +1,36 @@
 import { useNavigate } from "react-router-dom";
 import './Home.css'
+import Product from "./Product";
+const image = [
+  {
+      name: 'Cassett In the Sky',
+      url: 'https://images.unsplash.com/photo-1588417446723-884e75a48432?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=307&q=80',
+      description: 'Front-end for project-specific portals. The Application was made using ReactJS to extract data from server logs and display it in readable form for analysis. Developed login interface along with backend architecture using Express, it allows storing user activity in MySQL database. Worked on various REST APIs and have an understanding of various headers used. Used UNIX to monitor the server logs for API requests made.'
+  },
+  {
+      name: 'Greany Leaf',
+      url: 'https://images.unsplash.com/photo-1588417446123-e7202e88f934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=308&q=80',
+      description: 'Front-end for project-specific portals. The Application was made using ReactJS to extract data from server logs and display it in readable form for analysis. Developed login interface along with backend architecture using Express, it allows storing user activity in MySQL database. Worked on various REST APIs and have an understanding of various headers used. Used UNIX to monitor the server logs for API requests made.'
+  }
+]
+
+const imageTwo = [
+  {
+      name: 'Contrasty Leaf',
+      url: 'https://images.unsplash.com/photo-1588417221066-8b8184004cab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=707&q=80',
+      description: 'Front-end for project-specific portals. The Application was made using ReactJS to extract data from server logs and display it in readable form for analysis. Developed login interface along with backend architecture using Express, it allows storing user activity in MySQL database. Worked on various REST APIs and have an understanding of various headers used. Used UNIX to monitor the server logs for API requests made.'
+  },
+  {
+      name: 'Pretty White Duck',
+      url: 'https://images.unsplash.com/photo-1588417220543-160f591512cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=707&q=80',
+      description: 'Front-end for project-specific portals. The Application was made using ReactJS to extract data from server logs and display it in readable form for analysis. Developed login interface along with backend architecture using Express, it allows storing user activity in MySQL database. Worked on various REST APIs and have an understanding of various headers used. Used UNIX to monitor the server logs for API requests made.'
+  },
+  {
+      name: 'Very Orange Container',
+      url: 'https://images.unsplash.com/photo-1588417099597-fb0b248d6c35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=707&q=80',
+      description: 'Front-end for project-specific portals. The Application was made using ReactJS to extract data from server logs and display it in readable form for analysis. Developed login interface along with backend architecture using Express, it allows storing user activity in MySQL database. Worked on various REST APIs and have an understanding of various headers used. Used UNIX to monitor the server logs for API requests made.'
+  }	
+]
 export default function Home() {
   const navigate = useNavigate()
 
@@ -16,10 +47,15 @@ export default function Home() {
           <img className="home-colored-image" src='https://images.pexels.com/photos/10865105/pexels-photo-10865105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
         </div>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <div className="collection" style={{width: '100%', marginTop: '200px', marginBottom: '-190px'}}>
+      <div className="collection-grid">
+          {image.map((res) => {
+              return(
+                <Product res={res} from={'collection'}/>
+              )
+          })}
+      </div>
+      </div>
       <div className="home-flex-two">
         <div className="home-icons">
             <img src="https://img.icons8.com/wired/64/000000/delivery.png"/>
@@ -37,6 +73,36 @@ export default function Home() {
             <p className="para-description">Write us ASAP! We can correct your address/size in the first 24 hours :)</p>
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      {/* <div className="home-collection" style={{width: '100%', marginTop: '0px', marginBottom: '-70px'}}>
+      <div className="home-collection-grid">
+        <div>
+          <div className='home-image1'>
+              <img  id='box1' src={imageTwo[0].url} />
+          </div>
+          <div className='home-image3'>
+              <img  id='box3' src={imageTwo[2].url} />
+          </div>
+        </div>
+        <div>
+          <div className='home-image1'>
+              <img  id='box1' src={image[0].url} />
+          </div>
+          <div className='home-image3'>
+              <img  id='box3' src={image[1].url} />
+          </div>
+        </div>
+        <div className='home-image2'>
+            <img  id='box2' src={imageTwo[1].url} />
+        </div>
+        
+      </div>
+      </div> */}
     </div>
   );
 }

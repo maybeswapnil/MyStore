@@ -13,6 +13,7 @@
 .cart {
     font-family: var(--font-style);
     height: 100vh;
+    margin-top: 300px;
 }
 
 .cart-header {

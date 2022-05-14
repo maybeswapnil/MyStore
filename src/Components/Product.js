@@ -37,11 +37,12 @@ export default function Product(props) {
         <div>
           <img className="cart-image" src={props.res.url} />
         </div>
-        <div className="product-grid" onClick={() => setView(true)}>
+        <div className="product-grid-main"  onClick={() => setView(true)}>
             <h1 className="cart-product-header" >{props.res.name}</h1>
-            <p>{props.res.description}</p>
+            <h3>{props.res.description}</h3>
+            <p>$20</p>
         </div>
-        {props.from==='cart'?<a className="close" style={{fontSize: '40px', zIndex: '15', height: '200%'}} onClick={() => RemoveFromCart()}>&times;</a>:null}
+        {props.from==='cart'?<a className="close" style={{fontSize: '40px', zIndex: '15', height: '200%', position: 'absolute', right: '20px'}} onClick={() => RemoveFromCart()}>&times;</a>:null}
 
       {view?<ProductPage res={props.res} view={setView} from={props.from}/>:<h1></h1>}
 

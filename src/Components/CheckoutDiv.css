@@ -10,81 +10,72 @@
   --font-style: 'Source Sans Pro', sans-serif;
 }
 
-.product {
+.checkoutdiv-product {
     font-family: var(--font-style);
     box-shadow: rgba(87, 86, 86, 0.3) 0px 1px 30px;
     border-radius: 20px;
-    width: 100%;
-    height: 99%;
+    width: 60%;
+    height: 160px;
     background-color: white;
     transition-delay: 300ms;
     text-decoration: none;
     transition: text-decoration 300ms;
     position: relative;
 }
-.product-flex {
+.checkoutdiv-product-flex {
     font-family: var(--font-style);
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
-.product-grid {
+.checkoutdiv-product-grid {
     font-family: var(--font-style);
     display: grid;
-} 
-.product-grid-main {
-    font-family: var(--font-style);
-    display: grid;
+    margin-left: 200px;
 } 
 
-.product-flex h3 {
-    font-family: var(--font-style);
-    font-weight: 100;
-}
-
-.product:hover h1{
+.checkoutdiv-product:hover h1{
     text-decoration: underline;
     cursor: pointer;
     text-underline-offset: 4px;
 }
 
-.cart-image {
+.checkoutdiv-cart-image-div {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 40%;
 }
 
-.cart-product-header {
+.checkoutdiv-cart-image {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 160px;
+    width: 160px;
+}
+
+.checkoutdiv-cart-product-header {
     color: #a8ac91;
+    font-size: 20px;
+}
+@media only screen and (max-width: 1400px) { 
+    .checkoutdiv-product {
+        margin-top: 30%;
+        width: 90%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-@media only screen and (max-width: 1400px) { 
-    .collection {
-        width: 100%;
-    }
-    .product {
-        font-family: var(--font-style);
-        box-shadow: none;
-
-        border-radius: 6px;
-        width: 330px;
-        height: 600px;
-        font-size: 2.3vmin;
-    }
-    .cart-image {
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px;
-        position: absolute;
-        width: 100%;
-    }
-    .product-grid-main {
-        margin-top: 500px;
-    } 
-    .product-flex h3 {
-        display: none;
-        
-    }
-    .product-flex p {
-        margin-top: -5px;
-        width: 100%;
+@media only screen and (max-width: 600px) { 
+    .checkoutdiv-product {
+        margin-top: 30%;
+        width: 90%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

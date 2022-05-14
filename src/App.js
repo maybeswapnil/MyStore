@@ -26,8 +26,6 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="navbar-background">
-      </div>
       <Router>
         <Navbar />
         <Link to="/account/user" />

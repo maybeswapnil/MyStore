@@ -10,14 +10,15 @@
   --font-style: 'Source Sans Pro', sans-serif;
 }
 .home {
-    height: 190vh;
-    margin-top: 10%;
+    height: 200vh;
+    margin-top:200px;
     font-family: var(--font-style);
     justify-content: center;
     align-items: center;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
 
 .home-flex {
@@ -32,21 +33,58 @@
     gap: 90px;
     justify-content: center;
     margin-top: 11%;
+    margin-bottom: 31%;
 }
+
+.home-collection {
+    font-family: var(--font-style);
+    width: 80%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.home-collection-grid {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    gap: 10px 10px;
+    display: grid;
+    justify-items: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: auto;
+}
+
+
+
+#box1 {
+    width: 300px;
+}
+#box3 {
+    width: 300px;
+}
+#box2 {
+    width: 604px;
+    height: 905px;
+    /* margin-left: -487px; */
+}
+
 
 .home-colored-box {
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
     padding: 90px;
     padding-top: 60px;
     padding-left: 50px;
+    padding-right: 50px;
     border-radius: 15px;
-    width: 30%;
+    width: 500px;
     position: absolute;
     margin-left: 10%;
 }
 
 .home-colored-image {
-    width: 80%;
+    width: 90vmin;
     border-radius: 15px;
     margin-left: 16%;
 }
@@ -62,4 +100,42 @@
 .para-description {
     width: 80%;
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) { 
+    .home {
+        margin-top: 350px;
+        height: 300vh;
+    } 
+    .home-flex-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 90px;
+        justify-content: center;
+        margin-top: 70%;
+    margin-bottom: 31%;
+        
+    }
+    .home-icons {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        
+    }
+    .home-flex {
+    }
+    .home-colored-box {
+        margin-top: 20%;
+        width: 80%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .home-colored-image {
+        width: 80%;
+        border-radius: 15px;
+        display: none;
+    }
 }

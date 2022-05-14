@@ -11,7 +11,6 @@
 }
 
 .navbar {
-    position: fixed;
     display: flex;
     font-family: var(--font-style);
     margin-top: 20px;
@@ -30,8 +29,6 @@
 .navbar h1 {
     margin: 0;
     padding: 0;
-    margin-inline: 0;
-    margin-black: 0;
     margin-left: 20%;
 }
 
@@ -57,16 +54,20 @@ img:hover {
 }
 
 #headline {
-    font-size: 30px;
+    position: absolute;
+    left: 30vmin;
     margin-top: -30px;
-    margin-left: 70%;
 }
 
 .right-navbar {
     display: flex;
     gap: 40px;
+    position: absolute;
+    right: 30vmin;
 }
 
+@media only screen and (max-width: 1400px) { 
+}
 
 @media only screen and (max-width: 600px) { 
     .navbar > div {
@@ -82,19 +83,22 @@ img:hover {
         margin-black: 0;
         margin-left: 10%;
     }
+    #headline {
+        position: absolute;
+        left: -10vmin;
+        margin-top: -60px;
+    }
+    
     img {
-        width: 12%;
+        width: 8%;
     }
     .right-navbar {
+        margin-top: 10px;
         display: flex;
         gap: 40px;
         position: absolute;
-        left: 210%;
-    }
-    .right-navbar {
-        float: right;
-        display: flex;
-        gap: 40px;
+        right: 0;
+        justify-content: flex-end;
     }
     #headline {
         font-size: 30px;

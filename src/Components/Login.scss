@@ -2,20 +2,20 @@
 
 
 :root {
-    --input-color: #ffffff;
-    --input-border: #ffffff;
+    --input-color: #000000;
+    --input-border: #c9c9c9;
     --input-background: #fff;
-    --input-placeholder: #ffffff;
+    --input-placeholder: #000000;
 
-    --input-border-focus: #ffffff;
+    --input-border-focus: #94748b;
 
-    --group-color: var(--input-color);
+    --group-color: rgb(255, 255, 255);
     --group-border: var(--input-border);
-    --group-background: #ffffff1c;
+    --group-background: #9e5c8b;
 
-    --group-color-focus: rgb(255, 255, 255);
+    --group-color-focus: #ffffff;
     --group-border-focus: var(--input-border-focus);
-    --group-background-focus: #000000;
+    --group-background-focus: #94748b;
     --font-style: 'Source Sans Pro', sans-serif;
 }
 
@@ -229,7 +229,7 @@ text-decoration: underline;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 10%;
+        margin-top: 130px;
     }
     .login-header {
         border-right: 0px solid black;

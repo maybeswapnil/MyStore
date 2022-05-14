@@ -18,6 +18,9 @@ export default function Cart() {
       <div className="collection-grid">
         {cart.map((res) => {return(<Product res={res} from={'cart'}/>)})}
       </div>
+      <br/>
+      <br/><br/>
+      <br/>
       <div className="cart-form">
       {!cart.length>0?<div>
          <h1 style={{height: '20px'}}>Your cart is empty</h1>

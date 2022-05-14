@@ -47,7 +47,7 @@ export default function Home() {
           <img className="home-colored-image" src='https://images.pexels.com/photos/10865105/pexels-photo-10865105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
         </div>
       </div>
-      <div className="collection" style={{width: '100%', marginTop: '200px', marginBottom: '-190px'}}>
+      {/* <div className="collection" id='home-collection' >
       <div className="collection-grid">
           {image.map((res) => {
               return(
@@ -55,20 +55,37 @@ export default function Home() {
               )
           })}
       </div>
+      </div> */}
+      <div className="home-description-two">
+          <div>
+            <h1 id='description-header-two'>Water-based inks</h1>
+            <h3 id='description-para-two'>We are about partnering with sustainable suppliers in order to provide you with ethically produced, sustainably made custom apparels made from ecofriendly materials like organic cotton and hemp.</h3>     
+          </div>
+          <div className="home-description-image">
+            <img src='https://cdn.shopify.com/s/files/1/0631/4934/2952/files/close-up-silk-screen-printing-ink_750x.jpg?v=1649703517'/>
+          </div>
       </div>
+      <div className="home-description">
+            <h1 id='description-header'>Eco-friendly canvas prints</h1>
+            <h3 id='description-para'>We are about partnering with sustainable suppliers in order to provide you with ethically produced, sustainably made custom apparels made from ecofriendly materials like organic cotton and hemp.</h3>
+            <button style={{marginTop: '0vmin', marginLeft: 'auto', marginRight: 'auto'}} className="button-13 cart-header" onClick={() => navigate('/collection')}>Shop Now</button>
+      </div>
+      
+      <br/>
+      <br/>
       <div className="home-flex-two">
         <div className="home-icons">
-            <img src="https://img.icons8.com/wired/64/000000/delivery.png"/>
+            <img className="home-icons-image" src="https://img.icons8.com/wired/64/000000/delivery.png"/>
             <h2>Shipping & Delivery</h2>
             <p className="para-description">Chipoichipoi!! Free shipping on orders over 100$ (within USA).</p>
         </div>
-        <div className="home-icons">
-            <img src="https://img.icons8.com/external-outline-juicy-fish/60/000000/external-damaged-cyber-crime-outline-outline-juicy-fish.png"/>
+        <div className="home-icons" >
+            <img className="home-icons-image" src="https://img.icons8.com/external-outline-juicy-fish/60/000000/external-damaged-cyber-crime-outline-outline-juicy-fish.png"/>
             <h2>Damaged item?</h2>
             <p className="para-description">No worries! Contact our customer support team and we'll make it right</p>
         </div>
         <div className="home-icons">
-            <img src="https://img.icons8.com/wired/64/000000/wrong-pincode.png"/>
+            <img className="home-icons-image" src="https://img.icons8.com/wired/64/000000/wrong-pincode.png"/>
             <h2>Made the wrong order?</h2>
             <p className="para-description">Write us ASAP! We can correct your address/size in the first 24 hours :)</p>
         </div>

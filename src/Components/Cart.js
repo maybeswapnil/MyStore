@@ -43,7 +43,7 @@ export default function Cart() {
         <div className="your-cart-product-grid-main" id='your-cart-price' style={{textAlign: 'right'}}>
             <h2><span id='bolder'>Subtotal</span> ${price}.00 USD</h2>
             <p>Taxes and shipping <a id='underlined'>calculated</a> at checkout</p>
-            <button className="button-13" style={{marginLeft: '0px'}} id='submit-button' role="button" >Checkout</button>
+            <button className="button-13" style={{marginLeft: '0px'}} id='submit-button' role="button" onClick={() => navigate('/checkout')}>Checkout</button>
             <br/>
             <button className="button-13" style={{marginLeft: '0px', marginTop: '10px', backgroundColor: 'black'}} id='submit-button' role="button" >Google pay</button>
         </div>
@@ -56,14 +56,14 @@ export default function Cart() {
       {!cart.length>0?<div>
          <h1 id='cart-empty' style={{height: '20px'}}>Your cart is empty</h1>
         </div>:<h1></h1>}
-        <div className="cart-buttons">
+        {!cart.length>0?<div className="cart-buttons">
             <button className="button-13 cart-header" style={{height: '60px', fontSize: '20px', width: '230px'}} onClick={() => navigate('/collection')}>Continue Shopping</button>
-        </div>
+        </div>:null}
         {!user?<div style={{height: '50px'}}>
           {cart?<h6>Have an account?</h6>:<h1></h1>}
         </div>:null}
         <div className="cart-buttons">
-            {!user?<button style={{marginTop: '0vmin'}} className="button-13 cart-header" onClick={() => navigate('/account/user')}>Login to order</button>:<button className="button-13" onClick={() => navigate('/checkout')}>Check Out</button>}
+            {!user?<button style={{marginTop: '0vmin'}} className="button-13 cart-header" onClick={() => navigate('/account/user')}>Login to order</button>:null}
         </div>
       </div>
     </div>

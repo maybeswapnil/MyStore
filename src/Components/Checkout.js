@@ -3,6 +3,7 @@ import { selectCart } from "../features/userSlice";
 import './Checkout.css'
 import CheckoutDiv from "./CheckoutDiv";
 import CheckoutForm from "./CheckoutForm";
+import YourCart from "./YourCart";
 
 export default function Checkout() {
   const cart = useSelector(selectCart)
@@ -13,10 +14,23 @@ export default function Checkout() {
         <CheckoutForm />
       </div>
       <div className="checkout-cart">
-      <div className="product-grid0cart-header" >
-            <h1 className="cart-product-header">Cart</h1>
+        <div className="cart" style={{marginTop: '0px'}}>
+        <div className="cart-product-flex" id='bottom-border'>
+        <div>
+          <h1 style={{fontSize:'50px'}}>Your Cart</h1>
         </div>
-       {cart.map((res) => {return(<CheckoutDiv res={res} from={'checkout'}/>)})}
+        <div className="your-cart-product-grid-main" >
+        </div>
+        <div className="your-cart-product-grid-main" id='your-cart-price-header'>
+            <h4><a id='underlined'>Continue Shopping</a></h4>
+        </div>
+      </div>
+        <div className="cart-grid">
+          
+          {cart.map((res) => {return(<YourCart res={res} from={'checkout'}/>)})}
+
+          </div>
+        </div>
       </div>
     </div>
   );

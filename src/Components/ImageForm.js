@@ -86,7 +86,7 @@ function ImageForm(props) {
                 <button className="button-13" style={{marginLeft: '10px'}}  id='submit-button' role="button" onClick={() => {props.addToCart(props.element); props.close()}}>Add Default</button>
         </div>
         <br/>
-        <p id='random-sentence' style={{color:'black'}}>This lightweight, soft Cactus will fast become your favorite. It's made with our  100% Certified Organic Cotton fabric giving you a fit that's stylish year-round.   </p>
+        <p id='random-sentence' style={{color:'black'}}>This lightweight, soft Cactus canvas will fast become your favorite. It's made with our 100% Certified Organic Cotton fabric giving premium feel.   </p>
         <br/>
     </div>
   );

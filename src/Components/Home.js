@@ -39,7 +39,7 @@ export default function Home() {
       <div className="home-flex">
         <div className="home-colored-box">
           <h1>My planet friendly Collection</h1>
-          <p>#LiveEpic also means to live responsibly. Give shape to your epic moments with our new sustainable clothing.</p>
+          <p>#LiveEpic also means to live responsibly. Give shape to your epic moments with our new sustainable canvas prints.</p>
           <br/>
           <button style={{marginTop: '0vmin'}} className="button-13 cart-header" onClick={() => navigate('/collection')}>Shop Now</button>
         </div>

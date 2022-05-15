@@ -1,12 +1,12 @@
-
 import { useEffect, useState } from "react";
 import ProductPage from './ProductPage'
-import './Product.css'
+import './YourCart.css'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectCart, selectUser } from "../features/userSlice";
 import { useDispatch } from "react-redux";
 import { addCart, removeCart } from "../features/userSlice";
+
 export default function Product(props) {
   const [view, setView] = useState(false)
   const navigate = useNavigate()
@@ -32,17 +32,21 @@ export default function Product(props) {
     console.log(cart)
   }
   return (
-    <div className="product" >
-      <div className="product-flex" >
-        <div>
-          <img className="cart-image" src={props.res.url} />
+    <div className="your-cart-product" >
+      <div className="your-cart-product-flex" >
+        <div style={{borderBottom: '2px solid black'}}>
+          <img className="your-cart-cart-image" src={props.res.smallurl} />
         </div>
-        <div className="product-grid-main"  onClick={() => setView(true)}>
-            <h1 className="cart-product-header" >{props.res.name}</h1>
-            <h3>{props.res.description}</h3>
-            <p>$20</p>
+        <div className="your-cart-product-grid-main">
+            <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" onClick={() => setView(true)}>{props.res.name}</h1>
+            <h4>$20</h4>
+            <h4>Size: S</h4>
+            <img src="https://img.icons8.com/wired/64/000000/add--v1.png" id='delete-button' onClick={() => addToCart()}/>
         </div>
-        {props.from==='cart'?<a className="close" style={{fontSize: '40px', zIndex: '15', height: '200%', position: 'absolute', right: '20px'}} onClick={() => RemoveFromCart()}>&times;</a>:null}
+        <div className="your-cart-product-grid-main" id='your-cart-price'  >
+            <h4>${props.res.price}.00</h4>
+        </div>
+        
 
       {view?<ProductPage res={props.res} view={setView} from={props.from}/>:<h1></h1>}
 
@@ -51,4 +55,5 @@ export default function Product(props) {
     </div>
   );
 }
+  
   

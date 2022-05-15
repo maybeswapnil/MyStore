@@ -22,7 +22,7 @@ export default function App() {
         localStorage.setItem('user', null)
       }
     }
-  }, [])
+  }, [user])
 
   return (
     <div className="App">

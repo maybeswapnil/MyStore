@@ -10,7 +10,7 @@
   --font-style: 'Source Sans Pro', sans-serif;
 }
 .home {
-    height: 290vh;
+    height: 245vh;
     margin-top:200px;
     font-family: var(--font-style);
     justify-content: center;
@@ -90,9 +90,9 @@
 }
 
 .home-colored-image {
-    width: 90vmin;
+    width: 82%;
     border-radius: 15px;
-    margin-left: 16%;
+    margin-left: auto;
 }
 
 .home-icons {
@@ -134,7 +134,7 @@
     margin-right: auto;
 }
 .home-description-two {
-    width: 100%;
+    width: 80%;
     height: 500px;
     background-image:  linear-gradient(320deg, rgba(214, 168, 168, 1) 23%, rgba(158, 92, 139, 1) 100%);
     display: grid;
@@ -143,6 +143,8 @@
     border-radius: 15px;
     position: relative;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #description-header-two {
@@ -152,12 +154,13 @@
     line-height: 2.6;
     color: white;
 
-    width: 45%;
+    width: 29%;
     font-size: 1.8vmin;
 }
 .home-description-image {
     position: absolute;
     right: 0;
+    height: 500px;
 }
 
 .home-description-image >img {
@@ -168,6 +171,7 @@
 
 @media only screen and (max-width: 600px) {
     .home-description-two {
+        width: 100%;
         margin-top: 300px;
         padding: 20px;
     }

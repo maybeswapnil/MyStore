@@ -1,14 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { selectUser } from "../features/userSlice";
-
+import './Users.css'
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [column, setColumn] = useState([]);
   const [select, setSelect] = useState(5);
   const [search, setSearch] = useState('')
   const user = useSelector(selectUser)
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios("https://randomuser.me/api/?results=" + select).then((res) => {
@@ -26,7 +28,10 @@ export default function Users() {
 
   return (
     <div className="users">
-      <h1>Welcome {user.user}</h1>
+      <div className="users-header">
+        <h1 id='main-header'>Account</h1>
+        <h1>Welcome {user.user} <span id='underline' href='/' onClick={() => {localStorage.setItem('user', null); navigate('/account/user')}}>Logout</span></h1>
+      </div>
     </div>
   );
 }

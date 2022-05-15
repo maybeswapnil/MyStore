@@ -14,12 +14,28 @@ export default function Product(props) {
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
+  const [added, setAdded] = useState(false)
+
+  useEffect(() => {
+      cart.map((r) => {
+        if(r.name === props.res.name) setAdded(true)
+      })
+  }, [])
+
   const addToCart = () => {
+    if(added) {
+      RemoveFromCart();
+      setAdded(false)
+      return;
+    } 
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
     cart.push(props.res)
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(addCart(props.res))
-    console.log(cart)
+    cart.map((r) => {
+      if(r.name === props.res.name) setAdded(true)
+    })
+    console.log(added)
   }
 
   const RemoveFromCart = () => {
@@ -34,14 +50,15 @@ export default function Product(props) {
   return (
     <div className="your-cart-product" >
       <div className="your-cart-product-flex" >
-        <div style={{borderBottom: '2px solid black'}}>
+        <div style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid #2ECC71'}}>
           <img className="your-cart-cart-image" src={props.res.smallurl} />
         </div>
         <div className="your-cart-product-grid-main">
-            <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" onClick={() => setView(true)}>{props.res.name}</h1>
+            <h1 style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid #2ECC71'}} className="your-cart-cart-product-header" onClick={() => setView(true)}>{props.res.name}</h1>
             <h4>$20</h4>
             <h4>Size: S</h4>
-            <img src="https://img.icons8.com/wired/64/000000/add--v1.png" id='delete-button' onClick={() => addToCart()}/>
+            {!added?<img src="https://img.icons8.com/wired/204/000000/add--v1.png" id='delete-button' onClick={() => addToCart()}/>:<img src="https://i.imgur.com/LN8NKHj.png" id='delete-button' onClick={() => addToCart()}/>}
+            {/* "https://img.icons8.com/wired/204/000000/add--v1.png" */}
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price'  >
             <h4>${props.res.price}.00</h4>

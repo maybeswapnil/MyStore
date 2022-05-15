@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,9 @@ export default function Login() {
     const m = useRef(null)
     const n = useRef(null)
     const o = useRef(null)
+
+    useEffect(() => {
+      }, []);
 
     function clearFunction() {
         l.current.value = ''
@@ -57,11 +60,6 @@ export default function Login() {
                     <a className="forgot-password">Create Account</a>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
       </div>
      
     );

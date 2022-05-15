@@ -7,7 +7,8 @@
   --font-color-hover: #FF5F00;
   --font-color-shadow: rgb(255, 255, 255);
   --background-color: white;
-  --font-style: 'Source Sans Pro', sans-serif;
+  --font-style: acumin-pro, system-ui, sans-serif;
+
 }
 
 #delete-button {

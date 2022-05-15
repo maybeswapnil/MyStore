@@ -14,6 +14,7 @@ export default function YourCart(props) {
   const cart = useSelector(selectCart)
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
+  const [added, setAdded] = useState(false)
 
   const addToCart = () => {
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
@@ -24,25 +25,28 @@ export default function YourCart(props) {
   }
 
   const RemoveFromCart = () => {
-    var cart = JSON.parse(localStorage.getItem('cart'))||[]
-    for(var j = 0;j<cart.length;j++) {
-        if(cart[j].name===props.res.name) cart.splice(j, 1)
-    }
-    localStorage.setItem('cart', JSON.stringify(cart))
-    dispatch(removeCart(props.res))
-    console.log(cart)
+    setAdded(true)
+    setTimeout(() =>{
+      setAdded(false)
+      var cart = JSON.parse(localStorage.getItem('cart'))||[]
+      for(var j = 0;j<cart.length;j++) {
+          if(cart[j].name===props.res.name) cart.splice(j, 1)
+      }
+      localStorage.setItem('cart', JSON.stringify(cart))
+      dispatch(removeCart(props.res))
+    }, 500)
   }
   return (
     <div className="your-cart-product" >
       <div className="your-cart-product-flex" >
-        <div style={{borderBottom: '2px solid black'}}>
+        <div style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid red'}}>
           <img className="your-cart-cart-image" src={props.res.smallurl} />
         </div>
         <div className="your-cart-product-grid-main">
             <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" >{props.res.name}</h1>
             <h4>$20</h4>
             <h4>Size: S</h4>
-            <img src="https://img.icons8.com/wired/64/000000/filled-trash.png" id='delete-button' onClick={() => RemoveFromCart()}/>
+            {!added?<img src="https://img.icons8.com/wired/204/000000/filled-trash.png" id='delete-button' onClick={() => RemoveFromCart()}/>:<img src="https://i.imgur.com/2RoMH1O.png" id='delete-button' onClick={() => RemoveFromCart()}/>}
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price'  >
             <h4>${props.res.price}.00</h4>

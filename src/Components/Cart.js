@@ -15,7 +15,7 @@ export default function Cart() {
 
   useEffect(() => {
         var sum = 0;
-        cart.map((r, c) => sum+=r.price*r.quantity)
+        cart.map((r, c) => sum+=r.price[r.size]*r.quantity)
         setPrice(sum)
   }, [cart])
 

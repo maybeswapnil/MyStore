@@ -19,7 +19,7 @@ export const userSlice = createSlice({
         },
         removeCart: (state, action) => {
             for(var j = 0;j<state.cart.length;j++) {
-                if(state.cart[j].name===action.payload.name) state.cart.splice(j,1)
+                if(state.cart[j].id===action.payload.id) state.cart.splice(j,1)
             }
         }
     }

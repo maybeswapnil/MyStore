@@ -23,19 +23,20 @@ export default function Product(props) {
   }, [])
 
   const addToCart = () => {
-    if(added) {
-      RemoveFromCart();
-      setAdded(false)
-      return;
-    } 
+    setAdded(true)
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
-    cart.push(props.res)
+    var local = {...props.res};
+    local.id = cart.length+1;
+    cart.push(local);
     localStorage.setItem('cart', JSON.stringify(cart))
-    dispatch(addCart(props.res))
+    dispatch(addCart(local))
     cart.map((r) => {
       if(r.name === props.res.name) setAdded(true)
     })
-    console.log(added)
+    setTimeout(() => {
+      setAdded(false)
+    }, 300)
+    console.log(cart)
   }
 
   const RemoveFromCart = () => {
@@ -61,7 +62,7 @@ export default function Product(props) {
             {/* "https://img.icons8.com/wired/204/000000/add--v1.png" */}
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price'  >
-            <h4>${props.res.price}.00</h4>
+            <h4>${props.res.price[props.res.size]}.00</h4>
         </div>
         
 

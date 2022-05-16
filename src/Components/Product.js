@@ -56,7 +56,7 @@ export default function Product(props) {
         <div className="your-cart-product-grid-main">
             <h1 style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid #2ECC71'}} className="your-cart-cart-product-header" onClick={() => setView(true)}>{props.res.name}</h1>
             <h4>$20</h4>
-            <h4>Size: S</h4>
+            <h4>Size: <span id='bolder'>{props.res.size}</span></h4>
             {!added?<img src="https://img.icons8.com/wired/204/000000/add--v1.png" id='delete-button' onClick={() => addToCart()}/>:<img src="https://i.imgur.com/LN8NKHj.png" id='delete-button' onClick={() => addToCart()}/>}
             {/* "https://img.icons8.com/wired/204/000000/add--v1.png" */}
         </div>

@@ -44,12 +44,13 @@ export default function YourCart(props) {
         </div>
         <div className="your-cart-product-grid-main">
             <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" >{props.res.name}</h1>
-            <h4>$20</h4>
-            <h4>Size: S</h4>
+            <h4 id='cart-info-mobile'>$20 per canvas</h4>
+            <h4 id='cart-info-mobile'>Size: {props.res.size}</h4>
+            <h4 id='cart-info-mobile'>Quantity: x{props.res.quantity}</h4>
             {!added?<img src="https://img.icons8.com/wired/204/000000/filled-trash.png" id='delete-button' onClick={() => RemoveFromCart()}/>:<img src="https://i.imgur.com/2RoMH1O.png" id='delete-button' onClick={() => RemoveFromCart()}/>}
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price'  >
-            <h4>${props.res.price}.00</h4>
+            <h4>${props.res.price*props.res.quantity}.00</h4>
         </div>
         
 

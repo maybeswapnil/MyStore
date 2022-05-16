@@ -28,11 +28,11 @@ font-family: var(--font-style);
     margin-left: 200px;
     animation: none;
 }
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 1600px) { 
     .checkout {
         display: flex;
         flex-direction: column;
-        height: 200vh;
+        height: 210vh;
         margin-top: 80px;
     }
     .checkout-payment {

@@ -13,12 +13,17 @@ export default function ProductPage(props) {
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
-  const addToCart = () => {
+  const addToCart = (object) => {
+    console.log(object)
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
-    cart.push(props.res)
+    var local = props.res;
+    local.quantity = object.quantity;
+    local.size = object.size;
+    local.comments = object.comments;
+    cart.push(local)
     localStorage.setItem('cart', JSON.stringify(cart))
-    dispatch(addCart(props.res))
-    console.log(cart)
+    dispatch(addCart(local))
+    console.log(local)
   }
 
   const RemoveFromCart = () => {
@@ -32,7 +37,6 @@ export default function ProductPage(props) {
   }
 
   const main = () => {
-    console.log('jhahah')
     props.view(false)
   }
 

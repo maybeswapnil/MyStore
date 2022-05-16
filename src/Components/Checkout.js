@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { selectCart } from "../features/userSlice";
 import './Checkout.css'
 import CheckoutDiv from "./CheckoutDiv";
@@ -7,7 +9,13 @@ import YourCart from "./YourCart";
 
 export default function Checkout() {
   const cart = useSelector(selectCart)
-
+  const [price, setPrice] = useState(0)
+  const navigate = useNavigate()
+  useEffect(() => {
+        var sum = 0;
+        cart.map((r, c) => sum+=r.price*r.quantity)
+        setPrice(sum)
+  }, [cart])
   return (
     <div className="checkout">
       <div className="checkout-payment">
@@ -30,6 +38,20 @@ export default function Checkout() {
           {cart.map((res) => {return(<YourCart res={res} from={'checkout'}/>)})}
 
           </div>
+          {cart.length>0?<div className="cart-product-flex" >
+        <div>
+          <h1 style={{fontSize:'50px'}}></h1>
+        </div>
+        <div className="your-cart-product-grid-main" >
+        </div>
+        <div className="your-cart-product-grid-main" id='your-cart-price' style={{textAlign: 'right'}}>
+            <h2><span id='bolder'>Subtotal</span> ${price}.00 USD</h2>
+            <p>Taxes and shipping <a id='underlined'>calculated</a> at checkout</p>
+            </div>
+      </div>:null}
+      <br/>
+      <br/><br/>
+      <br/>
         </div>
       </div>
     </div>

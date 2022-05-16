@@ -57,26 +57,38 @@ function CheckoutForm() {
         </div>
         </div>
         <div className="form-group2">
+            <span style={{width: '100px'}}>{'Name'}</span>
+
             <input className="form-field" type="text" placeholder="First Name"  ref ={m} onChange={(e) => setFirstName(e.target.value)}/>
             <input className="form-field" type="email" placeholder="Last Name" ref ={n} onChange={(e) => setLastName(e.target.value)} />
         </div> 
         <div className="form-group2">
+        <span style={{width: '100px'}}>{'Comp. Name'}</span>
+
             <input className="form-field" type="text" placeholder="Company Name (optional)" ref ={n} onChange={(e) => setLastName(e.target.value)} />
         </div> 
         <div className="form-group2">
+        <span style={{width: '100px'}}>{'Address'}</span>
+
             <input className="form-field" type="text" placeholder="Address" ref ={n} onChange={(e) => setLastName(e.target.value)} />
         </div>
         <div className="form-group2">
+        <span style={{width: '100px'}}>{'House No.'}</span>
+
             <input className="form-field" type="text" placeholder="Apartment, suite, etc. (optional)" ref ={n} onChange={(e) => setLastName(e.target.value)} />
         </div>
         <div className="form-group2">
+        <span style={{width: '100px'}}>{'City'}</span>
+
             <input className="form-field" type="text" placeholder="City" ref ={n} onChange={(e) => setLastName(e.target.value)} />
         </div>
         <div className="form-group2">
+        <span style={{width: '100px'}}>{'Phone No.'}</span>
+
             <input className="form-field" type="text" placeholder="Phone" ref ={n} onChange={(e) => setLastName(e.target.value)} />
         </div>
         <div className="form-group2">
-            <span>{'Comments'}</span>
+        <span style={{width: '100px'}}>{'Comments'}</span>
             <input className="form-field" type="text" placeholder="Write your comments here" ref ={o} onChange={(e) => setExtraInformation(e.target.value)} />
         </div>
         <div className="content-submit">

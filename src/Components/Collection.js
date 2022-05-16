@@ -95,7 +95,6 @@ export default function Collection() {
         <div className="your-cart-product-grid-main" >
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price-header'>
-            {/* <h4><a id='underlined'>Continue Shopping</a></h4> */}
         </div>
       </div>
       <div className="cart-grid">

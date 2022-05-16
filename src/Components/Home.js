@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import './Home.css'
+import Loading from "./Loading";
 import Product from "./Product";
 const image = [
   {

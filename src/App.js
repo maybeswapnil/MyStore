@@ -7,14 +7,16 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 import Cart from "./Components/Cart";
 import Collection from "./Components/Collection";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Checkout from "./Components/Checkout";
 import './App.css'
 import Footer from "./Components/Footer";
+import Loading from "./Components/Loading";
 
 export default function App() {
 
   const user = useSelector(selectUser)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if(user) {
@@ -22,10 +24,14 @@ export default function App() {
         localStorage.setItem('user', null)
       }
     }
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
   }, [user])
 
   return (
     <div className="App">
+      {/* {loading?<Loading />:null} */}
       <Router>
         <Navbar />
         <Link to="/account/user" />

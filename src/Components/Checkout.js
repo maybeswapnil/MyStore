@@ -13,7 +13,7 @@ export default function Checkout() {
   const navigate = useNavigate()
   useEffect(() => {
         var sum = 0;
-        cart.map((r, c) => sum+=r.price*r.quantity)
+        cart.map((r, c) => sum+=r.price[r.size]*r.quantity)
         setPrice(sum)
   }, [cart])
   return (

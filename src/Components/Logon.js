@@ -4,11 +4,13 @@ import { login, selectCart } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
-export default function Login() {
+export default function Logon() {
     const navigate = useNavigate()
     const cart = useSelector(selectCart);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [firstName,  setFirstName] = useState('')
+    const [lastName,  setLastName] = useState('')
     const l = useRef(null)
     const m = useRef(null)
     const n = useRef(null)
@@ -30,14 +32,19 @@ export default function Login() {
             "domain": "mystore",
             "username": email,
             "password": password,
+            "name": {
+              "firstname": firstName,
+              "lastname": lastName
+            },
+            orders: [],
             "commserver": "nodejs",
             "timeout": "120000",
             "cart": cart
-        });
+          });
 
         var config = {
             method: 'post',
-            url: 'https://mystore-log.herokuapp.com/mystore/login',
+            url: 'https://mystore-log.herokuapp.com/mystore/logon',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -50,10 +57,9 @@ export default function Login() {
                 var object = {
                     email: email,
                     password: password,
+                    user: "chemo",
                     date: new Date(),
-                    logininfo: response.data,
-                    orders: [], 
-                    cart: cart
+                    logininfo: data.data
                 }
                 localStorage.setItem('user', JSON.stringify(object))
                 dispatch(login(object))
@@ -66,8 +72,13 @@ export default function Login() {
 
     return (
       <div className="Login">
-        <h1 className='login-header'>Login</h1>
+        <h1 className='login-header'>Logon</h1>
         <div className="main-form">
+            <div className="form-group2">
+                <span>{''}</span>
+                <input className="form-field" type="text" placeholder="First Name"  ref ={m} onChange={(e) => setFirstName(e.target.value)}/>
+                <input className="form-field" type="email" placeholder="Last Name" ref ={n} onChange={(e) => setLastName(e.target.value)} />
+            </div> 
             <div className="form-group">
                 <span></span>
                 <input className="form-field" type="email" placeholder="Email" ref ={l} onChange={(e) => setEmail(e.target.value)} required/>
@@ -81,10 +92,6 @@ export default function Login() {
                     <button className="button-13" id='submit-button' role="button" onClick={(e) => handleSubmit(e)}>Submit</button>
                     <br/>
                     <br/>
-                    <a className="forgot-password">Forgot your password?</a>
-                    <br/>
-                    <br/>
-                    <a className="forgot-password" onClick={() => navigate('/logon')}>Create Account</a>
             </div>
         </div>
       </div>

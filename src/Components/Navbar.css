@@ -56,7 +56,7 @@ img:hover {
 #headline {
     position: absolute;
     left: 30vmin;
-    margin-top: -30px;
+    margin-top: -20px;
 }
 
 .right-navbar {
@@ -86,7 +86,7 @@ img:hover {
     #headline {
         position: absolute;
         left: -22vmin;
-        margin-top: -60px;
+        margin-top: -300px;
     }
     
     img {

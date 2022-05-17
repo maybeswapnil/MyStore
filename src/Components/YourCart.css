@@ -60,8 +60,50 @@
 .your-cart-cart-product-header {
     color: #000000;
 }
-
 @media only screen and (max-width: 1400px) { 
+    /* #cart-info-mobile {
+        font-size: 10px;
+    }
+    #your-cart-price {
+        position: absolute;
+        right: 0px;
+        top: 20px;
+    }
+    
+    .your-cart-product {
+        width: 90%;
+        height: 200px;
+        position: relative;
+        font-size: 7px;
+    }
+    .your-cart-product-flex {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .your-cart-product-grid {
+        display: grid;
+    } 
+    .your-cart-product-grid-main {
+    } 
+    
+    .your-cart-product-flex h3 {
+    }
+    
+    .your-cart-product:hover h1{
+    }
+    
+    .your-cart-cart-image {
+        border-radius: 15px;
+        height: 150px;
+        width: 150px;
+    }
+    
+    .your-cart-cart-product-header {
+    } */
+}
+
+@media only screen and (max-width: 900px) { 
     #cart-info-mobile {
         font-size: 10px;
     }

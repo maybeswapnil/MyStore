@@ -28,9 +28,25 @@ font-family: var(--font-style);
     margin-left: 140px;
     animation: none;
 }
-@media only screen and (max-width: 1600px) { 
+@media only screen and (max-width: 1700px) { 
     .checkout {
         display: flex;
+        height: 100vh;
+        margin-top: 80px;
+    }
+    
+    .checkout-payment {
+        width: 25%;
+        margin-left: -4%;
+    }
+    .checkout-cart {
+        margin-right: 0px;
+        margin-left: 13%;
+    }
+}
+
+@media only screen and (max-width: 1300px) { 
+    .checkout {
         flex-direction: column;
         height: 210vh;
         margin-top: 80px;
@@ -45,6 +61,8 @@ font-family: var(--font-style);
         display: flex;
         flex-direction: column;
         gap: 30px;
+        margin-right: 0px;
+        margin-left:0px;
     }
     .product-grid0cart-header {
         margin-left: 10vmin;

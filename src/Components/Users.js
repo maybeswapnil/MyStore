@@ -21,10 +21,6 @@ export default function Users() {
   return (
     <div className="users-main">
         <div className="users">
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           <div className="users-header">
             <h1>Welcome {user.logininfo.name.firstname} <span id='underline' href='/' onClick={() => {localStorage.setItem('user', null); navigate('/account/user')}}><a href='/'>Logout</a></span></h1>
           </div>
@@ -39,13 +35,6 @@ export default function Users() {
           </div>
         </div>
         <div className="users">
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           <div className="users-header">
             <h1 id='main-header'>Account Details</h1>
             {user.address.length===0?<h4>You haven't added any address yet.</h4>:

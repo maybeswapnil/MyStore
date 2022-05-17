@@ -44,3 +44,25 @@
 
 .users-header {
 }
+
+@media only screen and (max-width: 600px) { 
+    .users-main {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+        margin-top: 100px;
+        height: 70vh;
+
+    }
+
+    .users {
+        font-family: 'Source Sans Pro', sans-serif;
+        height: 10vh;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}

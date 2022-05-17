@@ -8,6 +8,7 @@ export default function Login() {
     const navigate = useNavigate()
     const cart = useSelector(selectCart);
     const [email, setEmail] = useState('')
+    const [error, setError] = useState('')
     const [password, setPassword] = useState('')
     const l = useRef(null)
     const m = useRef(null)
@@ -26,6 +27,13 @@ export default function Login() {
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
+        if(email==='' || password==='') {
+            setError('Username or Password Empty')
+            setTimeout(() => {
+                setError('')
+            }, 2000)
+            return
+        }
         var data = JSON.stringify({
             "domain": "mystore",
             "username": email,
@@ -60,6 +68,10 @@ export default function Login() {
                 navigate(-1)
             })
             .catch(function (error) {
+                setError(error.response.data.error)
+                setTimeout(() => {
+                    setError('')
+                }, 2000)
                 console.log(error);
             });
     }
@@ -85,6 +97,9 @@ export default function Login() {
                     <br/>
                     <br/>
                     <a className="forgot-password" onClick={() => navigate('/logon')}>Create Account</a>
+            </div>
+            <div className="content-error">
+                <h4>{error}</h4>
             </div>
         </div>
       </div>

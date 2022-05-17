@@ -22,7 +22,7 @@ export default function Users() {
     <div className="users">
       <div className="users-header">
         <h1 id='main-header'>Account</h1>
-        <h1>Welcome {user.logininfo.name.firstname} <span id='underline' href='/' onClick={() => {localStorage.setItem('user', null); navigate('/account/user')}}>Logout</span></h1>
+        <h1>Welcome {user.logininfo.name.firstname} <span id='underline' href='/' onClick={() => {localStorage.setItem('user', null); navigate('/account/user')}}><a href='/'>Logout</a></span></h1>
       </div>
       <div className="users-header">
         <h1 id='main-header'>Orders History</h1>

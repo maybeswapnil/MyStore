@@ -25,9 +25,6 @@ export default function Navbar() {
         setViewTwo(false)
       }
   }, [cart])
-  useEffect(() => {
-    navigate('/')
-  }, [])
  
   return (
     <div className="navbar">

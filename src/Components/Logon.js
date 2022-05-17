@@ -4,6 +4,7 @@ import { login, selectCart } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
+import Loading from "./Loading";
 export default function Logon() {
     const navigate = useNavigate()
     const cart = useSelector(selectCart);
@@ -15,6 +16,9 @@ export default function Logon() {
     const m = useRef(null)
     const n = useRef(null)
     const o = useRef(null)
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
       }, []);
@@ -28,6 +32,13 @@ export default function Logon() {
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
+        if(email==='' || password==='' || firstName==='' || lastName==='') {
+            setError('Fields Are Empty')
+            setTimeout(() => {
+                setError('')
+            }, 2000)
+            return
+        }
         var data = JSON.stringify({
             "domain": "mystore",
             "username": email,
@@ -39,7 +50,8 @@ export default function Logon() {
             orders: [],
             "commserver": "nodejs",
             "timeout": "120000",
-            "cart": cart
+            "cart": cart, 
+            "address": []
           });
 
         var config = {
@@ -50,7 +62,7 @@ export default function Logon() {
             },
             data : data
         };
-
+        setLoading(true)
         axios(config)
             .then(function (response) {
                 e.preventDefault()
@@ -59,19 +71,28 @@ export default function Logon() {
                     password: password,
                     user: "chemo",
                     date: new Date(),
-                    logininfo: data.data
+                    logininfo: response.data,
+                    address: []
                 }
-                localStorage.setItem('user', JSON.stringify(object))
-                dispatch(login(object))
+                // localStorage.setItem('user', JSON.stringify(object))
+                // dispatch(login(object))
                 navigate(-1)
+                setLoading(false)
             })
             .catch(function (error) {
+                setError(error.response.data.error)
+                setTimeout(() => {
+                    setError('')
+                }, 2000)
                 console.log(error);
+                setLoading(false)
             });
     }
+    useEffect(() => setLoading(false), [])
 
     return (
       <div className="Login">
+        {loading?<Loading />:null}
         <h1 className='login-header'>Logon</h1>
         <div className="main-form">
             <div className="form-group2">
@@ -93,7 +114,11 @@ export default function Logon() {
                     <br/>
                     <br/>
             </div>
+            <div className="content-error">
+                <h4>{error}</h4>
+            </div>
         </div>
+        
       </div>
      
     );

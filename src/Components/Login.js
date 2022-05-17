@@ -4,6 +4,7 @@ import { login, selectCart } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
+import Loading from "./Loading";
 export default function Login() {
     const navigate = useNavigate()
     const cart = useSelector(selectCart);
@@ -14,7 +15,9 @@ export default function Login() {
     const m = useRef(null)
     const n = useRef(null)
     const o = useRef(null)
+   const [loading, setLoading] = useState(true)
 
+    
     useEffect(() => {
       }, []);
 
@@ -51,7 +54,7 @@ export default function Login() {
             },
             data : data
         };
-
+        setLoading(true)
         axios(config)
             .then(function (response) {
                 e.preventDefault()
@@ -61,13 +64,28 @@ export default function Login() {
                     date: new Date(),
                     logininfo: response.data,
                     orders: [], 
-                    cart: cart
+                    cart: cart,
+                    address: []
                 }
+                var configCart = {
+                    method: 'post',
+                    // url: 'https://mystore-log.herokuapp.com/mystore/addtocart',
+                    url: 'http://localhost:4000/mystore/addtocart',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    data : object
+                };
+                axios(configCart)
+                .then(function (response) {console.log(response)}).catch(() => {})
                 localStorage.setItem('user', JSON.stringify(object))
                 dispatch(login(object))
                 navigate(-1)
+                setLoading(false)
             })
             .catch(function (error) {
+                setLoading(false)
+
                 setError(error.response.data.error)
                 setTimeout(() => {
                     setError('')
@@ -76,8 +94,11 @@ export default function Login() {
             });
     }
 
+    useEffect(() => setLoading(false), [])
+
     return (
       <div className="Login">
+        {loading?<Loading />:null}
         <h1 className='login-header'>Login</h1>
         <div className="main-form">
             <div className="form-group">

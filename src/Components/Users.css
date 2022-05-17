@@ -11,25 +11,36 @@
 
 }
 
+.users-main {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+
+}
+
 .users {
     font-family: 'Source Sans Pro', sans-serif;;
     margin-top: 100px;
-    height: 100vh;
+    height: 60vh;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #main-header {
-    font-size: 60px;
+    font-size: 6vmin;
 }
 
 #underline {
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 2vmin;
 }
 
 #underline:hover {
     cursor: pointer;
     color: #FF5F00;
+}
+
+.users-header {
 }

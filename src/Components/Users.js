@@ -19,18 +19,45 @@ export default function Users() {
   }
 
   return (
-    <div className="users">
-      <div className="users-header">
-        <h1 id='main-header'>Account</h1>
-        <h1>Welcome {user.logininfo.name.firstname} <span id='underline' href='/' onClick={() => {localStorage.setItem('user', null); navigate('/account/user')}}><a href='/'>Logout</a></span></h1>
-      </div>
-      <div className="users-header">
-        <h1 id='main-header'>Orders History</h1>
-        {user.cart.map((r) => {
-          return(<p>{r.name}</p>)
-        })}
-      </div>
+    <div className="users-main">
+        <div className="users">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <div className="users-header">
+            <h1>Welcome {user.logininfo.name.firstname} <span id='underline' href='/' onClick={() => {localStorage.setItem('user', null); navigate('/account/user')}}><a href='/'>Logout</a></span></h1>
+          </div>
+          <div className="users-header">
+            <h1 id='main-header'>Orders History</h1>
+            {user.orders.length===0?<h4>You haven't placed any orders yet.</h4>:
+            <>
+              {user.orders.map((r) => {
+                return(<p>{r.name}</p>)
+              })}
+            </>}
+          </div>
+        </div>
+        <div className="users">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <div className="users-header">
+            <h1 id='main-header'>Account Details</h1>
+            {user.address.length===0?<h4>You haven't added any address yet.</h4>:
+            <>
+              {user.address.map((r) => {
+                return(<p>{r.name}</p>)
+              })}
+            </>}
+          </div>
+        </div>
     </div>
+    
   );
 }
     

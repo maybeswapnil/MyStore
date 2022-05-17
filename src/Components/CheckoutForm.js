@@ -2,6 +2,8 @@ import {useState, useRef} from 'react'
 import './CheckoutForm.scss';
 
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 function CheckoutForm() {
 
   const [email,  setEmail] = useState('')
@@ -12,6 +14,7 @@ function CheckoutForm() {
   const m = useRef(null)
   const n = useRef(null)
   const o = useRef(null)
+  const user = useSelector(selectUser)
 
  function clearFunction() {
      l.current.value = ''
@@ -59,8 +62,8 @@ function CheckoutForm() {
         <div className="form-group2">
             <span style={{width: '100px'}}>{'Name'}</span>
 
-            <input className="form-field" type="text" placeholder="First Name"  ref ={m} onChange={(e) => setFirstName(e.target.value)}/>
-            <input className="form-field" type="email" placeholder="Last Name" ref ={n} onChange={(e) => setLastName(e.target.value)} />
+            <input className="form-field" type="text" placeholder="First Name"  ref ={m} defaultValue={user?user.logininfo.name.firstname:''} onChange={(e) => setFirstName(e.target.value)}/>
+            <input className="form-field" type="email" placeholder="Last Name" ref ={n} defaultValue={user?user.logininfo.name.lastname:''} onChange={(e) => setLastName(e.target.value)} />
         </div> 
         <div className="form-group2">
         <span style={{width: '100px'}}>{'Comp. Name'}</span>

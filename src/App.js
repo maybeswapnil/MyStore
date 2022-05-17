@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Navbar from "./Components/Navbar";
@@ -29,6 +29,8 @@ export default function App() {
       setLoading(false)
     }, 500)
   }, [user])
+
+  
 
   return (
     <div className="App">

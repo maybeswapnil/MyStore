@@ -34,7 +34,7 @@ export default function Users() {
             </>}
           </div>
         </div>
-        <div className="users">
+        <div className="users" id='mobile-user'>
           <div className="users-header">
             <h1 id='main-header'>Account Details</h1>
             {user.address.length===0?<h4>You haven't added any address yet.</h4>:

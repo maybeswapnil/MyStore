@@ -16,7 +16,11 @@
     margin-right: auto;
     margin-left: auto;
     width: 60%;
+    margin-top: 100px;
+}
 
+#mobile-user {
+    margin-top: 150px;
 }
 
 .users {
@@ -63,6 +67,10 @@
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    #mobile-user {
+        margin-top: 0px;
     }
     
 }

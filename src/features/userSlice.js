@@ -21,11 +21,14 @@ export const userSlice = createSlice({
             for(var j = 0;j<state.cart.length;j++) {
                 if(state.cart[j].id===action.payload.id) state.cart.splice(j,1)
             }
+        },
+        emptyCart: (state, action) => {
+            state.cart = []
         }
     }
 })
 
-export const { login, logout, addCart, removeCart } = userSlice.actions;
+export const { login, logout, addCart, removeCart, emptyCart} = userSlice.actions;
 
 export const selectUser = (state) => state.user.user;
 

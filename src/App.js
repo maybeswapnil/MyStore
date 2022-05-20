@@ -20,6 +20,13 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    var url = window.location.href
+    if(url.includes('?')) {
+      var string = url.split('?')[1];
+      if(string==='paymentfailed') {
+          //navigate('/checkout')
+      }
+    }
     if(user) {
       if(new Date(user.date)-new Date()<-100000) {
         localStorage.setItem('user', null)
@@ -28,9 +35,14 @@ export default function App() {
     setTimeout(() => {
       setLoading(false)
     }, 500)
+    setInterval(() => {
+      if(user) {
+        if(new Date(user.date)-new Date()<-100000) {
+          localStorage.setItem('user', null)
+        }
+      }
+    })
   }, [user])
-
-  
 
   return (
     <div className="App">

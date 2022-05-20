@@ -22,7 +22,6 @@ function ImageForm(props) {
   const dispatch = useDispatch()
 
   const addToCart = (obj) => {
-    console.log(obj)
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
     var local = {...props.res};
     local.quantity = obj.quantity;
@@ -31,7 +30,6 @@ function ImageForm(props) {
     cart.push(local)
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(addCart(local))
-    console.log(local)
   }
 
   const RemoveFromCart = () => {
@@ -41,7 +39,6 @@ function ImageForm(props) {
     }
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(removeCart(props.res))
-    console.log(cart)
   }
 
   const l = useRef(null)

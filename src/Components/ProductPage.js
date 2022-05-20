@@ -14,7 +14,6 @@ export default function ProductPage(props) {
   const dispatch = useDispatch()
 
   const addToCart = (object) => {
-    console.log(object)
     var cart = JSON.parse(localStorage.getItem('cart'))||[]
     var local = props.res;
     local.quantity = object.quantity;
@@ -23,7 +22,6 @@ export default function ProductPage(props) {
     cart.push(local)
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(addCart(local))
-    console.log(local)
   }
 
   const RemoveFromCart = () => {
@@ -33,7 +31,6 @@ export default function ProductPage(props) {
     }
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(removeCart(props.res))
-    console.log(cart)
   }
 
   const main = () => {

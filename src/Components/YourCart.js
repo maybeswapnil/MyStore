@@ -21,7 +21,6 @@ export default function YourCart(props) {
     cart.push(props.res)
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(addCart(props.res))
-    console.log(cart)
   }
 
   const RemoveFromCart = () => {

@@ -10,12 +10,10 @@ export default function Users() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    console.log(user)
   }, []);
 
   function Search(value) {
       setSearch(value)
-        console.log(value)
   }
 
   return (
@@ -28,8 +26,8 @@ export default function Users() {
             <h1 id='main-header'>Orders History</h1>
             {user.orders.length===0?<h4>You haven't placed any orders yet.</h4>:
             <>
-              {user.orders.map((r) => {
-                return(<p>{r.name}</p>)
+              {user.orders.map((r, i) => {
+                return(<p>{i}</p>)
               })}
             </>}
           </div>

@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import mainLogo from '../Resources/main-logo.png'
-import { useSelector } from 'react-redux';
-import { selectCart, selectUser } from '../features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { emptyCart, selectCart, selectUser } from '../features/userSlice';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom'
+import axios from 'axios';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -13,7 +14,38 @@ export default function Navbar() {
   const [view, setView] = useState(false)
   const [viewTwo, setViewTwo] = useState(false)
   const location = useLocation();
+  const dispatch = useDispatch()
+
   useEffect(() => {
+      
+      var url = window.location.href
+      if(url.includes('?')) {
+        var string = url.split('?')[1];
+        var data = JSON.stringify({
+          "key": string.split(':')[1]
+        });
+        
+        var config = {
+          method: 'post',
+          url: 'http://my-store-apis.herokuapp.com/mystore/check-session-key',
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+          data : data
+        };
+        
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          if(string.split(':')[0]==='paymentsuccess') {
+            dispatch(emptyCart())
+          } 
+          navigate('/checkout?'+string.split(':')[0])
+        })
+        .catch(function (error) {
+          console.log('stop spamming');
+        });
+      }
       if(cart.length===0) {
         setView(true)
       } else {

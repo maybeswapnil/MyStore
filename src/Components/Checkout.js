@@ -5,19 +5,35 @@ import { selectCart } from "../features/userSlice";
 import './Checkout.css'
 import CheckoutDiv from "./CheckoutDiv";
 import CheckoutForm from "./CheckoutForm";
+import PaymentStatus from "./PaymentStatus";
 import YourCart from "./YourCart";
 
 export default function Checkout() {
   const cart = useSelector(selectCart)
   const [price, setPrice] = useState(0)
   const navigate = useNavigate()
+  const [view, setView] = useState(false)
+  const [message, setMessage] = useState('')
+
   useEffect(() => {
+        var url = window.location.href
+        if(url.includes('?')) {
+          var string = url.split('?')[1];
+          setView(true)
+          setTimeout(() => {
+            setView(false)
+            navigate('/collection')
+          }, 3000)
+          setMessage(string)
+        }
         var sum = 0;
         cart.map((r, c) => sum+=r.price[r.size]*r.quantity)
         setPrice(sum)
   }, [cart])
+
   return (
     <div className="checkout">
+      {view?<PaymentStatus view={setView} message={message} />:null}
       <div className="checkout-payment">
         <CheckoutForm />
       </div>
@@ -50,7 +66,7 @@ export default function Checkout() {
             </div>
       </div>:null}
       <br/>
-      <br/><br/>
+      <br/>
       <br/>
         </div>
       </div>

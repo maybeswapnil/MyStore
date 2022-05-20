@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectCart } from "../features/userSlice";
 import './Collection.css'
+import PaymentStatus from "./PaymentStatus";
 import Product from "./Product";
 const image = [
     {

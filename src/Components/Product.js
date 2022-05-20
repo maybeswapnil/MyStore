@@ -36,7 +36,6 @@ export default function Product(props) {
     setTimeout(() => {
       setAdded(false)
     }, 300)
-    console.log(cart)
   }
 
   const RemoveFromCart = () => {
@@ -46,7 +45,6 @@ export default function Product(props) {
     }
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(removeCart(props.res))
-    console.log(cart)
   }
   return (
     <div className="your-cart-product" >

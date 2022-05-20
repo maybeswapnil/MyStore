@@ -56,7 +56,7 @@ export default function Logon() {
 
         var config = {
             method: 'post',
-            url: 'https://mystore-log.herokuapp.com/mystore/logon',
+            url: 'https://my-store-apis.herokuapp.com/mystore/logon',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -84,7 +84,6 @@ export default function Logon() {
                 setTimeout(() => {
                     setError('')
                 }, 2000)
-                console.log(error);
                 setLoading(false)
             });
     }

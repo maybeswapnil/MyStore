@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login, selectCart } from "../features/userSlice";
+import { login, selectCart, selectUser } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
@@ -17,8 +17,14 @@ export default function Login() {
     const o = useRef(null)
    const [loading, setLoading] = useState(true)
 
+  const user = useSelector(selectUser)
     
     useEffect(() => {
+        if(user) {
+            if(new Date(user.date)-new Date()<-100000) {
+              localStorage.setItem('user', null)
+            }
+          }
       }, []);
 
     function clearFunction() {
@@ -48,7 +54,7 @@ export default function Login() {
 
         var config = {
             method: 'post',
-            url: 'https://mystore-log.herokuapp.com/mystore/login',
+            url: 'https://my-store-apis.herokuapp.com/mystore/login',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -63,14 +69,14 @@ export default function Login() {
                     password: password,
                     date: new Date(),
                     logininfo: response.data,
-                    orders: [], 
+                    orders: response.data.orders, 
                     cart: cart,
                     address: []
                 }
                 var configCart = {
                     method: 'post',
-                    // url: 'https://mystore-log.herokuapp.com/mystore/addtocart',
-                    url: 'http://localhost:4000/mystore/addtocart',
+                    // url: 'https://my-store-apis.herokuapp.com/mystore/addtocart',
+                    url: 'https://my-store-apis.herokuapp.com/mystore/addtocart',
                     headers: { 
                         'Content-Type': 'application/json'
                     },
@@ -90,7 +96,6 @@ export default function Login() {
                 setTimeout(() => {
                     setError('')
                 }, 2000)
-                console.log(error);
             });
     }
 

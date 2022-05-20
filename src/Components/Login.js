@@ -21,7 +21,7 @@ export default function Login() {
     
     useEffect(() => {
         if(user) {
-            if(new Date(user.date)-new Date()<-100000) {
+            if(new Date(user.date)-new Date()<-200000) {
               localStorage.setItem('user', null)
             }
           }

@@ -28,7 +28,7 @@ export default function App() {
       }
     }
     if(user) {
-      if(new Date(user.date)-new Date()<-100000) {
+      if(new Date(user.date)-new Date()<-200000) {
         localStorage.setItem('user', null)
       }
     }
@@ -37,11 +37,12 @@ export default function App() {
     }, 500)
     setInterval(() => {
       if(user) {
-        if(new Date(user.date)-new Date()<-100000) {
+        if(new Date(user.date)-new Date()<-200000) {
           localStorage.setItem('user', null)
         }
+        setLoading(true)
       }
-    })
+    }, 1000)
   }, [user])
 
   return (

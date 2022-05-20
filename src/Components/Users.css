@@ -51,13 +51,12 @@
 
 @media only screen and (max-width: 600px) { 
     .users-main {
-        display: flex;
-        flex-direction: column;
+        display: block;
         margin-right: auto;
         margin-left: auto;
         width: 80%;
         margin-top: 100px;
-        height: 70vh;
+        height: 90vh;
 
     }
 
@@ -70,7 +69,7 @@
     }
 
     #mobile-user {
-        margin-top: 100px;
+        margin-top: 300px;
     }
     
 }

@@ -46,11 +46,14 @@ function CheckoutForm() {
      if(user && firstName!='' && phone!='' && houseNo!='' && lastName!='' && companyName!=''&& address!='' && cityName!='') {
          setFirstName(user.logininfo.name.firstname)
          setLastName(user.logininfo.name.lastname)
+         var payload = {...user}
+         payload.orders = []
+         payload.cart = []
         var data = JSON.stringify({
             "email": user.username,
             "message": extraInformation,
             "time": new Date().toString(),
-            "userinfo": user,
+            "userinfo": payload,
             "shipping-info" : {
                 email: email,
                 firstName: firstName,

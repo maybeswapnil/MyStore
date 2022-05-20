@@ -27,7 +27,7 @@ export default function Navbar() {
         
         var config = {
           method: 'post',
-          url: 'http://my-store-apis.herokuapp.com/mystore/check-session-key',
+          url: 'https://my-store-apis.herokuapp.com/mystore/check-session-key',
           headers: { 
             'Content-Type': 'application/json'
           },

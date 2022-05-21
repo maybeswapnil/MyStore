@@ -45,6 +45,7 @@ export default function Navbar(props) {
           navigate('/checkout?'+string.split(':')[0])
         })
         .catch(function (error) {
+          props.loader(false)
           console.log('stop spamming');
         });
       }

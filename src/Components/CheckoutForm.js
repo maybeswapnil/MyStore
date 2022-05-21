@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { selectCart, selectUser } from '../features/userSlice';
 import { useNavigate } from 'react-router-dom';
+import LoginPopup from './LoginPopup';
 function CheckoutForm() {
 
   const [email,  setEmail] = useState('')
@@ -16,6 +17,7 @@ function CheckoutForm() {
   const [houseNo,  setHouseNumber] = useState('')
   const [phone,  setPhone] = useState('')
   const [error, setError] = useState('')
+  const [view, setView] = useState(false)
 
   const [extraInformation,  setExtraInformation] = useState('')
   const l = useRef(null)
@@ -37,10 +39,10 @@ function CheckoutForm() {
     if(user) {
         if(new Date(user.date)-new Date()<-100000) {
           localStorage.setItem('user', null)
-          navigate('/account/user')
+          setView(true)
         }
     } else {
-        navigate('/account/user')
+        setView(true)
     }
     
      if(user && firstName!='' && phone!='' && houseNo!='' && lastName!='' && companyName!=''&& address!='' && cityName!='') {
@@ -49,11 +51,14 @@ function CheckoutForm() {
          var payload = {...user}
          payload.orders = []
          payload.cart = []
+         console.log('asdasdasdasd', payload.email)
         var data = JSON.stringify({
-            "email": user.username,
+            "email": payload.email,
             "message": extraInformation,
             "time": new Date().toString(),
-            "userinfo": payload,
+            "userinfo": {
+                email: payload.email
+            },
             "shipping-info" : {
                 email: email,
                 firstName: firstName,
@@ -93,6 +98,8 @@ function CheckoutForm() {
 
   return (
     <div  className="main-form2" style={{marginTop: '0px'}} id='form-main2'>
+      {view?<LoginPopup view={setView} />:null}
+
         <br/>
         <div className="form-group2">
         <div className="product-grid">

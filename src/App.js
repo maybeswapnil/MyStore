@@ -3,7 +3,7 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Navbar from "./Components/Navbar";
 import Users from "./Components/Users";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 import Cart from "./Components/Cart";
 import Collection from "./Components/Collection";
@@ -13,11 +13,13 @@ import './App.css'
 import Footer from "./Components/Footer";
 import Loading from "./Components/Loading";
 import Logon from "./Components/Logon";
+import { logout } from "./features/userSlice";
 
 export default function App() {
 
   const user = useSelector(selectUser)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     var url = window.location.href
@@ -30,26 +32,16 @@ export default function App() {
     if(user) {
       if(new Date(user.date)-new Date()<-200000) {
         localStorage.setItem('user', null)
+        dispatch(logout())
       }
     }
-    setTimeout(() => {
-      setLoading(false)
-    }, 500)
-    setInterval(() => {
-      if(user) {
-        if(new Date(user.date)-new Date()<-200000) {
-          localStorage.setItem('user', null)
-        }
-        setLoading(true)
-      }
-    }, 1000)
   }, [user])
 
   return (
     <div className="App">
-      {/* {loading?<Loading />:null} */}
+      {loading?<Loading />:null}
       <Router>
-        <Navbar />
+        <Navbar loader={setLoading}/>
         <Link to="/account/user" />
         <Link to="/" />
         <Link to="/cart" />

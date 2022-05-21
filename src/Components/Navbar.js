@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom'
 import axios from 'axios';
 
-export default function Navbar() {
+export default function Navbar(props) {
   const navigate = useNavigate();
   var cart = useSelector(selectCart)
   var user = useSelector(selectUser)
@@ -20,6 +20,7 @@ export default function Navbar() {
       
       var url = window.location.href
       if(url.includes('?')) {
+        props.loader(true)
         var string = url.split('?')[1];
         var data = JSON.stringify({
           "key": string.split(':')[1]
@@ -36,9 +37,10 @@ export default function Navbar() {
         
         axios(config)
         .then(function (response) {
-          console.log(JSON.stringify(response.data));
+          props.loader(false)
           if(string.split(':')[0]==='paymentsuccess') {
             dispatch(emptyCart())
+            localStorage.removeItem('cart')
           } 
           navigate('/checkout?'+string.split(':')[0])
         })

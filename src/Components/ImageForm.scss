@@ -19,6 +19,11 @@
     --group-background-focus: #f1d11a;
 
 }
+
+#margin-left {
+  max-width: 430px;
+}
+
 .main-form2 {
     animation-duration: 0.3s;
     animation-name: slideup;
@@ -155,6 +160,12 @@ body {
     flex-direction: column;
     margin-left:10vmin;
 }
+.main-form3 {
+  margin-top:10vmin;
+  display: flex;
+  flex-direction: column;
+  margin-left:5vmin;
+}
 
 .tacbox {
     display:block;
@@ -201,11 +212,14 @@ body {
       #random-sentence {
         font-size:15px;
           width:80%;
-
+  }
+  #margin-left {
+    max-width: 380px;
   }
 }
 
 @media only screen and (max-width: 600px) { 
+
     .main-form2 {
         margin-top: 10vmin;
         width: 80%;
@@ -239,6 +253,9 @@ body {
     max-width: 100%;
     margin-left: 0vmin;
     font-size: 10px;
+  }
+  #margin-left {
+    max-width: 360px;
   }
 }
 

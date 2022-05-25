@@ -84,7 +84,7 @@ export default function Collection() {
 
   return (
     <div className="cart">
-        <div className="cart-product-flex" id='bottom-border'>
+        <div className="cart-product-flex collection-border" id='bottom-border'>
         <div>
           <h1 style={{fontSize:'50px'}}>Collection</h1>
         </div>
@@ -93,10 +93,10 @@ export default function Collection() {
         <div className="your-cart-product-grid-main" id='your-cart-price-header'>
         </div>
       </div>
-      <div className="cart-grid">
+      <div className="col-grid">
           {image.map((res) => {
               return(
-                <Product res={res} from={'collection'}/>
+                <Product res={res} m='true' from={'collection'}/>
               )
           })}
       </div>

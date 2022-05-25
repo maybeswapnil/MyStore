@@ -47,7 +47,7 @@ export default function Product(props) {
     dispatch(removeCart(props.res))
   }
   return (
-    <div className="your-cart-product" >
+    <div className="your-cart-product"  id={props.m?'new-grid':null}>
       <div className="your-cart-product-flex" >
         <div style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid #2ECC71'}}>
           <img className="your-cart-cart-image" src={props.res.smallurl} />

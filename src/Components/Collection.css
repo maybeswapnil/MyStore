@@ -19,6 +19,14 @@
     margin-top: 0px;
 }
 
+#new-grid {
+    width: 630px;
+}
+
+.collection-border {
+    width: 70%;
+}
+
 .collection-header {
     margin-left: 20%;
 }
@@ -43,6 +51,12 @@
         margin-top: 30%;
         margin-bottom: 30%;
         overflow: hidden;
+    }
+    .collection-border {
+        width: 90%;
+    }
+    #new-grid {
+        width: 90%;
     }
     .collection {
         margin-bottom: 100%;

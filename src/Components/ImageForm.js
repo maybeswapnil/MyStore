@@ -64,14 +64,14 @@ function ImageForm(props) {
  }
 
   return (
-    <div  className="main-form2">
+    <div  className="main-form3" id='margin-left'>
         <br/>
-        <div className="form-group2">
+        <div className="form-group2" id='margin-left'>
         <div className="product-grid">
             <h1 className="cart-product-header" >{props.res.name}</h1>
         </div>
         </div>
-        <div className="form-group2">
+        <div className="form-group2" id='margin-left'>
             <span style={{width: '100px'}}>{'Quantity'}</span>
             <select className="form-field" type="select" placeholder="" ref ={o} onChange={(e) => setQuantity(e.target.value)} >
               <option value="1">1</option>
@@ -79,7 +79,7 @@ function ImageForm(props) {
               <option value="3">3</option>
             </select>
         </div>
-        <div className="form-group2">
+        <div className="form-group2" id='margin-left'>
             <span style={{width: '100px'}}>{'Canvas Size'}</span>
             <select className="form-field" type="select" placeholder="Write your comments here" ref ={o} onChange={(e) => setSize(e.target.value)} >
               <option value="Small (12inch*18inch)">Small (12inch*18inch)</option>
@@ -87,7 +87,7 @@ function ImageForm(props) {
               <option value="Large (40inch*60inch)">Large (40inch*60inch)</option>
             </select>
         </div>
-        <div className="form-group2">
+        <div className="form-group2" id='margin-left'>
             <span style={{width: '100px'}}>{'Comments'}</span>
             <input className="form-field" type="text" placeholder="Write your comments here" ref ={o} onChange={(e) => setComments(e.target.value)} />
         </div>

@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
 import Loading from "./Loading";
+import PaymentLoading from "./PaymentLoading";
+import LoginLoad from "./LoginLoad";
 export default function Login() {
     const navigate = useNavigate()
     const cart = useSelector(selectCart);
@@ -86,7 +88,6 @@ export default function Login() {
                 .then(function (response) {console.log(response)}).catch(() => {})
                 localStorage.setItem('user', JSON.stringify(object))
                 dispatch(login(object))
-                navigate(-1)
                 setLoading(false)
             })
             .catch(function (error) {
@@ -103,7 +104,7 @@ export default function Login() {
 
     return (
       <div className="Login">
-        {loading?<Loading />:null}
+        {loading?<LoginLoad />:null}
         <h1 className='login-header'>Login</h1>
         <div className="main-form">
             <div className="form-group">

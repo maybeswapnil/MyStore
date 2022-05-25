@@ -6,6 +6,7 @@ import { emptyCart, selectCart, selectUser } from '../features/userSlice';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom'
 import axios from 'axios';
+import { logout } from "../features/userSlice";
 
 export default function Navbar(props) {
   const navigate = useNavigate();
@@ -60,12 +61,22 @@ export default function Navbar(props) {
         setViewTwo(false)
       }
   }, [cart])
+
+  function navigateNicely() {
+    if(user) {
+      if(new Date(user.date)-new Date()<-200000) {
+        localStorage.setItem('user', null)
+        dispatch(logout())
+      }
+    } 
+    navigate('/account/user')
+  }
  
   return (
     <div className="navbar">
         <h1><img onClick={() => navigate('/')} src={mainLogo} style={{width: '120px'}} id="headline"/></h1>
         <div className='right-navbar'>
-          {user==null?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/user.png' onClick={() => navigate('/account/user')}/>:<img className='right-navbar-icon' src='https://i.imgur.com/IGXS5UB.png' onClick={() => navigate('/account/user')}/>}
+          {user==null?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/user.png' onClick={() => navigateNicely()}/>:<img className='right-navbar-icon' src='https://i.imgur.com/IGXS5UB.png' onClick={() => navigateNicely()}/>}
           {view?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/favorite-cart.png' onClick={() => navigate('/cart')}/>:<img className='right-navbar-icon' src='https://i.imgur.com/ZxmvIhX.png' onClick={() => navigate('/cart')}/>}
         </div>
     </div>

@@ -27,7 +27,8 @@ export default function YourCart(props) {
     setAdded(true)
     setTimeout(() =>{
       setAdded(false)
-      var cart = JSON.parse(localStorage.getItem('cart'))||[]
+      var cart = JSON.parse(localStorage.getItem('cart'))||[];
+      if(cart.length===1) navigate('/cart')
       for(var j = 0;j<cart.length;j++) {
           if(cart[j].name===props.res.name) cart.splice(j, 1)
       }

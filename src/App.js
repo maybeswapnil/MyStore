@@ -14,6 +14,7 @@ import Footer from "./Components/Footer";
 import Loading from "./Components/Loading";
 import Logon from "./Components/Logon";
 import { logout } from "./features/userSlice";
+import PaymentLoading from "./Components/PaymentLoading";
 
 export default function App() {
 
@@ -31,7 +32,10 @@ export default function App() {
     }
     if(user) {
       if(new Date(user.date)-new Date()<-200000) {
+        console.log('jjjajajjajj')
         localStorage.setItem('user', null)
+        var url = window.location.href
+        window.location.href = url
         dispatch(logout())
       }
     }
@@ -39,7 +43,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {loading?<Loading />:null}
+      {loading?<PaymentLoading />:null}
       <Router>
         <Navbar loader={setLoading}/>
         <Link to="/account/user" />

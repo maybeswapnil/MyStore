@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
 import Loading from "./Loading";
+import PaymentLoading from "./PaymentLoading";
 export default function Logon() {
     const navigate = useNavigate()
     const cart = useSelector(selectCart);
@@ -91,7 +92,7 @@ export default function Logon() {
 
     return (
       <div className="Login">
-        {loading?<Loading />:null}
+        {loading?<PaymentLoading />:null}
         <h1 className='login-header'>Logon</h1>
         <div className="main-form">
             <div className="form-group2">

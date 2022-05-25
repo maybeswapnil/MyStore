@@ -67,7 +67,7 @@
 
 .cart-grid {
     grid-template-columns: 1fr;
-    grid-gap: 3px;
+    grid-gap: 30px;
     gap: 30px 40px;
     display: inline-grid;
     justify-items: center;

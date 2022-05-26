@@ -25,7 +25,7 @@ export default function App() {
   useEffect(() => {
     LogRocket.init('zaeyzk/mystore');
     if(user) {
-      LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+      LogRocket.identify(user.email, {
         name: user.logininfo.name.firstname,
         email: user.email,
         subscriptionType: 'pro'

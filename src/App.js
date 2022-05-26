@@ -15,12 +15,23 @@ import Loading from "./Components/Loading";
 import Logon from "./Components/Logon";
 import { logout } from "./features/userSlice";
 import PaymentLoading from "./Components/PaymentLoading";
-
+import LogRocket from 'logrocket';
 export default function App() {
 
   const user = useSelector(selectUser)
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    LogRocket.init('zaeyzk/mystore');
+    if(user) {
+      LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+        name: user.logininfo.name.firstname,
+        email: user.email,
+        subscriptionType: 'pro'
+      });
+    }
+  }, [])
 
   useEffect(() => {
     var url = window.location.href

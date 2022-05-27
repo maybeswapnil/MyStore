@@ -5,12 +5,18 @@ import { useEffect, useState } from "react";
 import Product from "./Product";
 import './Cart.css'
 import YourCart from "./YourCart";
+import InformationPopup from "./InformationPopup";
 
 export default function Cart() {
   const navigate = useNavigate()
   const cart = useSelector(selectCart)
   const user = useSelector(selectUser)
+  const [view, setView] = useState(false)
 
+  function viewAdded() {
+    setView(true);
+    setTimeout(() => setView(false), 1000)
+  }
   const [price, setPrice] = useState(0)
 
   useEffect(() => {
@@ -21,6 +27,8 @@ export default function Cart() {
 
   return (
     <div className="cart">
+        {view?<InformationPopup value='Added to cart'/>:null}
+
         {cart.length>0?<div className="cart-product-flex" id='bottom-border'>
         <div>
           <h1 style={{fontSize:'50px'}}>Your Cart</h1>
@@ -32,7 +40,7 @@ export default function Cart() {
         </div>
       </div>:null}
       <div className="cart-grid">
-        {cart.map((res) => {return(<YourCart res={res} from={'cart'}/>)})}
+        {cart.map((res) => {return(<YourCart res={res} from={'cart'} view={viewAdded}/>)})}
       </div>
       {cart.length>0?<div className="cart-product-flex" >
         <div>

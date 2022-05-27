@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectCart } from "../features/userSlice";
 import './Collection.css'
+import InformationPopup from "./InformationPopup";
 import PaymentStatus from "./PaymentStatus";
 import Product from "./Product";
 const image = [
@@ -81,27 +82,34 @@ const image = [
 ]
 export default function Collection() {
   const cart = useSelector(selectCart)
+  const [view, setView] = useState(false)
+
+  function viewAdded() {
+    setView(true);
+    setTimeout(() => setView(false), 1000)
+  }
 
   return (
     <div className="cart">
+        {view?<InformationPopup value='Added to cart'/>:null}
         <div className="cart-product-flex collection-border" id='bottom-border'>
         <div>
           <h1 style={{fontSize:'50px'}}>Collection</h1>
-        </div>
-        <div className="your-cart-product-grid-main" >
-        </div>
-        <div className="your-cart-product-grid-main" id='your-cart-price-header'>
         </div>
       </div>
       <div className="col-grid">
           {image.map((res) => {
               return(
-                <Product res={res} m='true' from={'collection'}/>
+                <Product res={res} m='true' from={'collection'} />
               )
           })}
       </div>
       <br/>
-      <br/>
+      <div className="cart-product-flex collection-border" id='bottom-border'>
+        <div>
+          <h1 style={{fontSize:'50px'}}></h1>
+        </div>
+      </div>
     </div>
   );
 }

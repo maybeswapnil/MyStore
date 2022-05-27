@@ -30,6 +30,21 @@
     z-index: 90;
     
   }
+
+  .overlay3 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(34, 5, 5, 0.7);
+    z-index: 90;
+  }
+
+  #notification {
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .popup2 {
     margin: 70px auto;
@@ -42,6 +57,31 @@
     margin-top: 20%;
     display: flex;
     max-width: 115vmin;
+  }
+
+  .popup99 {
+    margin: 70px auto;
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    position: relative;
+    margin-top: 5%;
+    display: flex;
+    max-width: 115vmin;
+    animation-duration: 0.3s;
+    animation-name: slideup;
+  }
+
+  @keyframes slideup {
+    from {
+      margin-top: 14vmin;
+    }
+  
+    to {
+      margin-top: 5%;
+    }
   }
   
   .popup2 h2 {
@@ -104,6 +144,28 @@
 }
   
   @media screen and (max-width: 700px){
+
+    .popup99 {
+      margin: 70px auto;
+      padding: 0px;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 300px;
+      height: 50px;
+      position: relative;
+      margin-top: 20%;
+      display: flex;
+      max-width: 115vmin;
+    }
+    @keyframes slideup {
+      from {
+        margin-top: 14vmin;
+      }
+    
+      to {
+        margin-top: 20%;
+      }
+    }
     .box{
       width: 60%;
      

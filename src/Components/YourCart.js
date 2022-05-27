@@ -54,7 +54,7 @@ export default function YourCart(props) {
         </div>
         
 
-      {view?<ProductPage res={props.res} view={setView} from={props.from}/>:<h1></h1>}
+      {view?<ProductPage res={props.res} view={setView} from={props.from} />:<h1></h1>}
 
       </div>
 

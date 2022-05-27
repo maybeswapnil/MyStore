@@ -51,7 +51,7 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 100px;
-    margin-top: 60px;
+    margin-top: 90px;
 }
 
 #bottom-border {
@@ -61,7 +61,7 @@
 #cart-empty {
     font-size: 10vmin;
     margin-bottom: 20vmin;
-    margin-top: -18vmin;
+    margin-top: 1vmin;
     text-align: center;
 }
 

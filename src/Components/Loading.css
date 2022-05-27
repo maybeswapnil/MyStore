@@ -77,4 +77,24 @@
         flex-direction: column;
         flex-direction: column;
       }
+      .popup4 {
+        margin: 70px auto;
+        padding: 0px;
+        background-color: #fff;
+        border-radius: 5px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin-top: 350px;
+        display: flex;
+        max-width: 115vmin;
+        display: flex;
+        align-items: center;
+        gap: 100px;
+      }
+
+      #payment-message {
+        display: none;
+      }
+      
 }

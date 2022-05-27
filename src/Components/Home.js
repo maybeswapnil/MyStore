@@ -48,15 +48,6 @@ export default function Home() {
           <img className="home-colored-image" src='https://images.pexels.com/photos/10865105/pexels-photo-10865105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
         </div>
       </div>
-      {/* <div className="collection" id='home-collection' >
-      <div className="collection-grid">
-          {image.map((res) => {
-              return(
-                <Product res={res} from={'collection'}/>
-              )
-          })}
-      </div>
-      </div> */}
       <div className="home-description-two">
           <div>
             <h1 id='description-header-two'>Water-based inks</h1>

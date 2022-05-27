@@ -58,6 +58,10 @@
     border-bottom: 1px solid black;
 }
 
+#top-border {
+    border-bottom: 1px solid black;
+}
+
 #cart-empty {
     font-size: 10vmin;
     margin-bottom: 20vmin;

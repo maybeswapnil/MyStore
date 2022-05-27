@@ -48,7 +48,7 @@ font-family: var(--font-style);
 @media only screen and (max-width: 1300px) { 
     .checkout {
         flex-direction: column;
-        height: 210vh;
+        height: 100%;
         margin-top: 80px;
     }
     .checkout-payment {

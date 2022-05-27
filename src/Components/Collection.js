@@ -106,7 +106,7 @@ export default function Collection() {
           })}
       </div>
       <br/>
-      <div className="cart-product-flex collection-border" id='bottom-border'>
+      <div className="cart-product-flex collection-border" id='top-border'>
         <div>
           <h1 style={{fontSize:'50px'}}></h1>
         </div>

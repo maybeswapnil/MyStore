@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectUser } from "../features/userSlice";
+import OrderDiv from "./OrderDiv";
 import './Users.css'
 export default function Users() {
   const [search, setSearch] = useState('')
@@ -24,18 +25,32 @@ export default function Users() {
           </div>
           <div className="users-header">
             <h1 id='main-header'>Orders History</h1>
+            {/* {user.orders.length===0?<h4>You haven't placed any orders yet.</h4>:
+            <>
+              {user.orders.map((r, i) => {
+                if(i==user.orders.length-1) {
+                  console.log(r)
+                  return(
+                    <OrderDiv order={r}/>
+                  )
+                }
+              })}
+            </>} */}
             {user.orders.length===0?<h4>You haven't placed any orders yet.</h4>:
             <>
               {user.orders.map((r, i) => {
-                return(
-                  <div style={{display:'flex'}}>
-                    <p id='bolder'>{i+1}.&nbsp;&nbsp;&nbsp;</p>
-                    <p>{user.orders[i]['time'].split('+')[0]}&nbsp;&nbsp;&nbsp;</p>
-                    <p><span id='bolder'>Items:</span>&nbsp;{user.orders[i].cart.length}</p>
-                  </div>
-                )
+                if(i<3) {
+                  return(
+                    <div style={{display:'flex'}}>
+                      <p id='bolder'>{i+1}.&nbsp;&nbsp;&nbsp;</p>
+                      <p>{user.orders[i]['time'].split('+')[0]}&nbsp;&nbsp;&nbsp;</p>
+                      <p><span id='bolder'>Items:</span>&nbsp;{user.orders[i].cart.length}</p>
+                    </div>
+                  )
+                }
               })}
             </>}
+            {user.orders.length>3?<h3>....more</h3>:null}
           </div>
         </div>
         <div className="users" id='mobile-user'>

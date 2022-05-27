@@ -106,12 +106,13 @@ export default function Collection() {
           })}
       </div>
       <br/>
+      <br/>
+      <br/>
       <div className="cart-product-flex collection-border" id='top-border'>
         <div>
-          <h1 style={{fontSize:'50px'}}></h1>
+          <h3 style={{fontSize:'15px'}}>We are about partnering with sustainable suppliers in order to provide you with ethically produced, sustainably made custom apparels made from ecofriendly materials like organic cotton and hemp.</h3>
         </div>
       </div>
-      
     </div>
   );
 }

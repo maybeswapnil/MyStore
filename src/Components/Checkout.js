@@ -46,7 +46,7 @@ export default function Checkout() {
         <div className="your-cart-product-grid-main" >
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price-header'>
-            <h4><a id='underlined'>Continue Shopping</a></h4>
+            <h4><a id='underlined' onClick={() => navigate('/collection')}>Continue Shopping</a></h4>
         </div>
       </div>
         <div className="cart-grid">

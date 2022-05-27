@@ -18,7 +18,6 @@ export default function Navbar(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-      
       var url = window.location.href
       if(url.includes('?')) {
         props.loader(true)

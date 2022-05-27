@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectCart, selectUser } from "../features/userSlice";
-import { useEffect } from "react";      
 import { useDispatch } from "react-redux";
-import { addCart, removeCart } from "../features/userSlice";
 import './PaymentStatus.css'
 
 //TODO: overlay
@@ -20,7 +18,7 @@ export default function PaymentStatus(props) {
   return (
     <div id="popup1" className="overlay2" >
     <div className="popup2">
-        {/* <a className="close" onClick={() => main()} >&times;</a> */}
+        <a className="close" onClick={() => main()} >&times;</a>
         <h1 id='payment-message'>{props.message==="paymentsuccess"?'Payment Success':'Payment Failed'}</h1>
     </div>
     </div>

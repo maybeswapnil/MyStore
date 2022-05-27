@@ -34,16 +34,8 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    var url = window.location.href
-    if(url.includes('?')) {
-      var string = url.split('?')[1];
-      if(string==='paymentfailed') {
-          //navigate('/checkout')
-      }
-    }
     if(user) {
       if(new Date(user.date)-new Date()<-200000) {
-        console.log('jjjajajjajj')
         localStorage.setItem('user', null)
         var url = window.location.href
         window.location.href = url

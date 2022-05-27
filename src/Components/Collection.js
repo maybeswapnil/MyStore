@@ -87,6 +87,7 @@ export default function Collection() {
   function viewAdded() {
     setView(true);
     setTimeout(() => setView(false), 1000)
+    console.log('askdkasdkaskdkas')
   }
 
   return (
@@ -100,7 +101,7 @@ export default function Collection() {
       <div className="col-grid">
           {image.map((res) => {
               return(
-                <Product res={res} m='true' from={'collection'} />
+                <Product res={res} m='true' from={'collection'} view={viewAdded}/>
               )
           })}
       </div>
@@ -110,6 +111,7 @@ export default function Collection() {
           <h1 style={{fontSize:'50px'}}></h1>
         </div>
       </div>
+      
     </div>
   );
 }

@@ -86,7 +86,6 @@
 
 .col-grid {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3px;
     gap: 30px 40px;
     display: inline-grid;
     justify-items: center;
@@ -128,7 +127,6 @@
 @media only screen and (max-width: 1500px) { 
     .col-grid {
         grid-template-columns: 1fr;
-        grid-gap: 3px;
         gap: 45px 0px;
         display: inline-grid;
         justify-items: center;
@@ -158,7 +156,6 @@
 
     .col-grid {
         grid-template-columns: 1fr;
-        grid-gap: 3px;
         gap: 0px 0px;
         display: inline-grid;
         justify-items: center;

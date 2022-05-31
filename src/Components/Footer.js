@@ -9,10 +9,9 @@ export default function Footer() {
         
     <h2>Contact</h2>
     
-    <address>
-      swapnil.sharma1998@gmail.com<br/>
-          
-      {/* <a className="footer__btn" href="mailto:example@gmail.com">Email Me</a> */}
+    <address>swapnil.sharma1998@gmail.com<br/>
+        <br/>  
+      <a className="footer__btn" href="mailto:swapnil.sharma1998@gmail.com">Email Me</a>
     </address>
   </div>
   
@@ -22,15 +21,15 @@ export default function Footer() {
 
       <ul className="nav__ul">
         <li>
-          <a href="#">Online</a>
+          <a href="https://www.pexels.com/@eyeswithmyopia/">Pexels</a>
         </li>
 
         <li>
-          <a href="#">Print</a>
+          <a href="https://unsplash.com/@eyeswithmyopia">Unsplash</a>
         </li>
             
         <li>
-          <a href="#">Alternative Ads</a>
+          <a href="https://www.everypixel.com/epx/users/eyeswithmyopia">Every Pixel</a>
         </li>
       </ul>
     </li>
@@ -40,15 +39,15 @@ export default function Footer() {
       
       <ul className="nav__ul nav__ul--extra">
         <li>
-          <a href="#">Hardware Design</a>
+          <a>ReactJS</a>
         </li>
         
         <li>
-          <a href="#">Software Design</a>
+          <a>NodeJS</a>
         </li>
         
         <li>
-          <a href="#">Digital Signage</a>
+          <a href="#">Express</a>
         </li>
         
         <li>
@@ -56,7 +55,7 @@ export default function Footer() {
         </li>
         
         <li>
-          <a href="#">Artificial Intelligence</a>
+          <a href="#">Software Design</a>
         </li>
         
         <li>

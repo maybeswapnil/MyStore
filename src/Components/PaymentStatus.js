@@ -19,7 +19,7 @@ export default function PaymentStatus(props) {
     <div id="popup1" className="overlay2" >
     <div className="popup2">
         <a className="close" onClick={() => main()} >&times;</a>
-        <h1 id='payment-message'>{props.message==="paymentsuccess"?'Payment Success Order ID: ' + (1000 + Math.random () * 9000):'Payment Failed'}</h1>
+        <h1 id='payment-message'>{props.message==="paymentsuccess"?'Payment Success Order ID: ' + Math.floor(1000 + Math.random () * 9000):'Payment Failed'}</h1>
     </div>
     </div>
   );

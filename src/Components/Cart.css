@@ -18,8 +18,14 @@
     right: 20px;
 }
 
+#cart {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
 .cart-product-flex {
-    width: 900px;
+    width: 100%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -125,6 +131,9 @@
     margin: 20px;
 }
 @media only screen and (max-width: 1500px) { 
+    #cart {
+        width: 100%;
+    }
     .col-grid {
         grid-template-columns: 1fr;
         gap: 45px 0px;
@@ -138,6 +147,10 @@
 }
 
 @media only screen and (max-width: 600px) { 
+
+    .cart {
+        width: 100%;
+    }
 
     #cart-empty {
         font-size: 10vmin;

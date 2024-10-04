@@ -56,7 +56,7 @@ export default function Login() {
 
         var config = {
             method: 'post',
-            url: 'https://my-store-apis.herokuapp.com/mystore/login',
+            url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/login',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -77,8 +77,8 @@ export default function Login() {
                 }
                 var configCart = {
                     method: 'post',
-                    // url: 'https://my-store-apis.herokuapp.com/mystore/addtocart',
-                    url: 'https://my-store-apis.herokuapp.com/mystore/addtocart',
+                    // url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/addtocart',
+                    url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/addtocart',
                     headers: { 
                         'Content-Type': 'application/json'
                     },

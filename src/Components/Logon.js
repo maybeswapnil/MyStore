@@ -57,7 +57,7 @@ export default function Logon() {
 
         var config = {
             method: 'post',
-            url: 'https://my-store-apis.herokuapp.com/mystore/logon',
+            url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/logon',
             headers: { 
                 'Content-Type': 'application/json'
             },

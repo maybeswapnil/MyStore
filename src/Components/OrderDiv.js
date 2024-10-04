@@ -37,7 +37,7 @@ export default function OrderDiv(props) {
             </div> */}
         </div>
         <div className="order-div-two">
-            <h3 id='var-font'>Price: ${price}</h3>
+            <h3 id='var-font'>Price: ₹{price}</h3>
             <h3 id='var-font'>Orderd on:</h3>
             <h3 id='var-font'>{props.order['time'].split('GMT')[0]}</h3>
         </div>

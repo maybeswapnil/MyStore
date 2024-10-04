@@ -7,14 +7,14 @@
 
 .checkout-payment {
     width: 40%;
-    margin-left: 55px;
+    margin-left: 5%;
 }
 .checkout-cart {
     display: flex;
     flex-direction: column;
     gap: 0px;
     margin-top: 0px;
-    margin-right: auto;
+    width: 43%;
 }
 
 .checkout-cart > .cart {

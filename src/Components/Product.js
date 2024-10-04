@@ -54,13 +54,13 @@ export default function Product(props) {
         </div>
         <div className="your-cart-product-grid-main">
             <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" onClick={() => setView(true)}>{props.res.name}</h1>
-            <h4 id='cart-info-mobile'>$20</h4>
+            <h4 id='cart-info-mobile'>₹ {props.res.price["Small (12inch*18inch)"]}</h4>
             <h4 id='cart-info-mobile'>Size: <span id='bolder'>{props.res.size}</span></h4>
             {!added?<img src="https://img.icons8.com/wired/204/000000/add--v1.png" id='delete-button' onClick={() => {addToCart(); props.view()}}/>:<img src="https://i.imgur.com/LN8NKHj.png" id='delete-button' onClick={() => {addToCart(); props.view()}}/>}
             {/* "https://img.icons8.com/wired/204/000000/add--v1.png" */}
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price'  >
-            <h4>${props.res.price[props.res.size]}.00</h4>
+            <h4>₹ {props.res.price[props.res.size]}.00</h4>
         </div>
         
 

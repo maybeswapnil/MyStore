@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
-import mainLogo from '../Resources/main-logo.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { emptyCart, selectCart, selectUser } from '../features/userSlice';
 import { useEffect, useState } from 'react';
@@ -28,7 +27,7 @@ export default function Navbar(props) {
         
         var config = {
           method: 'post',
-          url: 'https://my-store-apis.herokuapp.com/mystore/check-session-key',
+          url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/check-session-key',
           headers: { 
             'Content-Type': 'application/json'
           },
@@ -73,7 +72,7 @@ export default function Navbar(props) {
  
   return (
     <div className="navbar">
-        <h1><img onClick={() => navigate('/')} src={mainLogo} style={{width: '120px'}} id="headline"/></h1>
+        <h1 onClick={() => navigate('/')} className="navbar-name">Swapnil</h1>
         <div className='right-navbar'>
           {user==null?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/user.png' onClick={() => navigateNicely()}/>:<img className='right-navbar-icon' src='https://i.imgur.com/IGXS5UB.png' onClick={() => navigateNicely()}/>}
           {view?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/favorite-cart.png' onClick={() => navigate('/cart')}/>:<img className='right-navbar-icon' src='https://i.imgur.com/ZxmvIhX.png' onClick={() => navigate('/cart')}/>}

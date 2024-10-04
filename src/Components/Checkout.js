@@ -61,7 +61,7 @@ export default function Checkout() {
         <div className="your-cart-product-grid-main" >
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price' style={{textAlign: 'right'}}>
-            <h2><span id='bolder'>Subtotal</span> ${price}.00 USD</h2>
+            <h2><span id='bolder'>Subtotal</span> ₹ {price}.00</h2>
             <p>Taxes and shipping <a id='underlined'>calculated</a> at checkout</p>
             </div>
       </div>:null}

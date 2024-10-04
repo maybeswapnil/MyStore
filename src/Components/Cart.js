@@ -26,7 +26,7 @@ export default function Cart() {
   }, [cart])
 
   return (
-    <div className="cart">
+    <div className="cart" id="cart">
         {view?<InformationPopup value='Added to cart'/>:null}
 
         {cart.length>0?<div className="cart-product-flex" id='bottom-border'>
@@ -49,7 +49,7 @@ export default function Cart() {
         <div className="your-cart-product-grid-main" >
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price' style={{textAlign: 'right'}}>
-            <h2><span id='bolder'>Subtotal</span> ${price}.00 USD</h2>
+            <h2><span id='bolder'>Subtotal</span> ₹ {price}.00</h2>
             <p>Taxes and shipping <a id='underlined'>calculated</a> at checkout</p>
             <button className="button-13" style={{marginLeft: '0px'}} id='submit-button' role="button" onClick={() => navigate('/checkout')}>Checkout</button>
             <br/>

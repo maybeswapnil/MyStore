@@ -39,37 +39,20 @@ export default function Home() {
     <div className="home">
       <div className="home-flex">
         <div className="home-colored-box">
-          <h1>My planet friendly Collection</h1>
-          <p>#LiveEpic also means to live responsibly. Give shape to your epic moments with our new sustainable canvas prints.</p>
+          <h1>Your Walls Deserve More Than Just Color</h1>
+          <p>Each photograph I capture is a moment of discovery, now available as high-quality prints for your home or office. From vibrant cityscapes to serene nature scenes, every image reflects my passion for storytelling through the lens. Find the perfect print to add character and inspiration to your space.</p>
           <br/>
           <button style={{marginTop: '0vmin'}} className="button-13 cart-header" onClick={() => navigate('/collection')}>Shop Now</button>
         </div>
         <div className="home-colored-image">
-          <img className="home-colored-image" src='https://images.pexels.com/photos/10865105/pexels-photo-10865105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+          <img className="home-colored-image" src='https://images.pexels.com/photos/28738431/pexels-photo-28738431/free-photo-of-bustling-street-market-scene-in-manali-india.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 '/>
         </div>
       </div>
-      <div className="home-description-two">
-          <div>
-            <h1 id='description-header-two'>Water-based inks</h1>
-            <h3 id='description-para-two'>We are about partnering with sustainable suppliers in order to provide you with ethically produced, sustainably made custom apparels made from ecofriendly materials like organic cotton and hemp.</h3>     
-          </div>
-          <div className="home-description-image">
-            <img src='https://cdn.shopify.com/s/files/1/0631/4934/2952/files/close-up-silk-screen-printing-ink_750x.jpg?v=1649703517'/>
-          </div>
-      </div>
-      <div className="home-description">
-            <h1 id='description-header'>Eco-friendly canvas prints</h1>
-            <h3 id='description-para'>We are about partnering with sustainable suppliers in order to provide you with ethically produced, sustainably made custom apparels made from ecofriendly materials like organic cotton and hemp.</h3>
-            <button style={{marginTop: '0vmin', marginLeft: 'auto', marginRight: 'auto'}} className="button-13 cart-header" onClick={() => navigate('/collection')}>Shop Now</button>
-      </div>
-      
-      <br/>
-      <br/>
       <div className="home-flex-two">
         <div className="home-icons">
             <img className="home-icons-image" src="https://img.icons8.com/wired/64/000000/delivery.png"/>
             <h2>Shipping & Delivery</h2>
-            <p className="para-description">Chipoichipoi!! Free shipping on orders over 100$ (within USA).</p>
+            <p className="para-description">Chipoichipoi!! Free shipping on orders over ₹ 5000 (within India).</p>
         </div>
         <div className="home-icons" >
             <img className="home-icons-image" src="https://img.icons8.com/external-outline-juicy-fish/60/000000/external-damaged-cyber-crime-outline-outline-juicy-fish.png"/>
@@ -82,36 +65,6 @@ export default function Home() {
             <p className="para-description">Write us ASAP! We can correct your address/size in the first 24 hours :)</p>
         </div>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      {/* <div className="home-collection" style={{width: '100%', marginTop: '0px', marginBottom: '-70px'}}>
-      <div className="home-collection-grid">
-        <div>
-          <div className='home-image1'>
-              <img  id='box1' src={imageTwo[0].url} />
-          </div>
-          <div className='home-image3'>
-              <img  id='box3' src={imageTwo[2].url} />
-          </div>
-        </div>
-        <div>
-          <div className='home-image1'>
-              <img  id='box1' src={image[0].url} />
-          </div>
-          <div className='home-image3'>
-              <img  id='box3' src={image[1].url} />
-          </div>
-        </div>
-        <div className='home-image2'>
-            <img  id='box2' src={imageTwo[1].url} />
-        </div>
-        
-      </div>
-      </div> */}
     </div>
   );
 }

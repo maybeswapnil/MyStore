@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
 :root {
   margin: 0;
   padding: 0;
@@ -16,8 +16,11 @@
     margin-top: 20px;
     gap: 900px;
     height: 20%;
-  z-index: 10;
+    z-index: 10;
+}
 
+.navbar-name {
+    font-family: "Edu AU VIC WA NT Dots", cursive;
 }
 
 /* .navbar > div {
@@ -81,7 +84,7 @@ img:hover {
         padding: 0;
         margin-inline: 0;
         margin-black: 0;
-        margin-left: 0;
+        margin-left: 23px;  
     }
     #headline {
         position: absolute;

@@ -17,7 +17,7 @@
 .your-cart-product {
     font-family: var(--font-style);
     border-radius: 20px;
-    width: 900px;
+    width: 100%;
     height: 200px;
     transition-delay: 300ms;
     text-decoration: none;
@@ -27,7 +27,7 @@
 .your-cart-product-flex {
     font-family: var(--font-style);
     display: flex;
-    gap: 60px;
+    gap: 5%;
 }
 
 .your-cart-product-grid {

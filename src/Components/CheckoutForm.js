@@ -75,7 +75,7 @@ function CheckoutForm() {
         
             var config = {
                 method: 'post',
-                url: 'https://my-store-apis.herokuapp.com/mystore/create-checkout-session',
+                url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/create-checkout-session',
                 headers: { 
                     'Content-Type': 'application/json'
                 },

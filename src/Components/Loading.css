@@ -46,7 +46,7 @@
   .popup5 {
     margin: 70px auto;
     padding: 0px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 5px;
     width: 200px;
     height: 210px;
@@ -66,7 +66,7 @@
     .popup5 {
         margin: 70px auto;
         padding: 0px;
-        background-color: #fff;
+        background-color: transparent;
         border-radius: 5px;
         width: 200px;
         height: 210px;

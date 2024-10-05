@@ -1,147 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 
-:root {
+/* YourCart.css */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in place */
+  }
+}
+
+.product-card {
+  animation: fadeInUp 0.5s ease forwards; /* Apply animation */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease; /* Transition opacity */
+}
+
+/* Other existing styles remain unchanged */
+/* Container and Card Styles */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.product-card {
+  border-radius: 8px;
+  text-align: center;
+  width: 90%; /* Smooth transition on transform */
+}
+
+/* Zoom in on hover */
+.image-frame {
+  border: 12px solid #333;
+  padding: 30px;
+  margin-bottom: 15px;
+  background: rgba(250,248,244,255);
+  box-shadow: 0 4px 8px rgba(0.6, 0.6, 0.6, 0.6), 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 30px;
+}
+
+/* Hover effect on image */
+.image-frame:hover {
+  transform: scale(1.04); /* Increase scale by 2% */
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Product Name */
+.product-name {
+  font-size: 18px;
   margin: 0;
-  padding: 0;
-  --font-color: black;
-  --font-color-hover: #f1d11a;
-  --background-color: white;
-  --font-style: 'Source Sans Pro', sans-serif;
+  transition: font-weight 0.3s ease; /* Smooth transition for font weight */
+  width: 100%;
 }
-  
 
-  .box {
-    width: 40%;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.2);
-    padding: 35px;
-    border: 2px solid #fff;
-    border-radius: 20px/50px;
-    background-clip: padding-box;
-    text-align: center;
-  }
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 90;
-  }
-
-  .overlay9 {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 90;
-  }
-  
-  .popup {
-    margin: 70px auto;
-    padding: 0px;
-    background-color: #fff;
-    border-radius: 5px;
-    width: 70%;
-    height: 79%;
-    position: relative;
-    margin-top: 10vmin;
-    display: flex;
-    max-width: 115vmin;
-  }
-  
-  .popup h2 {
-    margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  .popup .close:hover {
-    color: var(--font-color-hover);
-    cursor: pointer;
-  }
-  .popup .content {
-    max-height: 30%;
-    overflow: auto;
-  }
-
-  .popup-image {
-    display: block;
-  }
-
-  @media only screen and (max-width: 1400px) { 
-    .popup-image {
-      display: none;
-    }
-    .box{
-      width: 60%;
-     
-    }
-    
-    .close {
-        color: white;
-    }
-    .popup {
-        margin: 70px auto;
-        padding: 0px;
-        background-color: #fff;
-        border-radius: 5px;
-        width: 55vmin;
-        height: none;
-        position: relative;
-        margin-top: 15vmin;
-        display: flex;
-        flex-direction: column;
-      }
+/* Make the product name bold on hover */
+.image-frame:hover .product-name {
+  font-weight: bold; /* Change to bold on hover */
 }
-  
-  @media screen and (max-width: 700px){
-    .box{
-      width: 60%;
-     
-    }
-    
-    .close {
-        color: white;
-    }
-    .popup {
-        margin: 70px auto;
-        padding: 0px;
-        background-color: #fff;
-        border-radius: 5px;
-        width: 85%;
-        position: relative;
-        margin-top: 15vmin;
-        display: flex;
-        flex-direction: column;
-        height: 70%;
-        min-height: 115vmin;
-      }
-  }
 
-  .popup-image {
-      width: 52.7vh;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-  }
-
-  .content {
-      right: 0;
-  }
-
-  
-
-  
+/* Product Price */
+.product-price {
+  color: #000000;
+  margin: 10px;
+}

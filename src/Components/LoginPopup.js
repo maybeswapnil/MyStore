@@ -54,7 +54,7 @@ export default function LoginPopup(props) {
 
         var config = {
             method: 'post',
-            url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/login',
+            url: 'http://localhost:4000/mystore/login',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -75,8 +75,8 @@ export default function LoginPopup(props) {
                 }
                 var configCart = {
                     method: 'post',
-                    // url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/addtocart',
-                    url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/addtocart',
+                    // url: 'http://localhost:4000/mystore/addtocart',
+                    url: 'http://localhost:4000/mystore/addtocart',
                     headers: { 
                         'Content-Type': 'application/json'
                     },

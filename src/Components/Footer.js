@@ -34,36 +34,6 @@ export default function Footer() {
       </ul>
     </li>
     
-    <li className="nav__item nav__item--extra">
-      <h2 className="nav__title">Technology</h2>
-      
-      <ul className="nav__ul nav__ul--extra">
-        <li>
-          <a>ReactJS</a>
-        </li>
-        
-        <li>
-          <a>NodeJS</a>
-        </li>
-        
-        <li>
-          <a href="#">Express</a>
-        </li>
-        
-        <li>
-          <a href="#">Automation</a>
-        </li>
-        
-        <li>
-          <a href="#">Software Design</a>
-        </li>
-        
-        <li>
-          <a href="#">IoT</a>
-        </li>
-      </ul>
-    </li>
-    
     <li className="nav__item">
       <h2 className="nav__title">Legal</h2>
       

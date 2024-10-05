@@ -8,8 +8,8 @@ import PaymentStatus from "./PaymentStatus";
 import Product from "./Product";
 const image = [
     {
-        name: 'Cassett In the Sky',
-        url: 'https://images.unsplash.com/photo-1588417446723-884e75a48432?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=307&q=80',
+        name: 'Walking Monk',
+        url: 'https://images.pexels.com/photos/18347410/pexels-photo-18347410/free-photo-of-pedestrians-walking-along-a-decorated-street.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
         smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
         price: {
             'Small (12inch*18inch)': 2000,
@@ -20,9 +20,9 @@ const image = [
         quantity: 1
     },
     {
-        name: 'Greany Leaf',
-        url: 'https://images.unsplash.com/photo-1588417446123-e7202e88f934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=308&q=80',
-        smallurl: 'https://i.imgur.com/cFwWwUy.jpg',
+        name: 'Ghuiyan',
+        url: 'https://images.pexels.com/photos/3039072/pexels-photo-3039072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
         price: {
             'Small (12inch*18inch)': 2000,
             'Medium (24inch*36inch)': 2500,
@@ -32,8 +32,68 @@ const image = [
         quantity: 1
     },
     {
-        name: 'Blue Cassett',
-        url: 'https://images.unsplash.com/photo-1588417321386-fc6426526b64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=307&q=80',
+        name: 'Ladakh Chal',
+        url: 'https://images.pexels.com/photos/17615049/pexels-photo-17615049/free-photo-of-scenery-of-barren-mountains.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
+        price: {
+            'Small (12inch*18inch)': 2000,
+            'Medium (24inch*36inch)': 2500,
+            'Large (40inch*60inch)': 3000
+        },
+        size: 'Small (12inch*18inch)',
+        quantity: 1
+    },
+    {
+        name: 'Bangalore',
+        url: 'https://images.pexels.com/photos/18466770/pexels-photo-18466770/free-photo-of-crowns-of-trees-seen-from-below.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
+        price: {
+            'Small (12inch*18inch)': 2000,
+            'Medium (24inch*36inch)': 2500,
+            'Large (40inch*60inch)': 3000
+        },
+        size: 'Small (12inch*18inch)',
+        quantity: 1
+    },
+    {
+        name: 'Banaras',
+        url: 'https://images.pexels.com/photos/27556831/pexels-photo-27556831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
+        price: {
+            'Small (12inch*18inch)': 2000,
+            'Medium (24inch*36inch)': 2500,
+            'Large (40inch*60inch)': 3000
+        },
+        size: 'Small (12inch*18inch)',
+        quantity: 1
+    },
+    {
+        name: 'Corupted',
+        url: 'https://images.pexels.com/photos/28736029/pexels-photo-28736029/free-photo-of-majestic-mountain-landscape-with-verdant-valleys.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
+        price: {
+            'Small (12inch*18inch)': 2000,
+            'Medium (24inch*36inch)': 2500,
+            'Large (40inch*60inch)': 3000
+        },
+        size: 'Small (12inch*18inch)',
+        quantity: 1
+    },
+    {
+        name: 'Clevage',
+        url: 'https://images.pexels.com/photos/28737029/pexels-photo-28737029/free-photo-of-breathtaking-mountain-valley-landscape-view.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
+        price: {
+            'Small (12inch*18inch)': 2000,
+            'Medium (24inch*36inch)': 2500,
+            'Large (40inch*60inch)': 3000
+        },
+        size: 'Small (12inch*18inch)',
+        quantity: 1
+    },
+    {
+        name: 'Cassett',
+        url: 'https://images.pexels.com/photos/1745936/pexels-photo-1745936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         smallurl: 'https://i.imgur.com/X9gqYOh.jpg',
         price: {
             'Small (12inch*18inch)': 2000,
@@ -56,6 +116,18 @@ const image = [
         quantity: 1
     },
     {
+        name: 'Cassett In the Sky',
+        url: 'https://images.pexels.com/photos/6064637/pexels-photo-6064637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        smallurl: 'https://i.imgur.com/MOuVb5C.jpg',
+        price: {
+            'Small (12inch*18inch)': 2000,
+            'Medium (24inch*36inch)': 2500,
+            'Large (40inch*60inch)': 3000
+        },
+        size: 'Small (12inch*18inch)',
+        quantity: 1
+    },
+    {
         name: 'Pretty White Duck',
         url: 'https://images.unsplash.com/photo-1588417220543-160f591512cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=307&q=80',
         smallurl: 'https://i.imgur.com/yihklXO.jpg',
@@ -68,8 +140,8 @@ const image = [
         quantity: 1
     },
     {
-        name: 'Orange Container',
-        url: 'https://images.unsplash.com/photo-1588417099597-fb0b248d6c35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=307&q=80',
+        name: 'Flower',
+        url: 'https://images.pexels.com/photos/1785271/pexels-photo-1785271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         smallurl: 'https://i.imgur.com/zWry6uz.jpg',
         price: {
             'Small (12inch*18inch)': 2000,
@@ -92,26 +164,17 @@ export default function Collection() {
   return (
     <div className="cart">
         {view?<InformationPopup value='Added to cart'/>:null}
-        <div className="cart-product-flex collection-border" id='bottom-border'>
-        <div>
-          <h1 style={{fontSize:'50px'}}>Collection</h1>
-        </div>
-      </div>
+       
       <div className="col-grid">
-          {image.map((res) => {
+          {image.map((res, index) => {
               return(
-                <Product res={res} m='true' from={'collection'} view={viewAdded}/>
+                <Product res={res} m='true' from={'collection'} index={index} view={viewAdded}/>
               )
           })}
       </div>
       <br/>
       <br/>
       <br/>
-      <div className="cart-product-flex collection-border" id='top-border'>
-        <div>
-          <h3 style={{fontSize:'15px'}}>We are about partnering with sustainable suppliers in order to provide you with ethically produced, sustainably made custom apparels made from ecofriendly materials like organic cotton and hemp.</h3>
-        </div>
-      </div>
     </div>
   );
 }

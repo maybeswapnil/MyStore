@@ -16,6 +16,8 @@ import Logon from "./Components/Logon";
 import { logout } from "./features/userSlice";
 import PaymentLoading from "./Components/PaymentLoading";
 import LogRocket from 'logrocket';
+import ProductPage from "./Components/ProductPage";
+import LoginLoad from "./Components/LoginLoad";
 export default function App() {
 
   const user = useSelector(selectUser)
@@ -46,7 +48,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {loading?<PaymentLoading />:null}
+     {loading?<LoginLoad />:null}
       <Router>
         <Navbar loader={setLoading}/>
         <Link to="/account/user" />
@@ -62,6 +64,7 @@ export default function App() {
           <Route path="/collection" element={<Collection />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/logon" element={<Logon />} />
+          <Route path="/product" element={<ProductPage />} />
         </Routes>
       </Router>
       <Footer />

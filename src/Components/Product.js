@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './YourCart.css';
 import { useSelector } from 'react-redux';
 import { selectCart } from '../features/userSlice';
+import ProductPage from './ProductPage';
+import { useNavigate } from 'react-router-dom';
 
 export default function Product(props) {
   const cart = useSelector(selectCart);
@@ -17,9 +19,14 @@ export default function Product(props) {
     const delay = props.index * 70; // Assuming props.index is passed
     setAnimationDelay(delay);
   }, [cart, props.res.name, props.index]);
+  const navigate = useNavigate();
+
+  const naviGate = (path) => {
+    window.location.href = path; // This will reload the page
+  }
 
   return (
-    <div className="product-container">
+    <div className="product-container" onClick={() => naviGate(`/product?sku=` +props.res.key)}>
       <div 
         className="product-card" 
         style={{ animationDelay: `${animationDelay}ms`, opacity: 0 }} // Apply animation delay

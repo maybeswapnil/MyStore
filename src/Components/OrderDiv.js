@@ -22,7 +22,7 @@ export default function OrderDiv(props) {
             {props.order.cart.map((r, i) => {
                 return(
                     <div className={array[i]}>
-                        <img className={array[i]+'-image'} width='200px' height='200px' src={r.smallurl}/>
+                        <img className={array[i]+'-image'} width='200px' height='200px' src={r.url}/>
                     </div>
                 )
             })}

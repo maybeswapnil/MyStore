@@ -4,8 +4,6 @@ import { login, selectCart, selectUser } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import './Login.scss'
 import axios from "axios";
-import Loading from "./Loading";
-import PaymentLoading from "./PaymentLoading";
 import LoginLoad from "./LoginLoad";
 export default function Login() {
     const navigate = useNavigate()

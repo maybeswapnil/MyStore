@@ -40,7 +40,7 @@ export default function YourCart(props) {
     <div className="your-cart-product" >
       <div className="your-cart-product-flex" >
         <div style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid red'}}>
-          <img className="your-cart-cart-image" src={props.res.smallurl} />
+          <img className="your-cart-cart-image" src={props.res.url} />
         </div>
         <div className="your-cart-product-grid-main">
             <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" >{props.res.name}</h1>

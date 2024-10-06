@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 :root {
   margin: 0;
@@ -54,6 +55,12 @@
     border-bottom-left-radius: 15px;
     height: 160px;
     width: 160px;
+}
+.cart-product-desc {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 10;
+    font-style: normal;
 }
 
 .checkoutdiv-cart-product-header {

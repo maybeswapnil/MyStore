@@ -45,6 +45,9 @@ export default function Checkout() {
         </div>
         <div className="your-cart-product-grid-main" >
         </div>
+        {!cart.length>0?<div>
+         <h1 id='cart-empty' style={{height: '20px'}}>Your cart is empty</h1>
+        </div>:<h1></h1>}
         <div className="your-cart-product-grid-main" id='your-cart-price-header'>
             <h4><a id='underlined' onClick={() => navigate('/collection')}>Continue Shopping</a></h4>
         </div>
@@ -62,7 +65,7 @@ export default function Checkout() {
         </div>
         <div className="your-cart-product-grid-main" id='your-cart-price' style={{textAlign: 'right'}}>
             <h2><span id='bolder'>Subtotal</span> ₹ {price}.00</h2>
-            <p>Taxes and shipping <a id='underlined'>calculated</a> at checkout</p>
+            <p>Taxes and shipping included <a id='underlined'>₹ {price*0.05}</a></p>
             </div>
       </div>:null}
       <br/>

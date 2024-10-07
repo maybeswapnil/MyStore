@@ -1,0 +1,31 @@
+/* Overlay styles */
+.info-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is on top of other content */
+  }
+  
+  /* Popup styles */
+  .info-popup {
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+    width: 300px; /* Set a fixed width for the popup */
+  }
+  
+  /* Message styles */
+  .info-message {
+    margin: 0; /* No margin for the notification text */
+    font-size: 18px; /* Increase font size */
+    color: #333; /* Dark text color for better readability */
+  }
+  

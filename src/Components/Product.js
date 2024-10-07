@@ -26,7 +26,7 @@ export default function Product(props) {
   }
 
   return (
-    <div className="product-container" onClick={() => naviGate(`/product?sku=` +props.res.key)}>
+    <div className="product-container" onClick={() => naviGate(`/product?sku=` +props.res.sku)}>
       <div 
         className="product-card" 
         style={{ animationDelay: `${animationDelay}ms`, opacity: 0 }} // Apply animation delay

@@ -39,7 +39,7 @@ export default function Footer() {
       
       <ul className="nav__ul">
         <li>
-          <a href="#">Privacy Policy</a>
+          <a href="/shipping_policy">Shipping Policy</a>
         </li>
         
         <li>

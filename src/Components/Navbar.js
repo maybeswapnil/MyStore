@@ -17,66 +17,34 @@ export default function Navbar(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-      var url = window.location.href
-      if(url.includes('?')) {
-        props.loader(true)
-        var string = url.split('?')[1];
-        var data = JSON.stringify({
-          "key": string.split(':')[1]
-        });
-        
-        var config = {
-          method: 'post',
-          url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/check-session-key',
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data : data
-        };
-        
-        axios(config)
-        .then(function (response) {
-          props.loader(false)
-          if(string.split(':')[0]==='paymentsuccess') {
-            dispatch(emptyCart())
-            localStorage.removeItem('cart')
-          } 
-          navigate('/checkout?'+string.split(':')[0])
-        })
-        .catch(function (error) {
-          props.loader(false)
-          console.log('stop spamming');
-        });
-      }
-      if(cart.length===0) {
-        setView(true)
-      } else {
-        setView(false)
-      }
-      if(localStorage.pathname==='/cart') {
-        setViewTwo(true)
-      } else {
-        setViewTwo(false)
-      }
+    if (cart.length === 0) {
+      setView(true)
+    } else {
+      setView(false)
+    }
+    if (localStorage.pathname === '/cart') {
+      setViewTwo(true)
+    } else {
+      setViewTwo(false)
+    }
   }, [cart])
 
   function navigateNicely() {
-    if(user) {
-      if(new Date(user.date)-new Date()<-200000) {
+    if (user) {
+      if (new Date(user.date) - new Date() < -200000) {
         localStorage.setItem('user', null)
         dispatch(logout())
       }
-    } 
+    }
     navigate('/account/user')
   }
- 
+
   return (
     <div className="navbar">
-        <h1 onClick={() => navigate('/')} className="navbar-name">Swapnil</h1>
-        <div className='right-navbar'>
-          {user==null?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/user.png' onClick={() => navigateNicely()}/>:<img className='right-navbar-icon' src='https://i.imgur.com/IGXS5UB.png' onClick={() => navigateNicely()}/>}
-          {view?<img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/favorite-cart.png' onClick={() => navigate('/cart')}/>:<img className='right-navbar-icon' src='https://i.imgur.com/ZxmvIhX.png' onClick={() => navigate('/cart')}/>}
-        </div>
+      <h1 onClick={() => navigate('/')} className="navbar-name">Swapnil</h1>
+      <div className='right-navbar'>
+        {!view ? <img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/favorite-cart.png' onClick={() => navigate('/checkout')} /> : null}
+      </div>
     </div>
   );
 }

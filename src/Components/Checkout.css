@@ -54,7 +54,7 @@ font-family: var(--font-style);
     .checkout {
         flex-direction: column;
         height: 100%;
-        margin-top: 5%;
+        margin-top: 15%;
         width: 100%;
     }
     .checkout-payment {

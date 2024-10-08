@@ -43,7 +43,7 @@ export default function YourCart(props) {
           <img className="your-cart-cart-image" src={props.res.url} />
         </div>
         <div className="your-cart-product-grid-main">
-            <h1 style={{borderBottom: '2px solid black'}} className="your-cart-cart-product-header" >{props.res.name}</h1>
+            <h1 className="your-cart-cart-product-header" >{props.res.name}</h1>
             <h4 id='cart-info-mobile'>₹ {props.res.price[props.res.size]} per canvas</h4>
             <h4 id='cart-info-mobile'>Size: {props.res.size}</h4>
             <h4 id='cart-info-mobile'>Quantity: x {props.res.quantity}</h4>

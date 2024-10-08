@@ -180,7 +180,7 @@ function CheckoutForm() {
             </div>
             <br />
             <div className="content-submit" >
-                <button className="button-13" style={{ marginLeft: '0px', width: '100px', backgroundColor: 'black' }} id='submit-button' role="button" onClick={() => { }}>Google pay</button>
+                <button className="button-13" style={{ marginLeft: '0px', width: '100px', backgroundColor: 'black' }} id='submit-button' role="button" onClick={() => { window.location.href = "/shipping_policy"}}>Policy</button>
             </div>
             <div className="content-error">
                 <h4>{error}</h4>

@@ -1,20 +1,23 @@
 .checkout {
-    display: flex;
-    height: 100vh;
-    margin-top: 80px;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 90vh;
+    margin-top: 1vh;
     font-family: var(--font-style);
+    width: 70%;
+    margin-left: auto;
 }
 
 .checkout-payment {
-    width: 40%;
-    margin-left: 5%;
+    width: 100%;
 }
 .checkout-cart {
     display: flex;
     flex-direction: column;
     gap: 0px;
     margin-top: 0px;
-    width: 43%;
+    width: 100%;
 }
 
 .checkout-cart > .cart {
@@ -25,23 +28,24 @@ font-family: var(--font-style);
 }
 
 #form-main2 {
-    margin-left: 140px;
     animation: none;
 }
 @media only screen and (max-width: 1700px) { 
     .checkout {
         display: flex;
         height: 100vh;
-        margin-top: 80px;
+        margin-right: auto;
+        grid-template-columns: 1fr 1fr;
+        font-family: var(--font-style);
+        margin-left: auto;
     }
     
     .checkout-payment {
-        width: 25%;
+        width: 100%;
         margin-left: -4%;
     }
     .checkout-cart {
         margin-right: 0px;
-        margin-left: 13%;
     }
 }
 
@@ -49,7 +53,8 @@ font-family: var(--font-style);
     .checkout {
         flex-direction: column;
         height: 100%;
-        margin-top: 80px;
+        margin-top: 5%;
+        width: 100%;
     }
     .checkout-payment {
         width: 100%;

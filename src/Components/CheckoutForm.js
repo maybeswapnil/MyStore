@@ -11,7 +11,6 @@ function CheckoutForm() {
     const [email, setEmail] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
-    const [companyName, setCompanyname] = useState('')
     const [cityName, setCityName] = useState('')
     const [address, setAddress] = useState('')
     const [houseNo, setHouseNumber] = useState('')
@@ -45,7 +44,7 @@ function CheckoutForm() {
     function submit(e) {
         e.preventDefault();
 
-        if (phone !== '' && address !== '' && cityName !== '') {
+        if (email !== '' && phone !== '' && address !== '' && cityName !== '') {
             const payload = { ...user, orders: [], cart: [] };
             const data = JSON.stringify({
                 email: payload.email,
@@ -53,7 +52,7 @@ function CheckoutForm() {
                 time: new Date().toString(),
                 userinfo: { email: payload.email },
                 amount: 7000,
-                'shipping-info': {
+                shippingInfo: {
                     email: payload.email,
                     firstName: firstName,
                     lastName: lastName,
@@ -61,13 +60,14 @@ function CheckoutForm() {
                     address: address,
                     houseNo: houseNo,
                     phone: phone,
+                    email: email,
                 },
                 cart: cart,
             });
 
             const config = {
                 method: 'post',
-                url: 'https://mystore-apiset.onrender.com/mystore/create-order', // Updated backend endpoint
+                url: 'http://localhost:4000/mystore/create-order', // Updated backend endpoint
                 headers: { 'Content-Type': 'application/json' },
                 data: data,
             };
@@ -86,7 +86,7 @@ function CheckoutForm() {
                         handler: function (response) {
                             const paycheck = {
                                 method: 'post',
-                                url: 'https://mystore-apiset.onrender.com/mystore/verify-payment',
+                                url: 'http://localhost:4000/mystore/verify-payment',
                                 headers: { 'Content-Type': 'application/json' },
                                 data: response,
                             }
@@ -96,7 +96,7 @@ function CheckoutForm() {
                                 localStorage.removeItem('cart')
                                 setTimeout(() => {
                                     setOrderConfirmation(false)
-                                    window.location.href = "/account/user"
+                                    window.location.href = "/"
                                 }, 2000)
                             }).catch(function (error) {
                                 console.log(error);
@@ -165,12 +165,15 @@ function CheckoutForm() {
             </div>
             <div className="form-group2">
                 <span style={{ width: '100px' }}>{'City'}</span>
-
                 <input className="form-field" type="text" placeholder="City" ref={n} onChange={(e) => setCityName(e.target.value)} required />
             </div>
             <div className="form-group2">
                 <span style={{ width: '100px' }}>{'Phone No.'}</span>
                 <input className="form-field" type="text" placeholder="Phone" ref={n} onChange={(e) => setPhone(e.target.value)} required />
+            </div>
+            <div className="form-group2">
+                <span style={{ width: '100px' }}>{'Email'}</span>
+                <input className="form-field" type="Email" placeholder="Phone" ref={n} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div className="content-submit">
                 <button className="button-13" style={{ marginLeft: '0px', width: '200px' }} type='submit' id='submit-button' >Continue to Shipping</button>

@@ -6,6 +6,7 @@ import './Collection.css';
 import Product from "./Product";
 import ProductPage from "./ProductPage";
 import NotFoundPage from "./NotFoundPage";
+import Loading from "./Loading";
 
 export default function Collection() {
     const cart = useSelector(selectCart);
@@ -24,7 +25,7 @@ export default function Collection() {
     useEffect(() => {
         const fetchCollection = async () => {
             try {
-                const response = await axios.get('https://mystore-apiset.onrender.com/mystore/getCollection'); // Use Axios to fetch data
+                const response = await axios.get('http://localhost:4000/mystore/getCollection'); // Use Axios to fetch data
                 setCollection(response.data); // Set the fetched collection data
             } catch (err) {
                 setError(err.message); // Set the error message
@@ -37,7 +38,7 @@ export default function Collection() {
     }, []); // Empty dependency array means this effect runs once on mount
 
     if (loading) {
-        return <div>Loading...</div>; // Loading state
+        return <Loading />; // Loading state
     }
 
     if (error) {

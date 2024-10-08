@@ -70,9 +70,6 @@ export default function Cart() {
         {!user?<div style={{height: '50px'}}>
           {cart?<h6>Have an account?</h6>:<h1></h1>}
         </div>:null}
-        <div className="cart-buttons">
-            {!user?<button style={{marginTop: '0vmin'}} className="button-13 cart-header" onClick={() => navigate('/account/user')}>Login to order</button>:null}
-        </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
 html {
   height: 90%;
   background-color: #eff3eb;
-
+  min-height: 100vh;
 }
 
 #root {
@@ -29,6 +29,7 @@ body {
 .App {
   overflow: auto;
   height: 90%;
+  min-height: 100vh;
 }
 .navbar-background {
   position: fixed;

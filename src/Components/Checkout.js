@@ -45,9 +45,6 @@ export default function Checkout() {
         </div>
         <div className="your-cart-product-grid-main" >
         </div>
-        {!cart.length>0?<div>
-         <h1 id='cart-empty' style={{height: '20px'}}>Your cart is empty</h1>
-        </div>:<h1></h1>}
         <div className="your-cart-product-grid-main" id='your-cart-price-header'>
             <h4><a id='underlined' onClick={() => navigate('/collection')}>Continue Shopping</a></h4>
         </div>

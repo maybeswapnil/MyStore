@@ -25,7 +25,7 @@ export default function Collection() {
     useEffect(() => {
         const fetchCollection = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/mystore/getCollection'); // Use Axios to fetch data
+                const response = await axios.get('https://mystore-apiset.onrender.com/mystore/getCollection'); // Use Axios to fetch data
                 setCollection(response.data); // Set the fetched collection data
             } catch (err) {
                 setError(err.message); // Set the error message

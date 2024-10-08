@@ -25,7 +25,7 @@ export default function ProductPage() {
   const fetchProduct = async (sku) => {
     try {
       setLoading(true); // Start loading
-      const response = await axios.get(`http://localhost:4000/mystore/getProduct?sku=${sku}`); // Make API request
+      const response = await axios.get(`https://mystore-apiset.onrender.com/mystore/getProduct?sku=${sku}`); // Make API request
       setProduct(response.data); // Set product details
     } catch (err) {
       setError('Failed to fetch product details'); // Handle errors

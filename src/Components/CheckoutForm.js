@@ -67,7 +67,7 @@ function CheckoutForm() {
 
             const config = {
                 method: 'post',
-                url: 'http://localhost:4000/mystore/create-order', // Updated backend endpoint
+                url: 'https://mystore-apiset.onrender.com/mystore/create-order', // Updated backend endpoint
                 headers: { 'Content-Type': 'application/json' },
                 data: data,
             };
@@ -86,7 +86,7 @@ function CheckoutForm() {
                         handler: function (response) {
                             const paycheck = {
                                 method: 'post',
-                                url: 'http://localhost:4000/mystore/verify-payment',
+                                url: 'https://mystore-apiset.onrender.com/mystore/verify-payment',
                                 headers: { 'Content-Type': 'application/json' },
                                 data: response,
                             }

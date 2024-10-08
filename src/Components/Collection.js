@@ -38,7 +38,7 @@ export default function Collection() {
     }, []); // Empty dependency array means this effect runs once on mount
 
     if (loading) {
-        return <Loading />; // Loading state
+        return  <div className="cart"><Loading /></div>; // Loading state
     }
 
     if (error) {

@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 90vh;
-    margin-top: 1vh;
+    margin-top: 5%;
     font-family: var(--font-style);
     width: 70%;
     margin-left: auto;
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     gap: 0px;
-    margin-top: 0px;
+    margin-top: 5%;
     width: 100%;
 }
 
@@ -38,6 +38,7 @@ font-family: var(--font-style);
         grid-template-columns: 1fr 1fr;
         font-family: var(--font-style);
         margin-left: auto;
+    margin-top: 5%;
     }
     
     .checkout-payment {

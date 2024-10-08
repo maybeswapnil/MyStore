@@ -18,7 +18,27 @@
     gap: 900px;
     height: 20%;
     z-index: 10;
+    position: fixed;
 }
+.right-navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .right-navbar-text {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px; /* Adjust the spacing between elements */
+    color: #000; /* Adjust color if needed */
+  }
+  
+  .right-navbar-text:hover {
+    text-decoration: underline;
+    color: #555; /* Optional: change color on hover */
+  }
 
 .navbar-name {
     font-family: "Dancing Script", cursive;
@@ -68,7 +88,7 @@ img:hover {
     display: flex;
     gap: 40px;
     position: absolute;
-    right: 30vmin;
+    left: 40%
 }
 
 @media only screen and (max-width: 1400px) { 

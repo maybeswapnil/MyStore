@@ -12,7 +12,7 @@ export default function Navbar(props) {
   const [view, setView] = useState(false)
   const [viewTwo, setViewTwo] = useState(false)
   const dispatch = useDispatch()
-
+  const cartLength = cart.length;
   useEffect(() => {
     if (cart.length === 0) {
       setView(true)
@@ -38,9 +38,25 @@ export default function Navbar(props) {
 
   return (
     <div className="navbar">
-      <h1 onClick={() => navigate('/')} className="navbar-name"><img src="https://i.imgur.com/xxsj5QF.png"  alt="Swapnil Sharma"  style={{ width: "20%", maxWidth: '100%', height: 'auto' }} /></h1>
+      <h1 onClick={() => navigate('/')} className="navbar-name">
+        <img
+          src="https://i.imgur.com/xxsj5QF.png"
+          alt="Swapnil Sharma"
+          style={{ width: "20%", maxWidth: '100%', height: 'auto' }}
+        />
+      </h1>
       <div className='right-navbar'>
-        {!view ? <img className='right-navbar-icon' src='https://img.icons8.com/dotty/50/000000/favorite-cart.png' onClick={() => navigate('/checkout')} /> : null}
+        {/* Instagram Link */}
+        <span className='right-navbar-text' onClick={() => window.open('https://www.instagram.com/hellochemo', '_blank')}>Instagram</span>
+
+        {/* Cart Link with Item Count */}
+        {!view && (
+          <>
+            <span className='right-navbar-text' onClick={() => navigate('/checkout')}>
+              Cart {cartLength > 0 ? `(${cartLength})` : ''}
+            </span>
+          </>
+        )}
       </div>
     </div>
   );

@@ -97,9 +97,9 @@ img:hover {
 @media only screen and (max-width: 600px) { 
     .navbar > div {
         position: absolute;
-        right: 0vmin;
+        left: 10%;
         margin-right: 5%;
-        width: 100vw;
+        width: 70%;
     }
     .navbar h1 {
         margin: 0;

@@ -1,133 +1,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap');
+
 :root {
-  margin: 0;
-  padding: 0;
-  --font-color: black;
-  --font-color-hover: #FF5F00;
-  --font-color-shadow: rgb(255, 255, 255);
-  --background-color: white;
-  --font-style: 'Source Sans Pro', sans-serif;
+    --font-color: black;
+    --font-color-hover: #FF5F00;
+    --background-color: white;
+    --primary-font: 'Source Sans Pro', sans-serif;
+    --navbar-font: 'Dancing Script', cursive; /* Navbar font */
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--primary-font);
+}
+
+/* Navbar Path Styling */
+.navbar-path {
+    font-size: 16px; /* Match the font size with the other navbar text */
+    font-weight: bold; /* Keep the weight consistent */
+    color: var(--font-color); /* Match the text color */
+    margin-left: 10px; /* Add some space between logo and path label */
+    font-family: var(--navbar-font); /* Ensure the same font family is applied */
+}
+
 
 .navbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 60px;
+    position: fixed;
+    top: 0;
+    background: var(--background-color);
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-name {
+    cursor: pointer;
+    font-family: var(--navbar-font); /* Apply Dancing Script font */
+    font-size: 28px; /* Font size for logo/name */
+    margin: 0;
+}
+
+.navbar-logo {
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+}
+
+.right-navbar {
+    display: flex; /* Use flex for alignment */
+    align-items: center;
+    gap: 20px; /* Space between items */
+    flex-wrap: nowrap; /* Prevent wrapping on small screens */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute space between items */
     font-family: var(--font-style);
-    margin-top: 20px;
-    gap: 900px;
-    height: 20%;
+    margin-top: 20px; /* Adjust as needed */
+    padding: 10px 60px; /* Add some padding for better spacing */
     z-index: 10;
     position: fixed;
+    width: 100%; /* Ensure the navbar takes full width */
+    background-color: white; /* Optional: Set background color */
 }
+
+.navbar-name {
+    display: flex;
+    align-items: center; /* Center the logo and path vertically */
+}
+
+/* Navbar Path Styling */
+.navbar-path {
+    font-size: 16px; /* Match the font size with the other navbar text */
+    font-weight: bold; /* Keep the weight consistent */
+    color: var(--font-color); /* Match the text color */
+    margin-left: 10px; /* Add some space between logo and path label */
+    font-family: var(--navbar-font); /* Ensure the same font family is applied */
+}
+
 .right-navbar {
     display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-top: 15px;
-  }
-  
-  .right-navbar-text {
+    gap: 20px; /* Space between the right navbar items */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.right-navbar-text {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    margin-left: 20px; /* Adjust the spacing between elements */
-    color: #000; /* Adjust color if needed */
-  }
-  
-  .right-navbar-text:hover {
+    font-family: var(--navbar-font); /* Apply Dancing Script font to navbar links */
+    color: var(--font-color);
+    transition: color 0.3s ease;
+}
+
+.right-navbar-text:hover {
+    color: var(--font-color-hover);
     text-decoration: underline;
-    color: #555; /* Optional: change color on hover */
-  }
-
-.navbar-name {
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
 }
 
-/* .navbar > div {
-    position: absolute;
-    right: 10vmin;
-    margin-right: 20%;
-} */
-
-.navbar h1 {
-    margin: 0;
-    padding: 0;
-    margin-left: 20%;
-}
-
-h1 > a {
-    font-size: 20px;
-}
-
-h1 > a:hover {
-    cursor: pointer;
-}
-
-img:hover {
-    cursor: pointer;
-}
-
-.right-navbar-icon {
-    height: 30%;
-}
-
-.right-navbar-icon:hover {
-    -webkit-filter: drop-shadow(1px 1px 1px rgb(146, 144, 144));
-    filter: drop-shadow(1px 1px 1px rgb(146, 144, 144));
-}
-
-#headline {
-    position: absolute;
-    left: 30vmin;
-    margin-top: -20px;
-}
-
-.right-navbar {
-    display: flex;
-    gap: 40px;
-    position: absolute;
-    left: 40%
-}
-
-@media only screen and (max-width: 1400px) { 
-}
-
-@media only screen and (max-width: 600px) { 
-    .navbar > div {
-        position: absolute;
-        left: 10%;
-        margin-right: 5%;
-        width: 70%;
+@media only screen and (max-width: 780px) {
+    .navbar {
+        padding: 10px 10px;
     }
-    .navbar h1 {
-        margin: 0;
-        padding: 0;
-        margin-inline: 0;
-        margin-black: 0;
-        margin-left: 23px;  
+
+}
+
+
+@media only screen and (max-width: 280px) {
+    .navbar {
+        align-items: flex-start;
+    padding: 10px 0px;
     }
-    #headline {
-        position: absolute;
-        left: -22vmin;
-        margin-top: -300px;
+
+    .navbar-name {
+        font-size: 20px; /* Further reduce font size */
     }
-    
-    img {
-        width: 8%;
+
+    .navbar-logo {
+        width: 80px; /* Adjust logo size for smaller screens */
     }
+
     .right-navbar {
-        margin-top: 10px;
-        display: flex;
-        gap: 40px;
-        position: absolute;
-        right: 0;
-        justify-content: flex-end;
+        flex-direction: row; /* Keep links in the same row */
+        justify-content: flex-start;
+        gap: 8px; /* Slightly reduce gap for small screens */
     }
-    #headline {
-        font-size: 30px;
-        margin-top: -30px;
-        margin-left: 22%;
+
+    .right-navbar-text {
+        font-size: 12px; /* Adjust font size for very small screens */
     }
 }

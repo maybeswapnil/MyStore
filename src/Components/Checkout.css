@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 90vh;
-    margin-top: 5%;
+    margin-top: 8%;
     font-family: var(--font-style);
     width: 70%;
     margin-left: auto;
@@ -38,7 +38,7 @@ font-family: var(--font-style);
         grid-template-columns: 1fr 1fr;
         font-family: var(--font-style);
         margin-left: auto;
-    margin-top: 5%;
+        margin-top: 33%;
     }
     
     .checkout-payment {
@@ -54,7 +54,7 @@ font-family: var(--font-style);
     .checkout {
         flex-direction: column;
         height: 100%;
-        margin-top: 15%;
+        margin-top: 24%;
         width: 100%;
     }
     .checkout-payment {

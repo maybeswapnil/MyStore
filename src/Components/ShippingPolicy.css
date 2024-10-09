@@ -1,0 +1,44 @@
+
+
+/* Container for the entire Shipping Policy */
+.shipping-policy-container {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically */
+  text-align: center;      /* Centers text inside the container */
+  flex-direction: column;  /* Aligns children vertically */
+  min-height: 70vh;       /* Ensures container takes full viewport height */
+  padding: 2rem;           /* Adds padding */
+  margin: 0 auto;
+}
+
+/* Style for larger screens */
+@media (min-width: 768px) {
+  .shipping-policy-container {
+    width: 60%;
+    padding: 2rem;
+  }
+}
+
+/* Style for small screens */
+@media (max-width: 767px) {
+  .shipping-policy-container {
+    width: 90%;            /* Set width to 90% for mobile devices */
+    padding: 1rem;         /* Reduce padding */
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  /* Font adjustments */
+  .shipping-policy-container h1 {
+    font-size: 2rem;       /* Slightly smaller font size for the main heading */
+  }
+
+  .shipping-policy-container h2 {
+    font-size: 1.5rem;     /* Smaller font size for subheadings */
+  }
+
+  .shipping-policy-container p {
+    font-size: 1rem;       /* Smaller font size for paragraphs */
+  }
+}

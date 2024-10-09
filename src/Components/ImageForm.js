@@ -1,67 +1,70 @@
-import { useState, useRef } from 'react'
+import { useState, useRef } from 'react';
 import './ImageForm.scss';
-
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addCart, removeCart, selectCart, selectUser } from '../features/userSlice';
-function ImageForm(props) {
 
+function ImageForm(props) {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState('Small (12inch*18inch)');
   const [comments, setComments] = useState('');
   const prices = props.res.price;
-  const [objects, setObject] = useState({
-    quantity: 1,
-    size: 'Small (12inch*18inch)',
-    comments: ''
-  });
+  const [addedToCart, setAddedToCart] = useState(false); // State to track if added to cart
 
-  const navigate = useNavigate()
-  const cart = useSelector(selectCart)
-  const user = useSelector(selectUser)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const addToCart = (obj) => {
-    var cart = JSON.parse(localStorage.getItem('cart')) || []
-    var local = { ...props.res };
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const local = { ...props.res };
     local.quantity = obj.quantity;
     local.size = obj.size;
     local.comments = obj.comments;
-    cart.push(local)
-    localStorage.setItem('cart', JSON.stringify(cart))
-    dispatch(addCart(local))
-  }
 
-  const RemoveFromCart = () => {
-    var cart = JSON.parse(localStorage.getItem('cart')) || []
-    for (var j = 0; j < cart.length; j++) {
-      if (cart[j].name === props.res.name) cart.splice(j, 1)
+    cartItems.push(local);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    dispatch(addCart(local));
+
+    setAddedToCart(true); // Update the state to indicate that the item has been added
+
+    // Reset the addedToCart state back to false after 2 seconds
+    setTimeout(() => {
+      setAddedToCart(false);
+    }, 2000);
+  };
+
+  const removeFromCart = () => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    for (let j = 0; j < cartItems.length; j++) {
+      if (cartItems[j].name === props.res.name) {
+        cartItems.splice(j, 1);
+      }
     }
-    localStorage.setItem('cart', JSON.stringify(cart))
-    dispatch(removeCart(props.res))
-  }
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    dispatch(removeCart(props.res));
+    setAddedToCart(false); // Reset added to cart state when removed
+  };
 
-  const l = useRef(null)
-  const m = useRef(null)
-  const n = useRef(null)
-  const o = useRef(null)
+  const l = useRef(null);
+  const m = useRef(null);
+  const n = useRef(null);
+  const o = useRef(null);
 
   function clearFunction() {
-    l.current.value = ''
-    m.current.value = ''
-    n.current.value = ''
-    o.current.value = ''
+    l.current.value = '';
+    m.current.value = '';
+    n.current.value = '';
+    o.current.value = '';
   }
 
   function submit() {
-    var obj = {
+    const obj = {
       quantity: quantity,
       size: size,
       comments: comments
-    }
+    };
 
-    addToCart(obj)
+    addToCart(obj);
   }
 
   const handleSizeChange = (size) => {
@@ -73,16 +76,16 @@ function ImageForm(props) {
       <br />
       <div className="form-group2" id='margin-left'>
         <div className="product-grid">
-          <h1 className="cart-product-header" >{props.res.name}</h1>
-          <br/>
-          <h3 className="cart-product-desc" >Shot on {props.res.camera}</h3>
-          <h3 className="cart-product-desc" >Ships in  {props.res.shipping_time}</h3>
+          <h1 className="cart-product-header">{props.res.name}</h1>
+          <br />
+          <h3 className="cart-product-desc">Shot on {props.res.camera}</h3>
+          <h3 className="cart-product-desc">Ships in {props.res.shipping_time}</h3>
         </div>
       </div>
       <div>
         <div style={{ display: 'flex', gap: '10px' }}>
           {Object.keys(prices).map((size) => (
-            <button class="button-6" role="button"
+            <button className="button-6" role="button"
               key={size}
               onClick={() => handleSizeChange(size)}
             >
@@ -98,15 +101,27 @@ function ImageForm(props) {
         </div>
       </div>
       <div className="content-submit">
-        <button className="button-13" style={{ marginLeft: '0px' }} id='submit-button' role="button" onClick={() => { submit(); props.close() }}>Add to Cart</button>
+        <button
+          className="button-13"
+          style={{ 
+            marginLeft: '0px', 
+            backgroundColor: addedToCart ? '#ccf97e' : '#9e5c8b', // Change color based on addedToCart state
+            color: addedToCart ? '#000' : '#f0f0f0' // Optional: change text color
+          }}
+          id='submit-button' 
+          role="button" 
+          onClick={() => { submit(); props.close(); }}
+        >
+          {addedToCart ? 'Added' : 'Add to Cart'} {/* Change button text based on addedToCart state */}
+        </button>
       </div>
       <br />
-      <p id='random-sentence' style={{ color: 'black' }}>This lightweight, soft Cactus canvas will fast become your favorite. It's made with our 100% Certified Organic Cotton fabric giving premium feel.   </p>
+      <p id='random-sentence' style={{ color: 'black' }}>
+        This lightweight, soft Cactus canvas will fast become your favorite. It's made with our 100% Certified Organic Cotton fabric giving premium feel.
+      </p>
       <br />
     </div>
   );
 }
 
 export default ImageForm;
-
-

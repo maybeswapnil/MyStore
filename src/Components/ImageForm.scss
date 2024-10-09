@@ -12,7 +12,7 @@
 
     --group-color: var(--input-color);
     --group-border: var(--input-border);
-    --group-background: #f1d11a1c;
+    --group-background: #bae08d;
 
     --group-color-focus: #fff;
     --group-border-focus: var(--input-border-focus);
@@ -178,6 +178,10 @@
     }
 }
 
+.form-group2 span {
+  font-weight: bold;
+}
+
 html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -324,7 +328,7 @@ textarea {
     line-height: 25px;
     color: var(--group-color);
     border: 1px solid var(--group-border);
-    transition: background .3s ease, border .3s ease, color .3s ease;
+    transition:  border .3s ease;
 }
 
 * {

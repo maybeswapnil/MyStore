@@ -1,8 +1,9 @@
 import React from 'react';
+import './ShippingPolicy.css';
 
 const ShippingPolicy = () => {
   return (
-    <div style={{ width: '60%', marginLeft: "auto", marginRight: "auto", paddingTop: "5%", paddingBottom: "8%" }}>
+    <div className="shipping-policy-container">
       <h1>Shipping Policy</h1>
       <h2>Domestic Shipping</h2>
       <p>

@@ -20,6 +20,7 @@
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+    margin-top: 10%;
 }
 
 #home-collection {
@@ -180,6 +181,7 @@
 @media only screen and (max-width: 600px) {
     .home {
         height: 140vh;
+        margin-top: 20rem;
     }
     .home-description-two {
         width: 100%;
@@ -248,7 +250,7 @@
     }
 
     .home {
-        margin-top: 350px;
+        margin-top: 100%;
     }
 
     .home-flex-two {

@@ -1,0 +1,29 @@
+.full-screen-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Change background to white */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black; /* Change text color to black for better contrast */
+    font-size: 2rem; /* Adjust font size as needed */
+    z-index: 9999; /* Ensure it is above other content */
+    padding: 20px; /* Add padding to avoid content touching edges */
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
+}
+
+.gif {
+    max-width: 100%; /* Allow the GIF to take full width */
+    max-height: 60%; /* Limit height to 60% of viewport height */
+    width: auto; /* Keep aspect ratio */
+    height: auto; /* Keep aspect ratio */
+}
+
+.countdown {
+    margin-top: 20px; /* Space between GIF and countdown */
+    font-size: 1.5rem; /* Smaller font for the countdown */
+}

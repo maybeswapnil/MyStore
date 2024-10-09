@@ -16,10 +16,11 @@ function CheckoutForm() {
     const [houseNo, setHouseNumber] = useState('');
     const [postalCode, setPostalCode] = useState(0);
     const [phone, setPhone] = useState('');
+    const [state, setState] = useState(''); // New state field
     const [error, setError] = useState('');
     const [orderInfo, setInfo] = useState('');
     const [viewOrderConfirmation, setOrderConfirmation] = useState(false);
-    const [loading, setLoading] = useState(false); // Loading state
+    const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
 
     const [extraInformation, setExtraInformation] = useState('');
@@ -44,9 +45,9 @@ function CheckoutForm() {
 
     function submit(e) {
         e.preventDefault();
-        setLoading(true); // Start loading when submitting
+        setLoading(true);
 
-        if (postalCode !== 0 && email !== '' && phone !== '' && address !== '' && cityName !== '') {
+        if (postalCode !== 0 && email !== '' && phone !== '' && address !== '' && cityName !== '' && state !== '') {
             const payload = { orders: [], cart: [] };
             const data = JSON.stringify({
                 email: payload.email,
@@ -63,13 +64,14 @@ function CheckoutForm() {
                     postalCode: postalCode,
                     phone: phone,
                     email: email,
+                    state: state, // Include state in shipping info
                 },
                 cart: cart,
             });
 
             const config = {
                 method: 'post',
-                url: 'https://mystore-apiset.onrender.com/mystore/create-order', // Updated backend endpoint
+                url: 'https://mystore-apiset.onrender.com/mystore/create-order',
                 headers: { 'Content-Type': 'application/json' },
                 data: data,
             };
@@ -79,7 +81,7 @@ function CheckoutForm() {
                     const { amount, order_id, currency } = response.data;
 
                     const options = {
-                        key: 'rzp_test_uJuMyCULeuuS24', // Replace with your Razorpay Key ID
+                        key: 'rzp_test_uJuMyCULeuuS24',
                         amount: amount * 100,
                         currency: currency,
                         name: 'Swapnil Sharma Print Company',
@@ -126,19 +128,19 @@ function CheckoutForm() {
 
                     const rzp = new window.Razorpay(options);
                     rzp.open();
-                    setLoading(false); // Stop loading when Razorpay opens
+                    setLoading(false);
                 })
                 .catch(function (error) {
                     console.log(error);
                     setError('Payment initiation failed');
-                    setLoading(false); // Stop loading if there's an error
+                    setLoading(false);
                     setTimeout(() => {
                         setError('');
                     }, 2000);
                 });
         } else {
             setError('Fields are Empty');
-            setLoading(false); // Stop loading if fields are empty
+            setLoading(false);
             setTimeout(() => {
                 setError('');
             }, 2000);
@@ -172,6 +174,10 @@ function CheckoutForm() {
                 <input className="form-field" type="text" placeholder="City" ref={n} onChange={(e) => setCityName(e.target.value)} required />
             </div>
             <div className="form-group2">
+                <span style={{ width: '100px' }}>{'State'}</span> {/* New state field label */}
+                <input className="form-field" type="text" placeholder="State" ref={n} onChange={(e) => setState(e.target.value)} required /> {/* New input for state */}
+            </div>
+            <div className="form-group2">
                 <span style={{ width: '100px' }}>{'Postal code'}</span>
                 <input className="form-field" type="number" placeholder="Postal code" ref={n} onChange={(e) => setPostalCode(e.target.value)} required />
             </div>
@@ -193,12 +199,9 @@ function CheckoutForm() {
                 >
                     {loading ? 'Checking out...' : 'Continue to Shipping'} {/* Change button text based on loading state */}
                 </button>
-            </div>
-            <br />
-            <div className="content-submit" >
                 <button 
                     className="button-13" 
-                    style={{ marginLeft: '0px', width: '100px', backgroundColor: 'black' }} 
+                    style={{ marginLeft: '10px', width: '100px', backgroundColor: 'black' }} 
                     id='submit-button' 
                     role="button" 
                     onClick={() => { window.location.href = "/shipping_policy" }}

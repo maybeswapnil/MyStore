@@ -1,0 +1,111 @@
+/* Invoice.css */
+.invoice-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial, sans-serif';
+    background: #ffffff;
+    margin-top: 10%;
+  }
+  
+  .invoice-header {
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .invoice-header h1 {
+    color: #333;
+  }
+  
+  .invoice-date, .invoice-id {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .payment-status {
+    font-weight: bold;
+    text-transform: capitalize;
+    display: inline-block;
+    margin: 5px 0;
+  }
+  
+  .payment-status.completed {
+    color: green;
+  }
+  
+  .payment-status.pending {
+    color: orange;
+  }
+  
+  .payment-status.failed {
+    color: red;
+  }
+  
+  .invoice-section {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-section h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  .invoice-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .invoice-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+  .invoice-item-details {
+    color: #333;
+  }
+  
+  .invoice-item-details p {
+    margin: 4px 0;
+  }
+  
+  .invoice-total {
+    font-size: 18px;
+    text-align: right;
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: 2px solid #f0f0f0;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .invoice-container {
+  margin-top: 33%;
+      padding: 15px;
+    }
+  
+    .invoice-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .invoice-item-image {
+      margin: 0 0 10px 0;
+    }
+  
+    .invoice-total {
+      text-align: left;
+    }
+  }
+  

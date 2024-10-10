@@ -3,8 +3,6 @@ import './CheckoutForm.scss';
 import axios from 'axios';
 import { emptyCart, selectCart, selectUser } from '../features/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import InformationPopup from './InformationPopup';
 import OrderPlaced from './OrderPlaced';
 
 function CheckoutForm() {
@@ -101,7 +99,8 @@ function CheckoutForm() {
                                     localStorage.removeItem('cart');
                                     setTimeout(() => {
                                         setOrderConfirmation(false);
-                                        window.location.href = "/";
+                                        window.location.href = `/invoice?order_id=${response.data.order_id}`;
+                                        console.log(response.data)
                                     }, 4000);
                                 })
                                 .catch(function (error) {

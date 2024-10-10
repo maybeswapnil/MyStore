@@ -16,6 +16,7 @@ import ProductPage from "./Components/ProductPage";
 import LoginLoad from "./Components/LoginLoad";
 import { Buffer } from 'buffer';
 import ShippingPolicy from "./Components/ShippingPolicy";
+import Invoice from "./Components/Invoice";
 window.Buffer = Buffer;
 
 export default function App() {
@@ -56,12 +57,14 @@ export default function App() {
         <Link to="/checkout" />
         <Link to="/product" />
         <Link to="/shipping_policy" />
+        <Link to="/invoice" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/shipping_policy" element={<ShippingPolicy />} />
+          <Route path="/invoice" element={<Invoice />} />
         </Routes>
       </Router>
       <Footer />

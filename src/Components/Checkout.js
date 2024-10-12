@@ -50,9 +50,7 @@ export default function Checkout() {
         </div>
       </div>
         <div className="cart-grid">
-          
           {cart.map((res) => {return(<YourCart res={res} from={'checkout'}/>)})}
-
           </div>
           {cart.length>0?<div className="cart-product-flex" >
         <div>

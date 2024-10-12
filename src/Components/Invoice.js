@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Invoice.css'; // Import the CSS file
+import Loading from './Loading';
 
 const Invoice = () => {
     const params = new URLSearchParams(window.location.search);
-    const orderId = params.get('order_id'); // Get the orderId from the URL path
+    const orderId = params.get('order_id'); // Get the orderId from the URL
     const [invoiceData, setInvoiceData] = useState(null);
     const [loading, setLoading] = useState(true); // Track loading state
     const [error, setError] = useState(null); // Track error state
@@ -37,52 +38,78 @@ const Invoice = () => {
         }
     }, [orderId]);
 
-    if (loading) return <p>Loading...</p>; // Show loading message
-    if (error) return <p className="error-message">Error: {error}</p>; // Show error message
+    if (loading)  return  <div className="loadingCart"><Loading /></div>; // Loading state
+    if (error) return <p className="loadingCart">Error: {error}</p>; // Show error message
 
     // Destructure the properties from the invoiceData object
-    const { shippingInfo, cart, amount, payment_status, created_at, razorpay_payment_id, razorpay_signature, order_id } = invoiceData;
+    const { shippingInfo, cart, amount, created_at, order_id } = invoiceData;
 
     return (
         <div className="invoice-container">
+            {/* Header Section */}
             <div className="invoice-header">
-                <h1>Invoice</h1>
-                <p className="invoice-date">Invoice Date: {new Date(created_at).toLocaleString()}</p>
-                <p>Order ID: <span className="invoice-id">{order_id}</span></p>
-                <p>Payment Status: <span className={`payment-status ${payment_status.toLowerCase()}`}>{payment_status}</span></p>
-                <p>Razorpay Payment ID: {razorpay_payment_id}</p>
+                <div className="invoice-logo">
+                    <img src="https://i.imgur.com/xxsj5QF.png" alt="Logo" />
+                </div>
+                <div className="invoice-details">
+                    <p>Narsinghpur, Madhya Pradesh, 487001</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@yourcompany.com</p>
+                </div>
+                <div className="invoice-meta">
+                    <p>Invoice No: {order_id}</p>
+                    <p>Date: {new Date(created_at).toLocaleDateString()}</p>
+                </div>
             </div>
 
-            {/* Shipping Information */}
-            <div className="invoice-section">
-                <h2>Shipping Information</h2>
-                <p>Name: {shippingInfo.firstName} {shippingInfo.lastName}</p>
-                <p>Address: {shippingInfo.houseNo} {shippingInfo.address}, {shippingInfo.cityName}</p>
-                <p>Phone: {shippingInfo.phone}</p>
-                <p>Email: {shippingInfo.email}</p>
+            {/* Billing and Shipping Section */}
+            <div className="invoice-billing-shipping">
+                <div className="bill-to">
+                    <h3>Bill To:</h3>
+                    <p>{shippingInfo.firstName} {shippingInfo.lastName}</p>
+                    <p>{shippingInfo.address}, {shippingInfo.cityName}, {shippingInfo.state}, {shippingInfo.postalCode}</p>
+                    <p>Email: {shippingInfo.email}</p>
+                    <p>Phone: {shippingInfo.phone}</p>
+                </div>
+                <div className="ship-to">
+                    <h3>Ship To:</h3>
+                    <p>{shippingInfo.firstName} {shippingInfo.lastName}</p>
+                    <p>{shippingInfo.address}, {shippingInfo.cityName}, {shippingInfo.state}, {shippingInfo.postalCode}</p>
+                    <p>Email: {shippingInfo.email}</p>
+                    <p>Phone: {shippingInfo.phone}</p>
+                </div>
             </div>
 
-            {/* Order Summary */}
-            <div className="invoice-section">
-                <h2>Order Summary</h2>
-                {cart.map((item) => (
-                    <div key={item._id} className="invoice-item">
-                        <img src={item.smallurl} alt={item.name} className="invoice-item-image" />
-                        <div className="invoice-item-details">
-                            <p><strong>Title:</strong> {item.name}</p>
-                            <p><strong>Size:</strong> {item.size}</p>
-                            <p><strong>Price:</strong> ₹{item.price[item.size]}</p>
-                            <p><strong>Quantity:</strong> {item.quantity}</p>
-                            <p><strong>Camera Used:</strong> {item.camera}</p>
-                            <p><strong>Shipping Time:</strong> {item.shipping_time}</p>
-                        </div>
-                    </div>
-                ))}
+            {/* Order Items Table */}
+            <div className="invoice-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cart.map((item) => (
+                            <tr key={item._id}>
+                                <td>{item.name} ({item.size})</td>
+                                <td>{item.quantity}</td>
+                                <td>₹{item.price[item.size]}</td>
+                                <td>₹{item.price[item.size] * item.quantity}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
 
-            {/* Total Amount */}
-            <div className="invoice-total">
-                <h2>Total Amount: ₹{amount/100}</h2>
+            {/* Invoice Totals */}
+            <div className="invoice-totals">
+                <p>Subtotal: ₹{amount / 100}</p>
+                <p>Tax (0%): ₹0.00</p>
+                <p>Shipping: ₹0.00</p>
+                <h3>Total: ₹{amount / 100}</h3>
             </div>
         </div>
     );

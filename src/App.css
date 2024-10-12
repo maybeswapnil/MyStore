@@ -28,7 +28,6 @@ body {
 
 .App {
   overflow: auto;
-  height: 90%;
   min-height: 100vh;
 }
 .navbar-background {

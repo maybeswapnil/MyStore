@@ -11,8 +11,6 @@ import { addCart, removeCart } from "../features/userSlice";
 export default function YourCart(props) {
   const [view, setView] = useState(false)
   const navigate = useNavigate()
-  const cart = useSelector(selectCart)
-  const user = useSelector(selectUser)
   const dispatch = useDispatch()
   const [added, setAdded] = useState(false)
 
@@ -24,7 +22,7 @@ export default function YourCart(props) {
   }
 
   const RemoveFromCart = () => {
-    setAdded(true)
+    setAdded(!added)
     setTimeout(() =>{
       setAdded(false)
       var cart = JSON.parse(localStorage.getItem('cart'))||[];
@@ -36,6 +34,7 @@ export default function YourCart(props) {
       dispatch(removeCart(props.res))
     }, 500)
   }
+
   return (
     <div className="your-cart-product" >
       <div className="your-cart-product-flex" >
@@ -43,7 +42,7 @@ export default function YourCart(props) {
           <img className="your-cart-cart-image" src={props.res.url} />
         </div>
         <div className="your-cart-product-grid-main">
-            <h1 className="your-cart-cart-product-header" >{props.res.name}</h1>
+            <h1 className="your-cart-cart-product-header" onClick={() => (window.location.href='/product?sku='+props.res.sku)} >{props.res.name}</h1>
             <h4 id='cart-info-mobile'>₹ {props.res.price[props.res.size]} per canvas</h4>
             <h4 id='cart-info-mobile'>Size: {props.res.size}</h4>
             <h4 id='cart-info-mobile'>Quantity: x {props.res.quantity}</h4>

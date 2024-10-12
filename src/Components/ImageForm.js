@@ -73,7 +73,6 @@ function ImageForm(props) {
 
   return (
     <div className="main-form3" id='margin-left'>
-      <br />
       <div className="form-group2" id='margin-left'>
         <div className="product-grid">
           <h1 className="cart-product-header">{props.res.name}</h1>
@@ -115,11 +114,6 @@ function ImageForm(props) {
           {addedToCart ? 'Added' : 'Add to Cart'} {/* Change button text based on addedToCart state */}
         </button>
       </div>
-      <br />
-      <p id='random-sentence' style={{ color: 'black' }}>
-        This lightweight, soft Cactus canvas will fast become your favorite. It's made with our 100% Certified Organic Cotton fabric giving premium feel.
-      </p>
-      <br />
     </div>
   );
 }

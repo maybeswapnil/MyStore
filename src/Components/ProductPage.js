@@ -36,7 +36,7 @@ export default function ProductPage() {
   };
 
   if (loading) {
-    return <Loading />; // Show loading indicator
+    return  <div className="loadingCart"><Loading /></div>; // Loading state
   }
 
   if (error) {
@@ -50,7 +50,6 @@ export default function ProductPage() {
   return (
     <>
       <div className="full-window-container">
-        
         <div className="product-page-container">
           <div className="product-container">
             <div className="product-card">

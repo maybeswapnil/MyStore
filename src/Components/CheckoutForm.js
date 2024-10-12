@@ -34,13 +34,6 @@ function CheckoutForm() {
         setOrderConfirmation(true);
     };
 
-    function clearFunction() {
-        l.current.value = '';
-        m.current.value = '';
-        n.current.value = '';
-        o.current.value = '';
-    }
-
     function submit(e) {
         e.preventDefault();
         setLoading(true);
@@ -211,11 +204,6 @@ function CheckoutForm() {
             <div className="content-error">
                 <h4>{error}</h4>
             </div>
-            <br />
-            <p id='random-sentence' style={{ color: 'black' }}>
-                This lightweight, soft Cactus will fast become your favorite. It's made with our 100% Certified Organic Cotton fabric giving you a fit that's stylish year-round.
-            </p>
-            <br />
         </form>
     );
 }

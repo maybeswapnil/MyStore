@@ -69,10 +69,10 @@ function CheckoutForm() {
 
             axios(config)
                 .then(function (response) {
-                    const { amount, order_id, currency } = response.data;
+                    const { amount, order_id, currency, razorpay_key_id } = response.data;
 
                     const options = {
-                        key: 'rzp_test_uJuMyCULeuuS24',
+                        key: razorpay_key_id,
                         amount: amount * 100,
                         currency: currency,
                         name: 'Swapnil Sharma Print Company',
@@ -90,11 +90,7 @@ function CheckoutForm() {
                                     setOrderInfo("Order placed", response.data.order_id);
                                     dispatch(emptyCart());
                                     localStorage.removeItem('cart');
-                                    setTimeout(() => {
-                                        setOrderConfirmation(false);
-                                        window.location.href = `/invoice?order_id=${response.data.order_id}`;
-                                        console.log(response.data)
-                                    }, 4000);
+                                    window.location.href = `/invoice?order_id=${response.data.order_id}`;
                                 })
                                 .catch(function (error) {
                                     console.log(error);
@@ -141,7 +137,6 @@ function CheckoutForm() {
 
     return (
         <form className="main-form2" style={{ marginTop: '0px' }} id="form-main2" onSubmit={(e) => submit(e)}>
-            {viewOrderConfirmation ? <OrderPlaced value={orderInfo} /> : null}
             <br />
             <div className="form-group2">
                 <div className="product-grid">

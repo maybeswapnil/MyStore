@@ -1,12 +1,46 @@
 .invoice-container {
     width: 80%;
+    max-width: 1200px; /* Limit maximum width */
     margin: 150px auto;
     border: 1px solid #ddd;
     padding: 20px;
-    background-color: white; /* Set the background to white */
+    background-color: white;
     font-family: Arial, sans-serif;
     margin-top: 150px;
     margin-bottom: 65px;
+}
+
+.print-button {
+    background-color: #800000;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.print-button:hover {
+    background-color: #600000;
+}
+
+/* Hide print button when printing */
+@media print {
+    .print-button {
+        display: none;
+    }
+}
+
+
+/* Ensure the layout fits smaller screens */
+@media (max-width: 768px) {
+    .invoice-container {
+        width: 95%;
+        margin-top: 100px;
+        padding: 15px;
+        margin-bottom: 40px;
+    }
 }
 
 .invoice-header {
@@ -16,17 +50,21 @@
     padding-bottom: 20px;
 }
 
+/* Stack elements vertically on small screens */
+@media (max-width: 768px) {
+    .invoice-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .invoice-details, .invoice-meta {
+        text-align: center;
+    }
+}
+
 .invoice-logo img {
-    width: 100px; /* Adjust the size of your logo */
+    width: 100%;
+    max-width: 150px; /* Limit logo size */
     height: auto;
-}
-
-.invoice-details {
-    text-align: left;
-}
-
-.invoice-meta {
-    text-align: right;
 }
 
 .invoice-meta p, .invoice-details p {
@@ -39,8 +77,17 @@
     margin-top: 30px;
 }
 
-.bill-to, .ship-to {
-    width: 45%;
+/* Stack billing and shipping sections on small screens */
+@media (max-width: 768px) {
+    .invoice-billing-shipping {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bill-to, .ship-to {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
 
 .bill-to h3, .ship-to h3 {
@@ -54,6 +101,8 @@
 .invoice-table table {
     width: 100%;
     border-collapse: collapse;
+    overflow-x: auto;
+    display: block; /* Ensure table scrolls on small screens */
 }
 
 .invoice-table th, .invoice-table td {
@@ -69,6 +118,13 @@
 .invoice-totals {
     margin-top: 30px;
     text-align: right;
+}
+
+/* Adjust totals section on small screens */
+@media (max-width: 768px) {
+    .invoice-totals {
+        text-align: center;
+    }
 }
 
 .invoice-totals p {

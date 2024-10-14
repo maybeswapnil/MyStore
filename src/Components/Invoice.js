@@ -82,14 +82,7 @@ const Invoice = () => {
                 {/* Billing and Shipping Section */}
                 <div className="invoice-billing-shipping">
                     <div className="bill-to">
-                        <h3>Bill To:</h3>
-                        <p>{shippingInfo.firstName} {shippingInfo.lastName}</p>
-                        <p>{shippingInfo.address}, {shippingInfo.cityName}, {shippingInfo.state}, {shippingInfo.postalCode}</p>
-                        <p>Email: {shippingInfo.email}</p>
-                        <p>Phone: {shippingInfo.phone}</p>
-                    </div>
-                    <div className="ship-to">
-                        <h3>Ship To:</h3>
+                        <h3>Bill & Ship To:</h3>
                         <p>{shippingInfo.firstName} {shippingInfo.lastName}</p>
                         <p>{shippingInfo.address}, {shippingInfo.cityName}, {shippingInfo.state}, {shippingInfo.postalCode}</p>
                         <p>Email: {shippingInfo.email}</p>

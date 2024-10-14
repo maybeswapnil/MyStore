@@ -735,3 +735,20 @@ textarea {
     border-radius: 0 0 4px 4px;
   }
   
+
+
+.dropdown {
+  width: 80%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-background);
+  color: var(--input-color);
+  transition: border 0.3s ease;
+}
+
+.dropdown:focus {
+  border-color: var(--input-border-focus);
+  outline: none;
+}

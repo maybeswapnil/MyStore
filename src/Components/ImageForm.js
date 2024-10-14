@@ -1,19 +1,18 @@
 import { useState, useRef } from 'react';
 import './ImageForm.scss';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { addCart, removeCart, selectCart, selectUser } from '../features/userSlice';
+import { useDispatch } from 'react-redux';
+import { addCart, removeCart } from '../features/userSlice';
 
 function ImageForm(props) {
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState('Small (12inch*18inch)');
+  const [size, setSize] = useState('Small (12inch*18inch)'); // Default size
   const [comments, setComments] = useState('');
-  const prices = props.res.price;
-  const [addedToCart, setAddedToCart] = useState(false); // State to track if added to cart
+  const prices = props.res.price; // Prices object from props
+  const [addedToCart, setAddedToCart] = useState(false);
 
   const dispatch = useDispatch();
 
+  // Add item to cart
   const addToCart = (obj) => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const local = { ...props.res };
@@ -25,50 +24,34 @@ function ImageForm(props) {
     localStorage.setItem('cart', JSON.stringify(cartItems));
     dispatch(addCart(local));
 
-    setAddedToCart(true); // Update the state to indicate that the item has been added
+    setAddedToCart(true);
 
-    // Reset the addedToCart state back to false after 2 seconds
     setTimeout(() => {
       setAddedToCart(false);
     }, 2000);
   };
 
+  // Remove item from cart
   const removeFromCart = () => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    for (let j = 0; j < cartItems.length; j++) {
-      if (cartItems[j].name === props.res.name) {
-        cartItems.splice(j, 1);
-      }
-    }
-    localStorage.setItem('cart', JSON.stringify(cartItems));
+    const filteredItems = cartItems.filter(item => item.name !== props.res.name);
+    localStorage.setItem('cart', JSON.stringify(filteredItems));
     dispatch(removeCart(props.res));
-    setAddedToCart(false); // Reset added to cart state when removed
+    setAddedToCart(false);
   };
 
-  const l = useRef(null);
-  const m = useRef(null);
-  const n = useRef(null);
-  const o = useRef(null);
+  const handleSizeChange = (e) => {
+    setSize(e.target.value);
+  };
 
-  function clearFunction() {
-    l.current.value = '';
-    m.current.value = '';
-    n.current.value = '';
-    o.current.value = '';
-  }
-
-  function submit() {
+  // On form submission, add item to cart
+  const submit = () => {
     const obj = {
       quantity: quantity,
       size: size,
       comments: comments
     };
-
     addToCart(obj);
-  }
-
-  const handleSizeChange = (size) => {
-    setSize(size);
   };
 
   return (
@@ -79,39 +62,39 @@ function ImageForm(props) {
           <br />
           <h3 className="cart-product-desc">Shot on {props.res.camera}</h3>
           <h3 className="cart-product-desc">Ships in {props.res.shipping_time}</h3>
+          <p className="cart-product-desc">{props.res.description}</p>
         </div>
       </div>
+      {/* Dropdown to select the size */}
       <div>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          {Object.keys(prices).map((size) => (
-            <button className="button-6" role="button"
-              key={size}
-              onClick={() => handleSizeChange(size)}
-            >
-              {size}
-            </button>
+        <select className="dropdown" value={size} onChange={handleSizeChange}>
+          {Object.keys(prices).map((sizeOption) => (
+            <option key={sizeOption} value={sizeOption}>
+              {sizeOption}
+            </option>
           ))}
-        </div>
+        </select>
 
         {/* Show the selected size and its price */}
         <div style={{ marginTop: '20px' }}>
-          <h5>{size}</h5>
           <h2>₹ {prices[size]}</h2>
         </div>
       </div>
+
+      {/* Add to Cart Button */}
       <div className="content-submit">
         <button
           className="button-13"
           style={{ 
             marginLeft: '0px', 
-            backgroundColor: addedToCart ? '#ccf97e' : '#9e5c8b', // Change color based on addedToCart state
-            color: addedToCart ? '#000' : '#f0f0f0' // Optional: change text color
+            backgroundColor: addedToCart ? '#ccf97e' : '#9e5c8b',
+            color: addedToCart ? '#000' : '#f0f0f0'
           }}
           id='submit-button' 
           role="button" 
           onClick={() => { submit(); props.close(); }}
         >
-          {addedToCart ? 'Added' : 'Add to Cart'} {/* Change button text based on addedToCart state */}
+          {addedToCart ? 'Added' : 'Add to Cart'}
         </button>
       </div>
     </div>

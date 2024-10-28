@@ -21,7 +21,7 @@ export default function Footer() {
 
       <ul className="nav__ul">
         <li>
-          <a href="https://www.pexels.com/@eyeswithmyopia/">Pexels</a>
+          <a href="https://www.pexels.com/@hellochemo/">Pexels</a>
         </li>
 
         <li>

@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Conditionally show Product or Collection adjacent to the logo */}
       </h1>
 
-      <div className='right-navbar'>\
+      <div className='right-navbar'>
         {/* Cart Link with Item Count */}
         {!view && (
           <span className='right-navbar-text' onClick={() => navigate('/checkout')}>

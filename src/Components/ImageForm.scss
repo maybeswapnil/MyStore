@@ -49,6 +49,10 @@
   width: auto;
 }
 
+.bolder {
+  font-weight: bold;
+}
+
 .button-6:hover,
 .button-6:focus {
   border-color: rgba(0, 0, 0, 0.15);
@@ -746,6 +750,8 @@ textarea {
   background-color: var(--input-background);
   color: var(--input-color);
   transition: border 0.3s ease;
+  font-family: "Space Grotesk", sans-serif;
+
 }
 
 .dropdown:focus {

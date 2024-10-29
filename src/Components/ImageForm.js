@@ -60,8 +60,8 @@ function ImageForm(props) {
         <div className="product-grid">
           <h1 className="cart-product-header">{props.res.name}</h1>
           <br />
-          <h3 className="cart-product-desc">Shot on {props.res.camera}</h3>
-          <h3 className="cart-product-desc">Ships in {props.res.shipping_time}</h3>
+          <h3 className="cart-product-desc">Shot on <span className='bolder'>{props.res.camera}</span></h3>
+          <h3 className="cart-product-desc">Ships in <span className='bolder'>{props.res.shipping_time}</span></h3>
           <p className="cart-product-desc">{props.res.description}</p>
         </div>
       </div>

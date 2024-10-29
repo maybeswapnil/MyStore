@@ -19,7 +19,7 @@ const ShippingPolicy = () => {
         We only make use of reliable courier companies and/or Speed Post. Swapnil Sharma Print Company is not liable for any delays in delivery by the Courier Company/ Speed Post or on account of any factors beyond the control of Swapnil Sharma Print Company. We shall endeavor to ensure timely delivery of your order within the estimated time as mentioned in the order confirmation.
       </p>
       <p>
-        In the unlikely event that delivery is not possible for any reasons outside the control of Swapnil Sharma Design, including but not limited to poor courier services in the delivery area, inaccessibility of the delivery area, force major events as laid out hereinafter, we shall inform you of such inability to deliver and cancel your order, followed by a full refund.
+        In the unlikely event that delivery is not possible for any reasons outside the control of Swapnil Sharma Print Company, including but not limited to poor courier services in the delivery area, inaccessibility of the delivery area, force major events as laid out hereinafter, we shall inform you of such inability to deliver and cancel your order, followed by a full refund.
       </p>
     </div>
   );

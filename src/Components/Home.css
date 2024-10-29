@@ -38,6 +38,8 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    cursor: pointer;
+
   }
   
   .button-89:hover,

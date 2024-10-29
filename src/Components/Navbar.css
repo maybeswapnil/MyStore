@@ -50,6 +50,7 @@ body {
     width: 120px;
     height: auto;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .right-navbar {

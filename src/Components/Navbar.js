@@ -43,37 +43,30 @@ export default function Navbar() {
   const pathLabel = location.pathname.includes('/product')
     ? 'Product'
     : location.pathname.includes('/collection')
-    ? 'Collection'
-    : location.pathname.includes('/checkout')
-    ? 'Checkouts'
-    : '';
+      ? 'Collection'
+      : location.pathname.includes('/checkout')
+        ? 'Checkouts'
+        : '';
 
   return (
     <div className="navbar">
       <h1 onClick={() => navigate('/')} className="navbar-name">
         <img
           src="https://i.imgur.com/xxsj5QF.png"
-          alt="Swapnil Sharma"
+          alt="Swapnil Sharma Print Company"
           className="navbar-logo"
         />
+        <span className='right-navbar-text' onClick={() => window.open('https://www.instagram.com/hellochemo', '_blank')}>
+          <img width="30" height="30" src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="instagram-new--v1" />
+        </span>
         {/* Conditionally show Product or Collection adjacent to the logo */}
-        {pathLabel && (
-          <span className="navbar-path">
-            {pathLabel} {/* This will show "Product" or "Collection" */}
-          </span>
-        )}
       </h1>
 
-      <div className='right-navbar'>
-        {/* Instagram Link */}
-        <span className='right-navbar-text' onClick={() => window.open('https://www.instagram.com/hellochemo', '_blank')}>
-          Instagram
-        </span>
-
+      <div className='right-navbar'>\
         {/* Cart Link with Item Count */}
         {!view && (
           <span className='right-navbar-text' onClick={() => navigate('/checkout')}>
-            Cart {cartLength > 0 ? `(${cartLength})` : ''}
+            <img width="30" height="30" src="https://img.icons8.com/emoji/48/shopping-cart-emoji.png" alt="shopping-cart-emoji" />
           </span>
         )}
       </div>

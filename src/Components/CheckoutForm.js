@@ -195,15 +195,6 @@ function CheckoutForm() {
                 >
                     Shipping Policy
                 </button>
-                <button 
-                    className="button-13" 
-                    style={{ marginLeft: '10px', width: '120px', backgroundColor: 'black' }} 
-                    id='submit-button' 
-                    role="button" 
-                    onClick={() => { window.location.href = "/returns-policy" }}
-                >
-                    Return Policy
-                </button>
             </div>
             <div className="content-error">
                 <h4>{error}</h4>

@@ -64,7 +64,7 @@ const TermsAndConditions = () => {
       <div className="policy-section">
         <div className="policy-subtitle">Governing Law</div>
         <p>
-          These terms and conditions are governed by and construed in accordance with the laws of the Netherlands. Any disputes arising from these terms will be resolved in the jurisdiction of the Netherlands.
+          These terms and conditions are governed by and construed in accordance with the laws of India. Any disputes arising from these terms will be resolved in the jurisdiction of India.
         </p>
       </div>
 

@@ -70,8 +70,8 @@ const Invoice = () => {
                     </div>
                     <div className="invoice-details">
                         <p>Narsinghpur, Madhya Pradesh, 487001</p>
-                        <p>Phone: (123) 456-7890</p>
-                        <p>Email: info@yourcompany.com</p>
+                        <p>Phone: +91 9755448822</p>
+                        <p>Email: info@swapnilsharma.in</p>
                     </div>
                     <div className="invoice-meta">
                         <p>Invoice No: {order_id}</p>
@@ -116,10 +116,7 @@ const Invoice = () => {
 
                 {/* Invoice Totals */}
                 <div className="invoice-totals">
-                    <p>Subtotal: ₹{amount / 100}</p>
-                    <p>Tax (0%): ₹0.00</p>
-                    <p>Shipping: ₹0.00</p>
-                    <h3>Total: ₹{amount / 100}</h3>
+                    <h3>Total: ₹{amount / 100} (Includes Taxes and Shipping charges)</h3>
                 </div>
             </div>
         </div>

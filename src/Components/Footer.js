@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__addr">
-      <img
+        <img
           src="https://i.imgur.com/xxsj5QF.png"
           alt="Swapnil Sharma Print Company"
           className="navbar-logo"
@@ -19,6 +19,24 @@ export default function Footer() {
       </div>
 
       <ul className="footer__nav">
+        <li className="nav__item">
+          <h2 className="nav__title">Legal</h2>
+          <ul className="nav__ul">
+            <li>
+              <a href="/shipping-policy">Shipping Policy</a>
+            </li>
+
+            <li>
+              <a href="/terms-of-service">Terms of service</a>
+            </li>
+            <li>
+              <a href="/privacy-policy">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/returns-policy">Returns Policy</a>
+            </li>
+          </ul>
+        </li>
         <li className="nav__item">
           <h2 className="nav__title">Media</h2>
 
@@ -36,23 +54,7 @@ export default function Footer() {
             </li>
           </ul>
         </li>
-        <li className="nav__item">
-          <h2 className="nav__title">Legal</h2>
 
-          <ul className="nav__ul">
-            <li>
-              <a href="/shipping-policy">Shipping Policy</a>
-            </li>
-
-            <li>
-              <a href="/terms-and-conditions">Terms And Conditions</a>
-            </li>
-
-            <li>
-              <a href="/returns-policy">Returns Policy</a>
-            </li>
-          </ul>
-        </li>
         <li className="nav__item">
           <h2 className="nav__title">Social</h2>
 
@@ -66,7 +68,7 @@ export default function Footer() {
           </ul>
         </li>
       </ul>
-      
+
 
       <div className="legal">
         <p>&copy; 2024 Copyright. All rights reserved.</p>

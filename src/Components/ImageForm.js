@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import './ImageForm.scss';
 import { useDispatch } from 'react-redux';
 import { addCart, removeCart } from '../features/userSlice';
+import loadingGif from '../Resources/loadbutton.gif'
 
 function ImageForm(props) {
   const [quantity, setQuantity] = useState(1);
@@ -9,7 +10,15 @@ function ImageForm(props) {
   const [comments, setComments] = useState('');
   const prices = props.res.price; // Prices object from props
   const [addedToCart, setAddedToCart] = useState(false);
+  const [loading, setLoading] = useState(false);
 
+  const handleClick = () => {
+    setLoading(true);
+    // Simulate a loading state for 2 seconds
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
   const dispatch = useDispatch();
 
   // Add item to cart
@@ -41,11 +50,15 @@ function ImageForm(props) {
   };
 
   const handleSizeChange = (e) => {
-    setSize(e.target.value);
+    console.log(e, "lololo")
+    setSize(e);
   };
 
   // On form submission, add item to cart
   const submit = () => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000)
     const obj = {
       quantity: quantity,
       size: size,
@@ -62,40 +75,74 @@ function ImageForm(props) {
           <br />
           <h3 className="cart-product-desc">Shot on <span className='bolder'>{props.res.camera}</span></h3>
           <h3 className="cart-product-desc">Ships in <span className='bolder'>{props.res.shipping_time}</span></h3>
-          <p className="cart-product-desc">{props.res.description}</p>
+          <p className="cart-product-desc">{props.res.description}</p>         
+          <p className="cart-product-desc">Question? <a href="https://instagram.com/hellochemo">Text me on Instagram</a></p>
         </div>
       </div>
       {/* Dropdown to select the size */}
       <div>
-        <select className="dropdown" value={size} onChange={handleSizeChange}>
+        <h2 className="cart-product-desc"> <span className='bolder'>Size</span></h2>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}> {/* Added flexWrap: 'wrap' */}
           {Object.keys(prices).map((sizeOption) => (
-            <option key={sizeOption} value={sizeOption}>
+            <button
+              key={sizeOption}
+              className="button-37"
+              onClick={() => handleSizeChange(sizeOption)}
+              style={{
+                backgroundColor: size === sizeOption ? '#ccf97e' : '#9e5c8b', // Change to your desired color
+                color: size === sizeOption ? 'black' : 'white', // Change to your desired color
+                fontWeight: size === sizeOption ? '5000' : '400', // Change to your desired color
+
+              }}
+            >
               {sizeOption}
-            </option>
+            </button>
           ))}
-        </select>
+        </div>
 
         {/* Show the selected size and its price */}
         <div style={{ marginTop: '20px' }}>
-          <h2>₹ {prices[size]}</h2>
+          <h3>₹ {prices[size].toLocaleString('en-IN')} INR (including taxes)</h3>
         </div>
       </div>
+      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+        {/* Add to Cart Button */}
+        <div className="content-submit">
+          <button
+            className="button-37"
+            style={{
+              marginLeft: '0px',
+              backgroundColor: addedToCart ? '#ccf97e' : '#ccf97e',
+              color: "black",
+              width: "140px",
+            }}
+            id='submit-button'
+            role="button"
+            onClick={() => { setLoading(true); submit(); }}
+          >
+            {loading ? (
+              <img src={loadingGif} alt="Loading..." style={{ width: '20px', marginRight: '8px' }} />
+            ) : null}
+            {loading ? '' : 'Add to cart'}
+          </button>
+        </div>
+        <div className="content-submit">
+          <button
+            className="button-37"
+            style={{
+              marginLeft: '0px',
+              backgroundColor: addedToCart ? '#9e5c8b' : '#9e5c8b',
+              color: "white",
+            }}
+            id='submit-button'
+            role="button"
+            onClick={() => { submit(); window.location.href = "/checkout"; }}
+          >
+            {'Buy Now'}
+          </button>
+        </div>
+        <p className="cart-product-desc">Printed on high-quality, durable canvas</p>
 
-      {/* Add to Cart Button */}
-      <div className="content-submit">
-        <button
-          className="button-13"
-          style={{ 
-            marginLeft: '0px', 
-            backgroundColor: addedToCart ? '#ccf97e' : '#9e5c8b',
-            color: addedToCart ? '#000' : '#f0f0f0'
-          }}
-          id='submit-button' 
-          role="button" 
-          onClick={() => { submit(); props.close(); }}
-        >
-          {addedToCart ? 'Added' : 'Add to Cart'}
-        </button>
       </div>
     </div>
   );

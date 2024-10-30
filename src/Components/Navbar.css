@@ -66,12 +66,13 @@ body {
     align-items: center; /* Align items vertically in the center */
     justify-content: space-between; /* Distribute space between items */
     font-family: var(--font-style);
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 2vh; /* Adjust as needed */
     padding: 10px 60px; /* Add some padding for better spacing */
     z-index: 10;
     position: fixed;
     width: 100%; /* Ensure the navbar takes full width */
     background-color: white; /* Optional: Set background color */
+    height:8vh;
 }
 
 .navbar-name {

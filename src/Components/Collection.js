@@ -55,9 +55,6 @@ export default function Collection() {
                     );
                 })}
             </div>
-            <br />
-            <br />
-            <br />
         </div>
     );
 }

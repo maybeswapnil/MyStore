@@ -39,7 +39,7 @@ export default function YourCart(props) {
     <div className="your-cart-product" >
       <div className="your-cart-product-flex" >
         <div style={!added?{borderBottom: '2px solid black'}:{borderBottom: '2px solid red'}}>
-          <img className="your-cart-cart-image" src={props.res.url} />
+          <img className="your-cart-cart-image" src={props.res.smallurl} />
         </div>
         <div className="your-cart-product-grid-main">
             <h1 className="your-cart-cart-product-header" onClick={() => (window.location.href='/product?sku='+props.res.sku)} >{props.res.name}</h1>

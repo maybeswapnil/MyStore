@@ -4,27 +4,22 @@ import './ShippingPolicy.css';
 const ReturnPolicy = () => {
   return (
     <div className="return-policy-container">
-      <div className="policy-title">Return Policy</div>
+      <div className="policy-title">Return / Refund / Replacement Policy</div>
 
       <div className="policy-section">
-        <div className="policy-subtitle">No Returns Accepted</div>
-        <p>
-          At <strong>Swapnil Sharma Print Company</strong>, we take great care to ensure that our products meet high standards of quality and craftsmanship. As such, <strong>we do not accept returns</strong> on any items once they have been purchased.
-        </p>
+        <div className="section-title">Damaged Product</div>
+        <p>If you have received a damaged product, please do not worry. Drop us an email at <a href="mailto:info@swapnilsharma.in">info@swapnilsharma.in</a> with images of the damaged product within 48 hours of receiving the order. We will assess the damage and provide a replacement or refund based on your preference.</p>
+        <p>The full amount will be refunded, and it may reflect in your account within 7-10 business days from the date the refund is processed.</p>
       </div>
 
       <div className="policy-section">
-        <div className="policy-subtitle">Order Carefully</div>
-        <p>
-          We encourage customers to carefully review their order details, including size, color, and quantity, before making a purchase. Our team is available to answer any questions and provide further information to help you make informed decisions.
-        </p>
+        <div className="section-title">Cancellation</div>
+        <p>Since all prints are made-to-order, we do not accept any cancellation requests.</p>
       </div>
 
       <div className="policy-section">
-        <div className="policy-subtitle">Contact Us</div>
-        <p>
-          For any questions regarding your order or additional assistance, please contact us at <a href="mailto:info@swapnilsharma.in">info@swapnilsharma.in</a>. We’re here to help with any inquiries.
-        </p>
+        <div className="section-title">Processing Orders</div>
+        <p>Our business hours are 10:00 AM to 6:00 PM Indian Standard Time (IST), Monday through Friday. For any queries, please write to us at <a href="mailto:info@swapnilsharma.in">info@swapnilsharma.in</a>, and we will respond as soon as possible.</p>
       </div>
     </div>
   );

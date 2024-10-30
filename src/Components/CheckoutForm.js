@@ -179,7 +179,7 @@ function CheckoutForm() {
             <div className="content-submit">
                 <button 
                     className="button-13" 
-                    style={{ marginLeft: '0px', width: '200px' }} 
+                    style={{ marginLeft: '0px', width: '170px' }} 
                     type='submit' 
                     id='submit-button' 
                     disabled={loading} // Disable button when loading
@@ -188,12 +188,21 @@ function CheckoutForm() {
                 </button>
                 <button 
                     className="button-13" 
-                    style={{ marginLeft: '10px', width: '100px', backgroundColor: 'black' }} 
+                    style={{ marginLeft: '10px', width: '120px', backgroundColor: 'black' }} 
                     id='submit-button' 
                     role="button" 
                     onClick={() => { window.location.href = "/shipping-policy" }}
                 >
-                    Policy
+                    Shipping Policy
+                </button>
+                <button 
+                    className="button-13" 
+                    style={{ marginLeft: '10px', width: '120px', backgroundColor: 'black' }} 
+                    id='submit-button' 
+                    role="button" 
+                    onClick={() => { window.location.href = "/returns-policy" }}
+                >
+                    Return Policy
                 </button>
             </div>
             <div className="content-error">

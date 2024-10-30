@@ -17,6 +17,8 @@ import LoginLoad from "./Components/LoginLoad";
 import { Buffer } from 'buffer';
 import ShippingPolicy from "./Components/ShippingPolicy";
 import Invoice from "./Components/Invoice";
+import TermsAndConditions from "./Components/TermsAndConditions";
+import ReturnPolicy from "./Components/ReturnPolicy";
 window.Buffer = Buffer;
 
 export default function App() {
@@ -56,15 +58,17 @@ export default function App() {
         <Link to="/collection" />
         <Link to="/checkout" />
         <Link to="/product" />
-        <Link to="/shipping_policy" />
+        <Link to="/shipping-policy" />
         <Link to="/invoice" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/product" element={<ProductPage />} />
-          <Route path="/shipping_policy" element={<ShippingPolicy />} />
+          <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/invoice" element={<Invoice />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/returns-policy" element={<ReturnPolicy />} />
         </Routes>
       </Router>
       <Footer />

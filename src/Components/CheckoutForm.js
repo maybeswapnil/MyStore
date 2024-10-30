@@ -191,7 +191,7 @@ function CheckoutForm() {
                     style={{ marginLeft: '10px', width: '100px', backgroundColor: 'black' }} 
                     id='submit-button' 
                     role="button" 
-                    onClick={() => { window.location.href = "/shipping_policy" }}
+                    onClick={() => { window.location.href = "/shipping-policy" }}
                 >
                     Policy
                 </button>

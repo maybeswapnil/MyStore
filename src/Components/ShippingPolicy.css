@@ -1,44 +1,84 @@
+/* Common styles for all policy components */
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 
-/* Container for the entire Shipping Policy */
-.shipping-policy-container {
-  display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center;     /* Centers content vertically */
-  text-align: center;      /* Centers text inside the container */
-  flex-direction: column;  /* Aligns children vertically */
-  min-height: 70vh;       /* Ensures container takes full viewport height */
-  padding: 2rem;           /* Adds padding */
+.shipping-policy-container,
+.terms-and-conditions-container,
+.return-policy-container {
+  font-family: 'Source Sans Pro', sans-serif;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+  margin-top: 120px;
+  margin-bottom: 40px;
 }
 
-/* Style for larger screens */
-@media (min-width: 768px) {
-  .shipping-policy-container {
-    width: 60%;
-    padding: 2rem;
+.policy-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+  font-weight: bold;
+}
+
+.policy-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  color: #444;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.policy-container p,
+.policy-container a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.policy-container a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.policy-container a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .policy-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .policy-container p,
+  .policy-container a {
+    font-size: 0.95rem;
   }
 }
 
-/* Style for small screens */
-@media (max-width: 767px) {
-  .shipping-policy-container {
-    width: 90%;            /* Set width to 90% for mobile devices */
-    padding: 1rem;         /* Reduce padding */
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+@media (max-width: 480px) {
+  .policy-title {
+    font-size: 1.6rem;
+    text-align: left;
   }
 
-  /* Font adjustments */
-  .shipping-policy-container h1 {
-    font-size: 2rem;       /* Slightly smaller font size for the main heading */
+  .section-title {
+    font-size: 1.2rem;
   }
 
-  .shipping-policy-container h2 {
-    font-size: 1.5rem;     /* Smaller font size for subheadings */
-  }
-
-  .shipping-policy-container p {
-    font-size: 1rem;       /* Smaller font size for paragraphs */
+  .policy-container p,
+  .policy-container a {
+    font-size: 0.9rem;
   }
 }

@@ -8,7 +8,7 @@ export default function Home() {
     <div className="home">
       {/* Video Background */}
       <video className="home-video-background" autoPlay loop muted>
-        <source src="https://videos.pexels.com/video-files/29098991/12572038_2560_1440_25fps.mp4" type="video/mp4" />
+        <source src="https://i.imgur.com/gFjVixe.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

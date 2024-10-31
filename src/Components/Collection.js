@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectCart } from "../features/userSlice";
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 import './Collection.css';
 import Product from "./Product";
 import ProductPage from "./ProductPage";
@@ -24,9 +24,32 @@ export default function Collection() {
 
     useEffect(() => {
         const fetchCollection = async () => {
+            const localStorageKey = 'collection_data'; // Key for local storage
+            const cachedData = localStorage.getItem(localStorageKey);
+            
+            // Check if cached data exists and is still valid
+            if (cachedData) {
+                const { timestamp, data } = JSON.parse(cachedData);
+                const now = Date.now();
+
+                // If the cached data is less than 15 minutes old, use it
+                if (now - timestamp < 900000) {
+                    setCollection(data); // Use cached data
+                    setLoading(false); // No need to set loading state again
+                    return; // Exit the function
+                }
+            }
+
+            // Fetch data from API if no valid cache
             try {
-                const response = await axios.get('https://mystore-apiset.onrender.com/mystore/getCollection'); // Use Axios to fetch data
+                const response = await axios.get('https://mystore-apiset.onrender.com/mystore/getCollection');
                 setCollection(response.data); // Set the fetched collection data
+
+                // Store response in local storage with timestamp
+                localStorage.setItem(localStorageKey, JSON.stringify({
+                    timestamp: Date.now(),
+                    data: response.data
+                }));
             } catch (err) {
                 setError(err.message); // Set the error message
             } finally {
@@ -38,7 +61,7 @@ export default function Collection() {
     }, []); // Empty dependency array means this effect runs once on mount
 
     if (loading) {
-        return  <div className="loadingCart"><Loading /></div>; // Loading state
+        return <div className="loadingCart"><Loading /></div>; // Loading state
     }
 
     if (error) {

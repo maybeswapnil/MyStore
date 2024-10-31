@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+@import url('https://fonts.googleapis.com/css?family=Space+Grotesk');
+
+.unique-description-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.unique-video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+}
+
+.unique-video {
+    width: 100%;
+    height: auto;
+    max-width: 650px;
+    max-height: 650px;
+    aspect-ratio: 1 / 1; /* Ensures video displays as a square */
+    object-fit: cover; /* Crops the video to fill the square */
+}
+
+.unique-text-container {
+    flex: 1;
+    margin-left: 40px;
+    color: #333;
+    max-width: 400px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.unique-text-container-left {
+    flex: 1;
+    margin-right: 40px;
+    color: #333;
+    max-width: 400px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.unique-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.unique-title-left {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Cabin Sketch', cursive;
+    text-align: right;
+}
+
+.unique-description-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.unique-description-text-left{
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+   text-align: right;
+}
+
+@media (max-width: 768px) {
+    .unique-description-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .unique-video-container {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    .unique-text-container {
+        margin-left: 0;
+        padding: 0 20px;
+        order: 1; /* Ensures text is displayed below the video on mobile */
+    }
+    .unique-title {
+        font-size: 20px;
+    }
+    .unique-description-text {
+        font-size: 14px;
+    }
+
+    .unique-text-container-left {
+        margin-left: 0;
+        margin-right: 0;
+
+        padding: 0 20px;
+        order: 1; /* Ensures text is displayed below the video on mobile */
+        text-align: center;
+    }
+    .unique-title-left {
+        font-size: 20px;
+        text-align: center;
+
+    }
+    .unique-description-text-left {
+        font-size: 14px;
+        text-align: center;
+    }
+}

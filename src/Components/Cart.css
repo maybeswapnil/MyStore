@@ -185,14 +185,11 @@
     }
 
     .col-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 0px 0px;
         display: inline-grid;
         justify-items: center;
         margin-top: 40px;
-        width: 100%;
-        margin-left: none;
-        margin-right: none;
         gap: 30px;
     }
 

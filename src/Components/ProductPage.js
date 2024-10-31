@@ -36,7 +36,7 @@ export default function ProductPage() {
       // If the cached data is less than 15 minutes old, use it
       if (now - timestamp < 900000) {
         setProduct(data);
-        setSelectedImage(data.url); // Set selected image from cached data
+        setSelectedImage(data.images[0]); // Set selected image from cached data
         setLoading(false); // No need to set loading state again
         return; // Exit the function
       }

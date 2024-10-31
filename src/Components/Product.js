@@ -26,15 +26,13 @@ export default function Product(props) {
   }
 
   return (
-    <div className="product-container" onClick={() => naviGate(`/product?sku=` +props.res.sku)}>
-      <div 
-        className="product-card" 
+    <div className="product-container" onClick={() => naviGate(`/product?sku=` + props.res.sku)}>
+      <div
+        className="product-card"
         style={{ animationDelay: `${animationDelay}ms`, opacity: 0 }} // Apply animation delay
       >
         {/* Canvas-like frame around the image */}
-        <div className="image-frame">
-          <img className="product-image" src={props.res.url} alt={props.res.name} />
-        </div>
+        <img className="product-image" src={props.res.url} alt={props.res.name} />
         <h2 className="product-name">{props.res.name}</h2>
         <h4 className="product-price">₹ {props.res.price['Small (12inch*18inch)']}</h4>
       </div>

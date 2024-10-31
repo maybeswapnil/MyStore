@@ -24,8 +24,8 @@ const Description = () => {
                 <div className="unique-text-container">
                     <h2 className="unique-title">Shot on High Resolution Cameras</h2>
                     <p className="unique-description-text">
-                        These dye-based prints are created using a six-colour process which makes them exceptionally vibrant and
-                        saturated. The inks are rated to look great for 40+ years when displayed in a frame.
+                    These stunning photographs have been captured using top-tier equipment, including the Sony Alpha 7 III, Canon 1300D, GoPro Hero 10, and Samsung S23 Ultra. Each image showcases remarkable quality and intricate details, ensuring a visually captivating experience.
+
                     </p>
                 </div>
             </div>

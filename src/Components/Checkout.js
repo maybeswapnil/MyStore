@@ -63,9 +63,6 @@ export default function Checkout() {
             <p>Taxes and shipping included <a id='underlined'>₹ {price*0.05}</a></p>
             </div>
       </div>:null}
-      <br/>
-      <br/>
-      <br/>
         </div>
       </div>
     </div>

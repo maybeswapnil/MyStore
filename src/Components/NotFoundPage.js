@@ -1,82 +1,128 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-// Define the moving animation
-const moving = keyframes`
-  0% {
-    background-position: -100vmin 20vmin, 100vmin -25vmin;
+const CabinSketchFont = () => (
+  <link
+    href="https://fonts.googleapis.com/css?family=Cabin+Sketch"
+    rel="stylesheet"
+  />
+);
+
+const redAnimation = keyframes`
+  0% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png); }
+  9.09% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-2.png); }
+  27.27% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-3.png); }
+  36.36% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-4.png); }
+  45.45% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-5.png); }
+  54.54% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-6.png); }
+  63.63% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-7.png); }
+  72.72% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-8.png); }
+  81.81% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-9.png); }
+  100% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png); }
+`;
+
+const blueAnimation = keyframes`
+  0% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png); }
+  9.09% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-2.png); }
+  27.27% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-3.png); }
+  36.36% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-4.png); }
+  45.45% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-5.png); }
+  54.54% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-6.png); }
+  63.63% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-7.png); }
+  72.72% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-8.png); }
+  81.81% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-9.png); }
+  100% { background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png); }
+`;
+
+const opacityRed = keyframes`
+  from { opacity: 1; }
+  25% { opacity: 1; }
+  75% { opacity: .3; }
+  to { opacity: .3; }
+`;
+
+const opacityBlue = keyframes`
+  from { opacity: 0; }
+  25% { opacity: 0; }
+  75% { opacity: 1; }
+  to { opacity: 1; }
+`;
+
+const Site = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 210px;
+  margin-bottom: 100px;
+
+  @media (min-width: 780px) {
+    flex-direction: row;
+    padding: 1em 3em 1em 0;
   }
-  100% {
-    background-position: 100vmin 20vmin, -100vmin -25vmin;
+`;
+
+const Sketch = styled.div`
+  position: relative;
+  height: 400px;
+  min-width: 400px;
+  overflow: visible;
+
+  @media (min-width: 780px) {
+    order: 1;
   }
 `;
 
-// Function to generate multiple shadows
-const multipleShadow = (length) => {
-    let value = '2px -1px 0 #000'; // Initial shadow
-    for (let i = 2; i <= length; i++) {
-        const ho = i * 2; // Horizontal offset
-        const vo = -(ho / 2); // Vertical offset
-        const col = `hsl(0deg, 0%, ${i * 2}%)`; // Color
-        value += `, ${ho}px ${vo}px 0 ${col}`;
-    }
-    return value;
-};
-
-// Styled component for the number
-const Number = styled.div`
-    background: #fff;
-    position: relative; /* Assuming $rl translates to relative */
-    font: 900 30vmin 'Consolas', monospace;
-    letter-spacing: 5vmin;
-    text-shadow: ${multipleShadow(8)};
-    background-color: #673ab7;
-    background-image: radial-gradient(closest-side at 50% 50%, #ffc107 100%, rgba(0, 0, 0, 0)),
-                      radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
-    background-repeat: no-repeat; /* Assuming $rpx translates to no-repeat */
-    background-size: 40vmin 40vmin;
-    mix-blend-mode: screen;
-    animation: ${moving} 10s linear infinite both;
-    width: 100%;
-    text-align: center; /* Assuming $c translates to center */
+const BeeSketch = styled.div`
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
-// Styled component for the text
-const Text = styled.div`
-    font-family: 'Courgette', cursive; /* Make sure to import this font */
-    font-weight: 400;
-    font-size: 5vmin; /* Assuming $n translates to a value */
-
-    span {
-        font-size: 10vmin;
-    }
+const RedBee = styled(BeeSketch)`
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png) no-repeat center center;
+  animation: ${redAnimation} 3s linear infinite, ${opacityRed} 5s linear alternate infinite;
 `;
 
-// Main NotFoundPage component
-const NotFoundPage = () => {
-    return (
-        <div className="number404">
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-            <Number className="number">404</Number>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+const BlueBee = styled(BeeSketch)`
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png) no-repeat center center;
+  animation: ${blueAnimation} 3s linear infinite, ${opacityBlue} 5s linear alternate infinite;
+`;
 
-        </div>
-    );
-};
+const Title = styled.h1`
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 3em;
+  text-align: center;
+  opacity: 0.8;
+
+  @media (min-width: 780px) {
+    text-align: right;
+    padding-bottom: 2em;
+    padding-left: 2em;
+  }
+`;
+
+const Small = styled.small`
+  display: block;
+`;
+
+const NotFoundPage = () => (
+  <>
+    <CabinSketchFont />
+    <Site>
+      <Sketch>
+        <RedBee />
+        <BlueBee />
+      </Sketch>
+      <Title>
+        404: <Small>Page Not Found</Small>
+        <Small>{"<-"} <a href="/collection" onClick={() => window.location.href="/collection"}>Go to collections</a></Small>
+      </Title>
+    </Site>
+  </>
+);
 
 export default NotFoundPage;

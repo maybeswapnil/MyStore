@@ -12,13 +12,6 @@ function ImageForm(props) {
   const [addedToCart, setAddedToCart] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleClick = () => {
-    setLoading(true);
-    // Simulate a loading state for 2 seconds
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
   const dispatch = useDispatch();
 
   // Add item to cart
@@ -40,17 +33,7 @@ function ImageForm(props) {
     }, 2000);
   };
 
-  // Remove item from cart
-  const removeFromCart = () => {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const filteredItems = cartItems.filter(item => item.name !== props.res.name);
-    localStorage.setItem('cart', JSON.stringify(filteredItems));
-    dispatch(removeCart(props.res));
-    setAddedToCart(false);
-  };
-
   const handleSizeChange = (e) => {
-    console.log(e, "lololo")
     setSize(e);
   };
 
@@ -58,7 +41,7 @@ function ImageForm(props) {
   const submit = () => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000)
+    }, 1000)
     const obj = {
       quantity: quantity,
       size: size,
@@ -72,7 +55,6 @@ function ImageForm(props) {
       <div className="form-group2" id='margin-left'>
         <div className="product-grid">
           <h1 className="cart-product-header">{props.res.name}</h1>
-          <br />
           <h3 className="cart-product-desc">Shot on <span className='bolder'>{props.res.camera}</span></h3>
           <h3 className="cart-product-desc">Ships in <span className='bolder'>{props.res.shipping_time}</span></h3>
           <p className="cart-product-desc">{props.res.description}</p>         

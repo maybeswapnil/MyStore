@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +20,7 @@ import Invoice from "./Components/Invoice";
 import TermsOfService from "./Components/TermsOfService";
 import ReturnPolicy from "./Components/ReturnPolicy";
 import PrivacyPolicy from "./Components/PrivacyPolicy";
+import NotFoundPage from "./Components/NotFoundPage";
 window.Buffer = Buffer;
 
 export default function App() {
@@ -30,7 +31,7 @@ export default function App() {
 
   useEffect(() => {
     LogRocket.init('zaeyzk/mystore');
-    if(user) {
+    if (user) {
       LogRocket.identify(user.email, {
         name: user.logininfo.name.firstname,
         email: user.email,
@@ -40,8 +41,8 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if(user) {
-      if(new Date(user.date)-new Date()<-200000) {
+    if (user) {
+      if (new Date(user.date) - new Date() < -200000) {
         localStorage.setItem('user', null)
         var url = window.location.href
         window.location.href = url
@@ -52,9 +53,9 @@ export default function App() {
 
   return (
     <div className="App">
-     {loading?<LoginLoad />:null}
+      {loading ? <LoginLoad /> : null}
       <Router>
-        <Navbar loader={setLoading}/>
+        <Navbar loader={setLoading} />
         <Link to="/" />
         <Link to="/collection" />
         <Link to="/checkout" />
@@ -71,10 +72,10 @@ export default function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/returns-policy" element={<ReturnPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
       <Footer />
-
     </div>
   );
 }

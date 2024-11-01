@@ -13,7 +13,7 @@ export default function Footer() {
 
         <h2>Contact</h2>
 
-        <address>swapnil.sharma1998@gmail.com</address>
+        <address>info@swapnilsharma.in</address>
         <br />
         <address>+91 9755448822</address>
       </div>

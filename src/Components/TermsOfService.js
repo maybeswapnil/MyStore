@@ -55,12 +55,12 @@ const TermsOfService = () => {
 
       <div className="policy-section">
         <div className="section-title">Copyright & Intellectual Property</div>
-        <p>The trademark “Swapnil Sharma” is proprietary to Swapnil Sharma Print Company. The website (<a href="https://www.swapnilsharma.in" target="_blank" rel="noopener noreferrer">swapnilsharma.in</a>) and all content, including text, illustrations, and images, are created and owned by Swapnil Sharma Print Company.</p>
+        <p>The trademark “Swapnil Sharma Print Company" is proprietary to Swapnil Sharma Print Company. The website (<a href="https://www.swapnilsharma.in" target="_blank" rel="noopener noreferrer">swapnilsharma.in</a>) and all content, including text, illustrations, and images, are created and owned by Swapnil Sharma Print Company.</p>
       </div>
 
       <div className="policy-section">
         <div className="section-title">Jurisdiction</div>
-        <p>All disputes are subject to the courts of Mumbai, Maharashtra jurisdiction.</p>
+        <p>All disputes are subject to the courts of Madhya Pradesh jurisdiction.</p>
       </div>
 
       <div className="policy-section">

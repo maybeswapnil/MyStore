@@ -3,7 +3,6 @@ import './CheckoutForm.scss';
 import axios from 'axios';
 import { emptyCart, selectCart, selectUser } from '../features/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import OrderPlaced from './OrderPlaced';
 
 function CheckoutForm() {
     const [email, setEmail] = useState('');
@@ -177,27 +176,19 @@ function CheckoutForm() {
                 <input className="form-field" type="Email" placeholder="Email" ref={n} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div className="content-submit">
-                <button 
-                    className="button-13" 
-                    style={{ marginLeft: '0px', width: '170px' }} 
-                    type='submit' 
-                    id='submit-button' 
+                <button
+                    className="button-13"
+                    style={{ marginLeft: '0px', width: '170px' }}
+                    type='submit'
+                    id='submit-button'
                     disabled={loading} // Disable button when loading
                 >
                     {loading ? 'Checking out...' : 'Continue to Shipping'} {/* Change button text based on loading state */}
                 </button>
-                <button 
-                    className="button-13" 
-                    style={{ marginLeft: '10px', width: '120px', backgroundColor: 'black' }} 
-                    id='submit-button' 
-                    role="button" 
-                    onClick={() => { window.location.href = "/shipping-policy" }}
-                >
-                    Shipping Policy
-                </button>
             </div>
             <div className="content-error">
                 <h4>{error}</h4>
+                <h3>By clicking on <strong style={{fontWeight: "bolder"}}>"Continue to Shipping"</strong> button, you will be accepting <a href='/terms-of-service'>terms of service</a>, <a href='/privacy-policy'>privacy policy</a>, <a href='/shipping-policy'>shipping policy</a>, and <a href='/returns-policy'>return policy</a></h3>
             </div>
         </form>
     );

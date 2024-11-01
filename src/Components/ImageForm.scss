@@ -308,6 +308,14 @@ body {
 
 @media only screen and (max-width: 600px) { 
 
+  .content-submit {
+    margin-left: 0;
+  }
+  .content-error {
+    width: 100%;
+    text-align: center;
+  }
+
     .main-form2 {
         margin-top: 10vmin;
         width: 80%;
@@ -347,8 +355,7 @@ body {
   }
 }
 
-.content-submit {
-}
+
 
 #submit-button {
     margin-left: 4vmin;

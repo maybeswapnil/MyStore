@@ -21,6 +21,7 @@ import TermsOfService from "./Components/TermsOfService";
 import ReturnPolicy from "./Components/ReturnPolicy";
 import PrivacyPolicy from "./Components/PrivacyPolicy";
 import NotFoundPage from "./Components/NotFoundPage";
+import ContactDetails from "./Components/ContactDetails";
 window.Buffer = Buffer;
 
 export default function App() {
@@ -72,6 +73,7 @@ export default function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/returns-policy" element={<ReturnPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/contact-us" element={<ContactDetails />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>

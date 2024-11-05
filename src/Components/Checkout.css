@@ -2,7 +2,7 @@
     margin-right: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 90vh;
+    height: 110vh;
     margin-top: 8%;
     font-family: var(--font-style);
     width: 70%;
@@ -83,5 +83,16 @@
 
     #form-main2 {
         margin-left: 10vmin;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .checkout-cart {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }

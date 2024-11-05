@@ -12,7 +12,6 @@ export default function Footer() {
         />
 
         <h2>Contact</h2>
-
         <address>info@swapnilsharma.in</address>
         <br />
         <address>+91 9755448822</address>
@@ -25,7 +24,6 @@ export default function Footer() {
             <li>
               <a href="/shipping-policy">Shipping Policy</a>
             </li>
-
             <li>
               <a href="/terms-of-service">Terms of service</a>
             </li>
@@ -35,6 +33,10 @@ export default function Footer() {
             <li>
               <a href="/returns-policy">Returns Policy</a>
             </li>
+            <li>
+              <a href="/contact-us">Contact us</a>
+            </li>
+
           </ul>
         </li>
         <li className="nav__item">

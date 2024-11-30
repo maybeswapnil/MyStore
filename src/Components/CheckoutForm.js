@@ -61,8 +61,8 @@ function CheckoutForm() {
 
             const config = {
                 method: 'post',
-                url: 'https://mystore-apiset.onrender.com/mystore/create-order',
-                headers: { 'Content-Type': 'application/json' },
+                url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/create-order',
+                headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 0 },
                 data: data,
             };
 
@@ -80,8 +80,8 @@ function CheckoutForm() {
                         handler: function (response) {
                             const paycheck = {
                                 method: 'post',
-                                url: 'https://mystore-apiset.onrender.com/mystore/verify-payment',
-                                headers: { 'Content-Type': 'application/json' },
+                                url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/verify-payment',
+                                headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 0 },
                                 data: response,
                             };
                             axios(paycheck)

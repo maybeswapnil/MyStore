@@ -44,7 +44,12 @@ export default function ProductPage() {
 
     try {
       setLoading(true);
-      const response = await axios.get(`https://mystore-apiset.onrender.com/mystore/getProduct?sku=${sku}`);
+      const response = await axios.get(`https://darling-sincerely-crab.ngrok-free.app/mystore/getProduct?sku=${sku}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'ngrok-skip-browser-warning': 0,
+        },
+      });
       
       // Store response in local storage with timestamp
       localStorage.setItem(localStorageKey, JSON.stringify({

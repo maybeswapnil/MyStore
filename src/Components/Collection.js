@@ -42,7 +42,12 @@ export default function Collection() {
 
             // Fetch data from API if no valid cache
             try {
-                const response = await axios.get('https://mystore-apiset.onrender.com/mystore/getCollection');
+                const response = await axios.get('https://darling-sincerely-crab.ngrok-free.app/mystore/getCollection', {
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'ngrok-skip-browser-warning': 0,
+                    },
+                  });
                 setCollection(response.data); // Set the fetched collection data
 
                 // Store response in local storage with timestamp

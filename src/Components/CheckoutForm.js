@@ -4,6 +4,7 @@ import axios from 'axios';
 import { emptyCart, selectCart, selectUser } from '../features/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from 'lodash';
+import Loading from './Loading'; // Make sure to import the Loading component
 
 function CheckoutForm() {
     const [email, setEmail] = useState('');
@@ -17,6 +18,7 @@ function CheckoutForm() {
     const [state, setState] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [verifyingPayment, setVerifyingPayment] = useState(false);
     const dispatch = useDispatch();
 
     const user = useSelector(selectUser);
@@ -123,6 +125,7 @@ function CheckoutForm() {
                         description: 'Order Payment',
                         order_id,
                         handler: (response) => {
+                            setVerifyingPayment(true);
                             const paycheck = {
                                 method: 'post',
                                 url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/verify-payment',
@@ -138,6 +141,9 @@ function CheckoutForm() {
                                 .catch((error) => {
                                     console.log(error);
                                     setError('Payment verification failed');
+                                })
+                                .finally(() => {
+                                    setVerifyingPayment(false);
                                 });
                         },
                         prefill: {
@@ -162,6 +168,14 @@ function CheckoutForm() {
             setLoading(false);
         }
     };
+
+    if (verifyingPayment) {
+        return (
+            <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 9999 }}>
+                <div className="loadingCart"><Loading /></div>
+            </div>
+        );
+    }
 
     return (
         <form className="main-form2" style={{ marginTop: '0px' }} id="form-main2" onSubmit={(e) => submit(e)}>

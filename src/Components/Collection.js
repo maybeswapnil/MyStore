@@ -42,7 +42,7 @@ export default function Collection() {
 
             // Fetch data from API if no valid cache
             try {
-                const response = await axios.get('https://darling-sincerely-crab.ngrok-free.app/mystore/getCollection', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/getCollection`, {
                     headers: {
                       'Content-Type': 'application/json',
                       'ngrok-skip-browser-warning': 0,

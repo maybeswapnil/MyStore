@@ -108,7 +108,7 @@ function CheckoutForm() {
 
             const config = {
                 method: 'post',
-                url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/create-order',
+                url: `${process.env.REACT_APP_API_URL}/create-order`,
                 headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 0 },
                 data,
             };
@@ -128,7 +128,7 @@ function CheckoutForm() {
                             setVerifyingPayment(true);
                             const paycheck = {
                                 method: 'post',
-                                url: 'https://darling-sincerely-crab.ngrok-free.app/mystore/verify-payment',
+                                url: `${process.env.REACT_APP_API_URL}/verify-payment`,
                                 headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 0 },
                                 data: response,
                             };

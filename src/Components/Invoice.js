@@ -17,7 +17,7 @@ const Invoice = () => {
             console.log("Captured orderId:", orderId); // Log the orderId
 
             // Fetch invoice data from the server using the dynamic orderId
-            fetch(`https://darling-sincerely-crab.ngrok-free.app/mystore/orders?order_id=${orderId}`, {
+            fetch(`${process.env.REACT_APP_API_URL}/orders?order_id=${orderId}`, {
                 method: 'GET',
                 headers: {
                   'Content-Type': 'application/json',

@@ -18,7 +18,7 @@
     font-family: var(--font-style);
     border-radius: 20px;
     width: 100%;
-    height: 200px;
+    height: 220px;
     transition-delay: 300ms;
     text-decoration: none;
     transition: text-decoration 300ms;
@@ -114,7 +114,7 @@
     
     .your-cart-product {
         width: 90%;
-        height: 200px;
+        height: 220px;
         position: relative;
         font-size: 7px;
     }

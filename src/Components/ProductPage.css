@@ -106,6 +106,7 @@
 .product-image {
   width: 100%;
   height: auto;
+  aspect-ratio: 2 / 3; /* Ensures the 2:3 aspect ratio */
 }
 
 /* Product Name */

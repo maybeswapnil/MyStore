@@ -2,11 +2,11 @@
     margin-right: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 110vh;
-    margin-top: 8%;
+    margin-top: 140px;
     font-family: var(--font-style);
     width: 70%;
     margin-left: auto;
+    margin-bottom: 80px;
 }
 
 .checkout-payment {
@@ -35,11 +35,11 @@
 @media only screen and (max-width: 1700px) {
     .checkout {
         display: flex;
-        height: 110vh;
         margin-right: auto;
         grid-template-columns: 1fr 1fr;
         font-family: var(--font-style);
         margin-left: auto;
+        margin-top: 140px;
     }
 
     .checkout-payment {
@@ -53,7 +53,7 @@
     .checkout {
         flex-direction: column;
         height: 100%;
-        margin-top: 24%;
+        margin-top: 120px;
         width: 100%;
     }
 

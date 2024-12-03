@@ -31,6 +31,10 @@ export default function Checkout() {
         setPrice(sum)
   }, [cart])
 
+  useEffect(() => {
+    if(cart.length <= 0) window.location.href = '/collection'
+  }, [])
+
   return (
     <div className="checkout">
       {view?<PaymentStatus view={setView} message={message} />:null}

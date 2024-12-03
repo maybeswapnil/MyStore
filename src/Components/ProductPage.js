@@ -118,7 +118,7 @@ export default function ProductPage() {
                   <img
                     key={index}
                     className={`thumbnail-image ${selectedImage === image ? 'active' : ''}`}
-                    src={image}
+                    src={image.replace('l.png', 's.png')}
                     alt={`Thumbnail ${index + 1}`}
                     onClick={() => setSelectedImage(image)}
                   />

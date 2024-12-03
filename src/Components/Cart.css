@@ -185,7 +185,7 @@
     }
 
     .col-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 0px 0px;
         display: inline-grid;
         justify-items: center;

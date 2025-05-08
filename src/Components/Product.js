@@ -34,7 +34,7 @@ export default function Product(props) {
         {/* Canvas-like frame around the image */}
         <img className="product-image" src={props.res.url} alt={props.res.name} />
         <h2 className="product-name">{props.res.name}</h2>
-        <h4 className="product-price">₹ {props.res.price['Small (12inch*18inch)']}</h4>
+        <h4 className="product-price">₹ {props.res.price['Small (30cm*40cm)']}</h4>
       </div>
     </div>
   );

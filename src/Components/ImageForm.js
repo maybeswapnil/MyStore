@@ -6,7 +6,7 @@ import loadingGif from '../Resources/loadbutton.gif'
 
 function ImageForm(props) {
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState('Small (12inch*18inch)'); // Default size
+  const [size, setSize] = useState('Small (30cm*40cm)'); // Default size
   const [comments, setComments] = useState('');
   const prices = props.res.price; // Prices object from props
   const [addedToCart, setAddedToCart] = useState(false);
